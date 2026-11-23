@@ -17,6 +17,8 @@ It is a lens, not a proof. It reports the mismatches it is able to detect (a sen
 cannot read, an anchor that points at nothing, code that no sentence mentions) and it
 leaves everything else to you. A sentence that checks is only as true as what it describes.
 
+**Want to see two architectures described with intentree? [Open the live demos.](https://fabriciorit.github.io/intentree/)**
+
 ## Try it
 
 Two interactive demos run in the browser, each with the real intentree (compiled to
