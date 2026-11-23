@@ -1,0 +1,33 @@
+# Numbers, units, measures and names with special characters.
+The field "floors" is at least 2.
+The field "floors" is at most 30.
+The field "capacity" is greater than 0.5.
+The field "épsilon" is less than 0.00001.
+The field "large" is at most 1234567.
+The field "huge" is at most 10000000000000000.
+The field "integer" is at least 007.
+The field "tab	name" is at least 1.25.
+The field "bar\name" is at least 100000.
+The clock "clock" has the unit "s".
+The value "speed" has the unit "s".
+The value "rate" has the unit "Hz".
+The value "duration" has the unit "parsecs".
+The value "door_time" is mutable.
+The module "m" has the unit "ms".
+The module "m" reads the value "rate".
+The value "x" has the same unit as the value "y".
+The value "y" has the same unit as the value "x".
+The value "z" has the unit "s".
+The module "n" has the unit "s".
+The module "n" uses the value "x".
+The module "n" consumes the value "w".
+The value "w" has the same unit as the value "rate".
+The queue "queue" is bounded.
+The queue "q2" is closed.
+The state machine "sm" has the states "a", "b" and "c".
+The state machine "sm" starts in the state "a".
+The module "m" moves the state machine "sm" from the state "a" to the state "b".
+If the queue "q2" is full, the module "m" always drops the message "x" from the queue "q2".
+When the module "m" reads the value "rate" and the value "z", the module "m" never changes the value "z".
+The module "m" does not mutate.
+The module "m" never writes "x" to the file "f".

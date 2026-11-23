@@ -1,0 +1,34 @@
+$ where touch screen mqtt
+where: touch screen mqtt (5 of 8)
+1 mqtt · thread
+  - The thread "mqtt" connects to the mqtt endpoint "127.0.0.1:1883".
+  same state accept device (Store), clock (Store), monitor (Store), weather (Store)
+2 panel-server · process
+  - The process "panel-server" does not change the value "physical screen edge".
+3 paneld · process
+  - The process "paneld" contains the list "touch targets".
+4 screen cache · map
+5 screen ownership · state machine
+more monitor, accept device, mosquitto
+nearby rules
+- [monitor] If the thread "mqtt" times out, the thread "monitor" publishes the alert "dead source" to the queue "alert queue".
+- [panel-server] If the counter "consecutive A2 per region" is at least 8, the process "panel-server" dispatches the event "ghosting cleanup".
+- [paneld] If the connection "session" closes, the process "paneld" connects to the tcp endpoint "server:8993".
+- [monitor] If the value "home.soc" is greater than 35, the thread "monitor" removes the alert "low SOC" from the queue "alert queue".
+- [panel-server] If the devtools endpoint "0.0.0.0:9222" times out, the process "panel-server" falls back to the function "native render".
+- [paneld] If the connection "session" times out, the process "paneld" launches the process "udhcpc".
+- [monitor] If the value "home.soc" is less than 30, the thread "monitor" publishes the alert "low SOC" to the queue "alert queue".
+- [panel-server] If the stack "navigation stack" changes, the process "panel-server" uses the value "GC16".
+- [paneld] The process "paneld" does not call the function "FB_WAIT_UPDATE".
+- [panel-server] If the value "rectangle" is monochrome, the process "panel-server" uses the value "A2".
+
+$ where render fallback
+where: render fallback (1 of 1)
+1 panel-server · process
+  - If the devtools endpoint "0.0.0.0:9222" times out, the process "panel-server" falls back to the function "native render".
+  - The process "panel-server" renders the page "home.html" into the device "buffer L8 1072x1448".
+nearby rules
+- [monitor] If the thread "mqtt" times out, the thread "monitor" publishes the alert "dead source" to the queue "alert queue".
+- [monitor] If the value "home.soc" is greater than 35, the thread "monitor" removes the alert "low SOC" from the queue "alert queue".
+- [monitor] If the value "home.soc" is less than 30, the thread "monitor" publishes the alert "low SOC" to the queue "alert queue".
+

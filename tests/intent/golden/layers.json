@@ -1,0 +1,255 @@
+{
+ "lexicon": "0.3",
+ "entities": [
+  {
+   "id": "01877a7ff6",
+   "name": "x",
+   "type": "e.layer",
+   "attrs": {}
+  },
+  {
+   "id": "041a480b8d",
+   "name": "executor",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "22e153bd10",
+   "name": "validate",
+   "type": "e.function",
+   "attrs": {}
+  },
+  {
+   "id": "2850c7e962",
+   "name": "interface",
+   "type": "e.layer",
+   "attrs": {}
+  },
+  {
+   "id": "681e903671",
+   "name": "app",
+   "type": "e.program",
+   "attrs": {}
+  },
+  {
+   "id": "6eb0534535",
+   "name": "domain",
+   "type": "e.layer",
+   "attrs": {}
+  },
+  {
+   "id": "73856b7641",
+   "name": "y",
+   "type": "e.layer",
+   "attrs": {}
+  },
+  {
+   "id": "97386beaa2",
+   "name": "rules",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "a14a83ea49",
+   "name": "data",
+   "type": "e.layer",
+   "attrs": {}
+  },
+  {
+   "id": "a3d50bf950",
+   "name": "cli",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "d08938d7c0",
+   "name": "execution",
+   "type": "e.layer",
+   "attrs": {}
+  },
+  {
+   "id": "d1d085e1f0",
+   "name": "double",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "f0c814f2fe",
+   "name": "cache",
+   "type": "e.module",
+   "attrs": {}
+  }
+ ],
+ "facts": [
+  {
+   "mode": "exception",
+   "object": "97386beaa2",
+   "rel": "a.reads",
+   "roles": {},
+   "subject": "a3d50bf950"
+  },
+  {
+   "mode": "exception",
+   "object": "a3d50bf950",
+   "rel": "a.calls",
+   "roles": {},
+   "subject": "f0c814f2fe"
+  },
+  {
+   "mode": null,
+   "object": "01877a7ff6",
+   "rel": "a.above",
+   "roles": {},
+   "subject": "73856b7641"
+  },
+  {
+   "mode": null,
+   "object": "01877a7ff6",
+   "rel": "a.is_in",
+   "roles": {},
+   "subject": "d1d085e1f0"
+  },
+  {
+   "mode": null,
+   "object": "041a480b8d",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "681e903671"
+  },
+  {
+   "mode": null,
+   "object": "041a480b8d",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "22e153bd10"
+  },
+  {
+   "mode": null,
+   "object": "041a480b8d",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "a3d50bf950"
+  },
+  {
+   "mode": null,
+   "object": "22e153bd10",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "97386beaa2"
+  },
+  {
+   "mode": null,
+   "object": "2850c7e962",
+   "rel": "a.is_in",
+   "roles": {},
+   "subject": "a3d50bf950"
+  },
+  {
+   "mode": null,
+   "object": "6eb0534535",
+   "rel": "a.above",
+   "roles": {},
+   "subject": "d08938d7c0"
+  },
+  {
+   "mode": null,
+   "object": "6eb0534535",
+   "rel": "a.is_in",
+   "roles": {},
+   "subject": "97386beaa2"
+  },
+  {
+   "mode": null,
+   "object": "73856b7641",
+   "rel": "a.above",
+   "roles": {},
+   "subject": "01877a7ff6"
+  },
+  {
+   "mode": null,
+   "object": "73856b7641",
+   "rel": "a.is_in",
+   "roles": {},
+   "subject": "d1d085e1f0"
+  },
+  {
+   "mode": null,
+   "object": "97386beaa2",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "681e903671"
+  },
+  {
+   "mode": null,
+   "object": "a14a83ea49",
+   "rel": "a.above",
+   "roles": {},
+   "subject": "6eb0534535"
+  },
+  {
+   "mode": null,
+   "object": "a14a83ea49",
+   "rel": "a.is_in",
+   "roles": {},
+   "subject": "f0c814f2fe"
+  },
+  {
+   "mode": null,
+   "object": "a3d50bf950",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "681e903671"
+  },
+  {
+   "mode": null,
+   "object": "d08938d7c0",
+   "rel": "a.above",
+   "roles": {},
+   "subject": "2850c7e962"
+  },
+  {
+   "mode": null,
+   "object": "d08938d7c0",
+   "rel": "a.is_in",
+   "roles": {},
+   "subject": "041a480b8d"
+  },
+  {
+   "mode": null,
+   "object": "f0c814f2fe",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "681e903671"
+  },
+  {
+   "mode": null,
+   "object": "f0c814f2fe",
+   "rel": "a.reads",
+   "roles": {},
+   "subject": "22e153bd10"
+  },
+  {
+   "mode": null,
+   "object": "f0c814f2fe",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "a3d50bf950"
+  }
+ ],
+ "invariants": [],
+ "rules": [],
+ "gaps": [],
+ "warnings": [
+  {
+   "entity": "a3d50bf950",
+   "text": "layer exception without a relation that goes up: a.reads 'rules'"
+  }
+ ],
+ "errors": [
+  "line 24: 'exceptionally' only applies in a simple sentence (the relation that goes up a layer)",
+  "cycle in the layer order: 'x', 'y'",
+  "'double' is in more than one layer: x, y",
+  "line 15: relation goes up a layer: 'validate' (layer 'domain') a.uses 'executor' (layer 'execution'); if it is on purpose, write 'exceptionally' before the verb"
+ ],
+ "notes": []
+}

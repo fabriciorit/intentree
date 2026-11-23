@@ -1,0 +1,67 @@
+If the message "first message" times out, the process "bridge" closes the connection "client".
+If the page script "main-world" changes the text field "authorized field", the page script "main-world" dispatches the event "change".
+If the page script "main-world" changes the text field "authorized field", the page script "main-world" dispatches the event "input".
+If the service worker "background" does not connect to the process "bridge", the process "bridge" sends the message "extension not connected" to the process "cmd".
+If the timer "field-bridge-reconnect" times out, the service worker "background" connects to the process "bridge".
+The content script "content" contains the key-value store "chrome.storage.local".
+The content script "content" contains the map "pending main-world".
+The content script "content" contains the state machine "selection mode".
+The content script "content" contains the text field "authorized field".
+The content script "content" does not read the value "window.ace".
+The content script "content" is idempotent.
+The content script "content" moves the state machine "selection mode" from the state "selecting" to the state "idle".
+The content script "content" runs in the execution context "isolated world".
+The content script "content" sends the event "field-bridge-request" through the execution context "DOM window" to the page script "main-world".
+The content script "content" sends the message "change event" to the service worker "background".
+The key-value store "chrome.storage.local" is keyed by the value "origin plus path".
+The key-value store "chrome.storage.local" is persistent.
+The map "pending main-world" is keyed by the value "request id".
+The map "pending main-world" times out after "8 s".
+The map "pending" is keyed by the value "request id".
+The map "pending" times out after "10 s".
+The message "first message" times out after "5 s".
+The page script "main-world" contains the function "getDiagnostics".
+The page script "main-world" contains the set "watching".
+The page script "main-world" is idempotent.
+The page script "main-world" reads the value "window.ace".
+The page script "main-world" runs in the execution context "MAIN world".
+The page script "main-world" sends the event "field-bridge-change" through the execution context "DOM window" to the content script "content".
+The page script "main-world" sends the event "field-bridge-response" through the execution context "DOM window" to the content script "content".
+The process "bridge" changes the map "pending".
+The process "bridge" changes the set "watchers".
+The process "bridge" contains the counter "id_counter".
+The process "bridge" contains the map "pending".
+The process "bridge" contains the set "watchers".
+The process "bridge" forwards the message "change event" to the set "watchers".
+The process "bridge" forwards the message "command" to the service worker "background".
+The process "bridge" listens on the websocket endpoint "ws://127.0.0.1:8797".
+The process "bridge" runs in the execution context "python asyncio".
+The process "cmd" connects to the websocket endpoint "ws://127.0.0.1:8797".
+The process "cmd" contains the message "command".
+The process "cmd" runs in the execution context "python asyncio".
+The process "cmd" sends the message "command" to the process "bridge".
+The program "field_bridge" contains the content script "content".
+The program "field_bridge" contains the page script "main-world".
+The program "field_bridge" contains the process "bridge".
+The program "field_bridge" contains the process "cmd".
+The program "field_bridge" contains the service worker "background".
+The program "field_bridge" contains the window "popup".
+The service worker "background" connects to the websocket endpoint "ws://127.0.0.1:8797".
+The service worker "background" contains the timer "field-bridge-reconnect".
+The service worker "background" does not pick the tab "active tab".
+The service worker "background" injects the content script "content" into the tab "each tab".
+The service worker "background" injects the page script "main-world" into the tab "each tab".
+The service worker "background" picks the tab "first tab with authorized field".
+The service worker "background" runs in the execution context "service worker".
+The service worker "background" sends the message "change event" to the process "bridge".
+The service worker "background" sends the message "command" to the content script "content".
+The state machine "selection mode" has the states "idle".
+The state machine "selection mode" has the states "selecting".
+The state machine "selection mode" starts in the state "idle".
+The timer "field-bridge-reconnect" repeats every "5 s".
+The window "popup" injects the content script "content" into the tab "active tab".
+The window "popup" injects the page script "main-world" into the tab "active tab".
+The window "popup" moves the state machine "selection mode" from the state "idle" to the state "selecting".
+The window "popup" runs in the execution context "extension popup".
+The window "popup" sends the message "start-select" to the content script "content".
+When the service worker "background" connects to the process "bridge", the process "bridge" replaces the connection "previous extension".

@@ -1,0 +1,210 @@
+# messenger: a WhatsApp-style chat simulated in the browser (two phones, a server, a push gateway, a network).
+# Plain ES modules, no dependencies. Domain logic has no DOM access and the actors only talk through the
+# network module; the page just draws what the domain does.
+
+# --- components and the files that implement them
+The program "messenger" excludes "README.md" and "demo.json".
+The program "messenger" contains the module "clock", the module "message states", the module "network", the module "server", the module "push gateway", the module "phone client", the module "phone A", the module "phone B", the module "world", the module "scenarios", the module "app", the module "phone view", the module "wire view", the module "log view", the module "controls", the page "page" and the test suite "tests".
+The module "clock" is implemented in "src/clock.js".
+The module "message states" is implemented in "src/message-states.js".
+The module "network" is implemented in "src/network.js".
+The module "server" is implemented in "src/server.js".
+The module "push gateway" is implemented in "src/push-gateway.js".
+The module "phone client" is implemented in "src/phone.js".
+The module "phone A" is implemented in "src/phone-a.js".
+The module "phone B" is implemented in "src/phone-b.js".
+The module "world" is implemented in "src/world.js".
+The module "scenarios" is implemented in "src/scenarios.js".
+The module "app" is implemented in "ui/app.js".
+The module "phone view" is implemented in "ui/phone-view.js".
+The module "wire view" is implemented in "ui/wire-view.js".
+The module "log view" is implemented in "ui/log-view.js".
+The module "controls" is implemented in "ui/controls.js".
+The page "page" is implemented in "index.html" and "style.css".
+The test suite "tests" is implemented in "tests/**".
+
+# --- relations (who imports whom)
+The module "network" uses the module "clock".
+The module "server" uses the module "message states".
+The module "phone client" uses the module "message states".
+The module "phone A" uses the module "phone client".
+The module "phone B" uses the module "phone client".
+The module "world" uses the module "clock", the module "network", the module "server", the module "push gateway", the module "phone A" and the module "phone B".
+The module "scenarios" uses the module "world".
+The module "app" uses the module "world", the module "scenarios", the module "phone A", the module "phone B", the module "phone view", the module "wire view", the module "log view" and the module "controls".
+The module "phone view" uses the module "message states".
+The module "phone view" reads the state machine "message".
+Note: the ticks on the screen are drawn from the state of the message, not from separate flags.
+The page "page" uses the module "app".
+The test suite "tests" uses the module "clock", the module "message states", the module "network", the module "server", the module "push gateway", the module "phone client", the module "world" and the module "scenarios".
+
+# --- relations (who talks to whom while running: only through the network)
+The module "phone client" sends the message "hello", the message "ping", the message "send", the message "receipt" and the message "status ack" through the module "network".
+The module "server" sends the message "welcome", the message "ack", the message "deliver", the message "status", the message "receipt ack" and the message "push request" through the module "network".
+The module "push gateway" sends the message "push" through the module "network".
+The module "network" exceptionally sends the message "hello", the message "ping", the message "send", the message "receipt" and the message "status ack" to the module "server".
+The module "network" exceptionally sends the message "welcome", the message "ack", the message "deliver", the message "status" and the message "receipt ack" to the module "phone client".
+The module "network" exceptionally sends the message "push request" to the module "push gateway".
+The module "network" exceptionally sends the message "push" to the module "phone client".
+Note: the network hands each packet to the handler its actor registered; that call-back is the only arrow that goes up a layer.
+
+# --- layers (each layer sits above the next)
+The layer "interface" is above the layer "scenario".
+The layer "scenario" is above the layer "composition".
+The layer "composition" is above the layer "actors".
+The layer "actors" is above the layer "transport".
+The layer "transport" is above the layer "foundation".
+The module "app" is in the layer "interface".
+The module "phone view" is in the layer "interface".
+The module "wire view" is in the layer "interface".
+The module "log view" is in the layer "interface".
+The module "controls" is in the layer "interface".
+The page "page" is in the layer "interface".
+The module "scenarios" is in the layer "scenario".
+The module "world" is in the layer "composition".
+The module "server" is in the layer "actors".
+The module "push gateway" is in the layer "actors".
+The module "phone client" is in the layer "actors".
+The module "phone A" is in the layer "actors".
+The module "phone B" is in the layer "actors".
+The module "network" is in the layer "transport".
+The module "clock" is in the layer "foundation".
+The module "message states" is in the layer "foundation".
+
+# --- deployment (the real-world picture the simulation stands for)
+The process "phone A" runs on the machine "Alice's handset".
+The process "phone B" runs on the machine "Bob's handset".
+The process "server" runs on the machine "chat backend".
+The process "push gateway" runs on the machine "push provider".
+The process "network" runs on the machine "internet".
+The process "phone A" contains the module "phone A".
+The process "phone B" contains the module "phone B".
+The process "server" contains the module "server".
+The process "push gateway" contains the module "push gateway".
+The process "network" contains the module "network".
+The process "server" listens on the websocket endpoint "chat.example:443".
+The process "push gateway" listens on the http endpoint "push.example:443".
+The websocket endpoint "chat.example:443" needs no authentication.
+Note: the simulation skips logging in; a real server would check who is connecting.
+The http endpoint "push.example:443" needs no authentication.
+Note: only the server calls the gateway, and the gateway ignores anyone else.
+The process "phone A" sends the message "hello", the message "ping", the message "send", the message "receipt" and the message "status ack" to the process "network".
+The process "phone B" sends the message "hello", the message "ping", the message "send", the message "receipt" and the message "status ack" to the process "network".
+The process "server" sends the message "welcome", the message "ack", the message "deliver", the message "status", the message "receipt ack" and the message "push request" to the process "network".
+The process "push gateway" sends the message "push" to the process "network".
+The process "network" sends the message "hello", the message "ping", the message "send", the message "receipt" and the message "status ack" to the process "server".
+The process "network" sends the message "welcome", the message "ack", the message "deliver", the message "status" and the message "receipt ack" to the process "phone A".
+The process "network" sends the message "welcome", the message "ack", the message "deliver", the message "status" and the message "receipt ack" to the process "phone B".
+The process "network" sends the message "push request" to the process "push gateway".
+The process "network" sends the message "push" to the process "phone A".
+The process "network" sends the message "push" to the process "phone B".
+
+# --- what each piece holds
+The module "clock" contains the priority queue "timer queue".
+The module "network" contains the queue "packets in flight", the random generator "loss dice" and the thread "packet delivery".
+The module "server" contains the map "conversations", the map "receipt index", the map "mailboxes", the map "presence table", the thread "delivery retry", the thread "presence watchdog", the state machine "presence", the counter "message order" and the record "stored message".
+The module "phone client" contains the queue "outbox", the list "chat", the priority queue "screen order", the map "known messages", the thread "heartbeat", the thread "outbox retry" and the state machine "connection".
+The module "message states" contains the state machine "message".
+The module "app" contains the thread "frame loop".
+The module "world" contains the record "world control".
+
+# --- threads and shared state
+The thread "frame loop" repeats every "16 ms".
+Note: the page drives time: each animation frame advances the virtual clock by the elapsed time times the chosen speed.
+The thread "frame loop" consumes the priority queue "timer queue".
+The priority queue "timer queue" is ordered by the value "due time". ^src/clock.js#Clock
+The priority queue "timer queue" breaks ties by the value "scheduling order". ^src/clock.js#Clock
+The thread "packet delivery" consumes the queue "packets in flight".
+The module "phone client" fills the queue "packets in flight".
+The module "server" fills the queue "packets in flight".
+The module "push gateway" fills the queue "packets in flight".
+The queue "packets in flight" is unbounded.
+Note: a packet stays here from the moment it is sent until it lands or dies on the way.
+The random generator "loss dice" is seeded with the value "seed".
+The thread "delivery retry" repeats every "2 s".
+The thread "delivery retry" consumes the map "mailboxes".
+Note: while a phone is online and has not confirmed, the server sends the same items again every 2 s: a "deliver" until the recipient answers with a "receipt", a "status" until the sender acknowledges it.
+The thread "presence watchdog" times out after "5 s".
+The thread "presence watchdog" changes the map "presence table".
+The module "server" changes the map "conversations", the map "receipt index" and the map "mailboxes".
+The map "conversations" is mutable.
+The map "conversations" is keyed by the value "conversation id".
+The map "receipt index" is mutable.
+The map "receipt index" is keyed by the value "message id".
+The map "mailboxes" is mutable.
+The map "mailboxes" is keyed by the value "phone".
+The map "presence table" is mutable.
+The map "presence table" is keyed by the value "phone".
+Note: the server keeps a message in "conversations" and in the recipient's "mailboxes" until that phone confirms receipt; the index only remembers who sent what, so receipts can be routed.
+The thread "heartbeat" repeats every "2 s".
+Note: a phone says "hello" when its Wi-Fi comes back, then "ping" every 2 s so the server knows it is online.
+The thread "outbox retry" repeats every "2 s to 8 s". ^src/phone.js#backoffDelay
+Note: the wait doubles after every unanswered attempt (2 s, 4 s, 8 s, 8 s ...) and starts over when the phone reconnects.
+The thread "outbox retry" consumes the queue "outbox".
+The module "phone client" changes the list "chat" and the map "known messages".
+The queue "outbox" is unbounded.
+Note: a message waits in the outbox, with a clock icon, until the server acknowledges it.
+The list "chat" is mutable.
+The map "known messages" is mutable.
+The map "known messages" is keyed by the value "message id".
+
+# --- state machine: the ticks of one message
+The state machine "message" has the states "composing", "queued", "sent", "delivered" and "read".
+The state machine "message" starts in the state "composing".
+Note: queued shows a clock, sent one grey tick, delivered two grey ticks and read two blue ticks; the page draws them from this machine.
+The module "phone client" moves the state machine "message" from the state "composing" to the state "queued". ^src/phone.js#Phone
+The module "server" moves the state machine "message" from the state "queued" to the state "sent". ^src/server.js#Server
+The module "phone client" moves the state machine "message" from the state "queued" to the state "sent".
+The module "server" moves the state machine "message" from the state "sent" to the state "delivered".
+The module "phone client" moves the state machine "message" from the state "sent" to the state "delivered".
+The module "server" moves the state machine "message" from the state "delivered" to the state "read".
+The module "phone client" moves the state machine "message" from the state "delivered" to the state "read".
+The module "message states" moves the state machine "message" from the state "read" to the state "read".
+Note: a read notice that arrives again leaves the message read; nothing ever moves a tick backwards.
+
+# --- state machine: whether a phone can reach the server
+The state machine "connection" has the states "offline", "syncing" and "online".
+The state machine "connection" starts in the state "offline".
+Note: syncing means the phone said hello and waits for the server to welcome it; only then does it send its outbox.
+The module "phone client" moves the state machine "connection" from the state "offline" to the state "syncing".
+The module "phone client" moves the state machine "connection" from the state "syncing" to the state "online".
+The module "phone client" moves the state machine "connection" from the state "syncing" to the state "offline".
+The module "phone client" moves the state machine "connection" from the state "online" to the state "offline".
+
+# --- state machine: whether the server thinks a phone is online
+The state machine "presence" has the states "offline" and "online".
+The state machine "presence" starts in the state "offline".
+Note: the server cannot see a phone's Wi-Fi; it notices a phone is gone after 5 s without a ping.
+The module "server" moves the state machine "presence" from the state "offline" to the state "online".
+The module "server" moves the state machine "presence" from the state "online" to the state "offline".
+If the thread "presence watchdog" times out, the module "server" moves the state machine "presence" from the state "online" to the state "offline". ^src/server.js#Server
+
+# --- invariants (anchored)
+# the order everyone sees is the order the server decided
+The value "sequence number" is greater than the value "previous sequence number". ^src/server.js#assignSequence
+Note: the message order is decided here: the server numbers the messages of a conversation as they arrive, and those numbers are the order every phone shows.
+The priority queue "screen order" is ordered by the value "server sequence number". ^src/phone.js#visibleMessages
+The priority queue "screen order" breaks ties by the value "writing order". ^src/phone.js#visibleMessages
+Note: messages the server has not numbered yet (still in the outbox) come last, in the order they were written.
+# ticks only go forward, one at a time
+The module "message states" never moves the state machine "message" from the state "sent" to the state "read". ^src/message-states.js#advanceTo
+The module "message states" never moves the state machine "message" from the state "delivered" to the state "sent". ^src/message-states.js#advanceTo
+# the server is a safety net until the recipient confirms
+If the value "recipient receipt" is false, the module "server" never discards the record "stored message". ^src/server.js#confirmReceipt
+# nothing is shown twice, nothing is stored twice
+If the map "known messages" contains the value "message id", the module "phone client" never adds the message "deliver" to the list "chat". ^src/phone.js#acceptDelivery
+If the map "receipt index" contains the value "message id", the module "server" never creates the record "stored message". ^src/server.js#Server
+# when a phone is back, it sends what it was holding
+When the module "phone client" moves the state machine "connection" from the state "syncing" to the state "online", the module "phone client" sends the message "send" through the module "network". ^src/phone.js#Phone
+# the push gateway is for phones that cannot be reached
+If the value "recipient presence" is the value "online", the module "server" never sends the message "push request" through the module "network". ^src/server.js#pushCandidates
+Note: the server asks the push gateway for a notification only when a phone is offline, and only once per new message.
+If the value "request sender" is not the value "server", the module "push gateway" discards the message "push request". ^src/push-gateway.js#PushGateway
+# you cannot read your own message
+The module "phone client" never changes the value "read state of own messages". ^src/phone.js#assertIncoming
+# the wire
+If the value "wifi link" is false, the module "network" discards the message "packet". ^src/network.js#Network
+The module "network" is deterministic. ^src/network.js#seededRandom
+# actors never call each other
+The module "server" never calls the module "phone client". ^src/server.js#Server
+The module "phone client" never calls the module "server". ^src/phone.js#Phone

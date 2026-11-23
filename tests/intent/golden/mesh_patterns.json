@@ -1,0 +1,896 @@
+{
+ "lexicon": "0.3",
+ "entities": [
+  {
+   "id": "03e9ec1024",
+   "name": "compute_distortion",
+   "type": "e.function",
+   "attrs": {}
+  },
+  {
+   "id": "0e5cf4b456",
+   "name": "Levy et al. 2002",
+   "type": "e.method",
+   "attrs": {}
+  },
+  {
+   "id": "11cde3eb51",
+   "name": "2D area",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "1f4ba05682",
+   "name": "angular p95",
+   "type": "m.percentile",
+   "attrs": {}
+  },
+  {
+   "id": "36ebafeab9",
+   "name": "degenerate faces",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "3ef8eebb21",
+   "name": "main",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "4358375669",
+   "name": "last face",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "43c4f8cec7",
+   "name": "panels",
+   "type": "p.list",
+   "attrs": {}
+  },
+  {
+   "id": "45cfe4957f",
+   "name": "viewer",
+   "type": "e.window",
+   "attrs": {}
+  },
+  {
+   "id": "4d62062974",
+   "name": "Exception",
+   "type": "e.error",
+   "attrs": {}
+  },
+  {
+   "id": "5786c07322",
+   "name": "face groups",
+   "type": "p.list",
+   "attrs": {}
+  },
+  {
+   "id": "5f80381484",
+   "name": "export_pdf",
+   "type": "e.function",
+   "attrs": {}
+  },
+  {
+   "id": "633902f88a",
+   "name": "seam with point",
+   "type": "p.state",
+   "attrs": {}
+  },
+  {
+   "id": "63ca94f1fe",
+   "name": "edge graph",
+   "type": "p.graph",
+   "attrs": {}
+  },
+  {
+   "id": "64e7d44ab3",
+   "name": "seam_segments",
+   "type": "p.stack",
+   "attrs": {}
+  },
+  {
+   "id": "6550b42521",
+   "name": "seam mode",
+   "type": "p.state_machine",
+   "attrs": {}
+  },
+  {
+   "id": "67bf7a68f3",
+   "name": "mesh",
+   "type": "m.mesh",
+   "attrs": {}
+  },
+  {
+   "id": "680881c2b0",
+   "name": "numpy linear interpolation",
+   "type": "e.method",
+   "attrs": {}
+  },
+  {
+   "id": "6d8bbf6879",
+   "name": "seam_edges",
+   "type": "p.list",
+   "attrs": {}
+  },
+  {
+   "id": "72d91cb8b5",
+   "name": "angular distortion per face",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "73b2c18a91",
+   "name": "segment_by_seams",
+   "type": "e.function",
+   "attrs": {}
+  },
+  {
+   "id": "85c0eea447",
+   "name": "flatten_patch",
+   "type": "e.function",
+   "attrs": {}
+  },
+  {
+   "id": "86762af644",
+   "name": "patterns.svg",
+   "type": "f.svg",
+   "attrs": {}
+  },
+  {
+   "id": "88fa401571",
+   "name": "angular",
+   "type": "p.state",
+   "attrs": {}
+  },
+  {
+   "id": "963996d272",
+   "name": "cut_to_disk",
+   "type": "e.function",
+   "attrs": {}
+  },
+  {
+   "id": "9e10c52f10",
+   "name": "reportlab",
+   "type": "e.library",
+   "attrs": {}
+  },
+  {
+   "id": "a17b381298",
+   "name": "panel",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "a2e718694b",
+   "name": "lscm",
+   "type": "m.algorithm",
+   "attrs": {}
+  },
+  {
+   "id": "a61a54ba7a",
+   "name": "export_svg",
+   "type": "e.function",
+   "attrs": {}
+  },
+  {
+   "id": "a7d2dffb93",
+   "name": "scipy",
+   "type": "e.library",
+   "attrs": {}
+  },
+  {
+   "id": "ac24c67a4e",
+   "name": "distortion mode",
+   "type": "p.state_machine",
+   "attrs": {}
+  },
+  {
+   "id": "b5e3592bb5",
+   "name": "none",
+   "type": "p.state",
+   "attrs": {}
+  },
+  {
+   "id": "bcc0f58c2d",
+   "name": "pyvista",
+   "type": "e.library",
+   "attrs": {}
+  },
+  {
+   "id": "c2cd7c0a4d",
+   "name": "navigation",
+   "type": "p.state",
+   "attrs": {}
+  },
+  {
+   "id": "c4e6c97d36",
+   "name": "patterns.pdf",
+   "type": "f.pdf",
+   "attrs": {}
+  },
+  {
+   "id": "c755fdf6ca",
+   "name": "loader",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "cbff699a4f",
+   "name": "distortion",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "d251e52a62",
+   "name": "patch",
+   "type": "m.mesh",
+   "attrs": {}
+  },
+  {
+   "id": "d73463794a",
+   "name": "trimesh",
+   "type": "e.library",
+   "attrs": {}
+  },
+  {
+   "id": "e13088b12f",
+   "name": "exporter",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "e81b30d808",
+   "name": "flattener",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "f1669c4ad2",
+   "name": "u axis",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "f27bca5af5",
+   "name": "seam without point",
+   "type": "p.state",
+   "attrs": {}
+  },
+  {
+   "id": "f4c3f6b818",
+   "name": "model.stl",
+   "type": "f.stl",
+   "attrs": {}
+  },
+  {
+   "id": "f6eb624ba1",
+   "name": "mesh_patterns",
+   "type": "e.program",
+   "attrs": {}
+  },
+  {
+   "id": "f77a074cd8",
+   "name": "area",
+   "type": "p.state",
+   "attrs": {}
+  },
+  {
+   "id": "f9e6738b8c",
+   "name": "two boundary vertices",
+   "type": "e.value",
+   "attrs": {}
+  }
+ ],
+ "facts": [
+  {
+   "literal": "mm",
+   "mode": null,
+   "rel": "a.has_unit",
+   "roles": {},
+   "subject": "5f80381484"
+  },
+  {
+   "literal": "mm",
+   "mode": null,
+   "rel": "a.has_unit",
+   "roles": {},
+   "subject": "a61a54ba7a"
+  },
+  {
+   "mode": null,
+   "object": "03e9ec1024",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "cbff699a4f"
+  },
+  {
+   "mode": null,
+   "object": "0e5cf4b456",
+   "rel": "a.follows",
+   "roles": {},
+   "subject": "a2e718694b"
+  },
+  {
+   "mode": null,
+   "object": "1f4ba05682",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "cbff699a4f"
+  },
+  {
+   "mode": null,
+   "object": "36ebafeab9",
+   "rel": "a.removes",
+   "roles": {
+    "from": "67bf7a68f3"
+   },
+   "subject": "c755fdf6ca"
+  },
+  {
+   "mode": null,
+   "object": "3ef8eebb21",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "f6eb624ba1"
+  },
+  {
+   "mode": null,
+   "object": "43c4f8cec7",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "45cfe4957f"
+  },
+  {
+   "mode": null,
+   "object": "43c4f8cec7",
+   "rel": "a.reads",
+   "roles": {},
+   "subject": "5f80381484"
+  },
+  {
+   "mode": null,
+   "object": "43c4f8cec7",
+   "rel": "a.reads",
+   "roles": {},
+   "subject": "a61a54ba7a"
+  },
+  {
+   "mode": null,
+   "object": "43c4f8cec7",
+   "rel": "a.writes",
+   "roles": {
+    "to": "86762af644"
+   },
+   "subject": "e13088b12f"
+  },
+  {
+   "mode": null,
+   "object": "43c4f8cec7",
+   "rel": "a.writes",
+   "roles": {
+    "to": "c4e6c97d36"
+   },
+   "subject": "e13088b12f"
+  },
+  {
+   "mode": null,
+   "object": "45cfe4957f",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "f6eb624ba1"
+  },
+  {
+   "mode": null,
+   "object": "45cfe4957f",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "3ef8eebb21"
+  },
+  {
+   "mode": null,
+   "object": "5f80381484",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "e13088b12f"
+  },
+  {
+   "mode": null,
+   "object": "633902f88a",
+   "rel": "a.has_states",
+   "roles": {},
+   "subject": "6550b42521"
+  },
+  {
+   "mode": null,
+   "object": "63ca94f1fe",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "45cfe4957f"
+  },
+  {
+   "mode": null,
+   "object": "64e7d44ab3",
+   "rel": "a.changes",
+   "roles": {},
+   "subject": "45cfe4957f"
+  },
+  {
+   "mode": null,
+   "object": "64e7d44ab3",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "45cfe4957f"
+  },
+  {
+   "mode": null,
+   "object": "6550b42521",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "45cfe4957f"
+  },
+  {
+   "mode": null,
+   "object": "6550b42521",
+   "rel": "a.moves",
+   "roles": {
+    "from": "633902f88a",
+    "to": "c2cd7c0a4d"
+   },
+   "subject": "45cfe4957f"
+  },
+  {
+   "mode": null,
+   "object": "6550b42521",
+   "rel": "a.moves",
+   "roles": {
+    "from": "633902f88a",
+    "to": "f27bca5af5"
+   },
+   "subject": "45cfe4957f"
+  },
+  {
+   "mode": null,
+   "object": "6550b42521",
+   "rel": "a.moves",
+   "roles": {
+    "from": "c2cd7c0a4d",
+    "to": "f27bca5af5"
+   },
+   "subject": "45cfe4957f"
+  },
+  {
+   "mode": null,
+   "object": "6550b42521",
+   "rel": "a.moves",
+   "roles": {
+    "from": "f27bca5af5",
+    "to": "633902f88a"
+   },
+   "subject": "45cfe4957f"
+  },
+  {
+   "mode": null,
+   "object": "6550b42521",
+   "rel": "a.moves",
+   "roles": {
+    "from": "f27bca5af5",
+    "to": "c2cd7c0a4d"
+   },
+   "subject": "45cfe4957f"
+  },
+  {
+   "mode": null,
+   "object": "67bf7a68f3",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "c755fdf6ca"
+  },
+  {
+   "mode": null,
+   "object": "67bf7a68f3",
+   "rel": "a.converts",
+   "roles": {
+    "into": "5786c07322"
+   },
+   "subject": "73b2c18a91"
+  },
+  {
+   "mode": null,
+   "object": "67bf7a68f3",
+   "rel": "a.has_same_unit_as",
+   "roles": {},
+   "subject": "43c4f8cec7"
+  },
+  {
+   "mode": null,
+   "object": "67bf7a68f3",
+   "rel": "a.reads",
+   "roles": {
+    "from": "f4c3f6b818"
+   },
+   "subject": "c755fdf6ca"
+  },
+  {
+   "mode": null,
+   "object": "680881c2b0",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "1f4ba05682"
+  },
+  {
+   "mode": null,
+   "object": "6d8bbf6879",
+   "rel": "a.changes",
+   "roles": {},
+   "subject": "45cfe4957f"
+  },
+  {
+   "mode": null,
+   "object": "6d8bbf6879",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "45cfe4957f"
+  },
+  {
+   "mode": null,
+   "object": "72d91cb8b5",
+   "rel": "a.measures",
+   "roles": {},
+   "subject": "1f4ba05682"
+  },
+  {
+   "mode": null,
+   "object": "73b2c18a91",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "e81b30d808"
+  },
+  {
+   "mode": null,
+   "object": "85c0eea447",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "e81b30d808"
+  },
+  {
+   "mode": null,
+   "object": "88fa401571",
+   "rel": "a.has_states",
+   "roles": {},
+   "subject": "ac24c67a4e"
+  },
+  {
+   "mode": null,
+   "object": "88fa401571",
+   "rel": "a.starts_in",
+   "roles": {},
+   "subject": "ac24c67a4e"
+  },
+  {
+   "mode": null,
+   "object": "963996d272",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "e81b30d808"
+  },
+  {
+   "mode": null,
+   "object": "963996d272",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "85c0eea447"
+  },
+  {
+   "mode": null,
+   "object": "9e10c52f10",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "e13088b12f"
+  },
+  {
+   "mode": null,
+   "object": "a2e718694b",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "e81b30d808"
+  },
+  {
+   "mode": null,
+   "object": "a2e718694b",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "85c0eea447"
+  },
+  {
+   "mode": null,
+   "object": "a61a54ba7a",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "e13088b12f"
+  },
+  {
+   "mode": null,
+   "object": "a7d2dffb93",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "e81b30d808"
+  },
+  {
+   "mode": null,
+   "object": "ac24c67a4e",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "45cfe4957f"
+  },
+  {
+   "mode": null,
+   "object": "ac24c67a4e",
+   "rel": "a.moves",
+   "roles": {
+    "from": "88fa401571",
+    "to": "f77a074cd8"
+   },
+   "subject": "45cfe4957f"
+  },
+  {
+   "mode": null,
+   "object": "ac24c67a4e",
+   "rel": "a.moves",
+   "roles": {
+    "from": "b5e3592bb5",
+    "to": "88fa401571"
+   },
+   "subject": "45cfe4957f"
+  },
+  {
+   "mode": null,
+   "object": "ac24c67a4e",
+   "rel": "a.moves",
+   "roles": {
+    "from": "f77a074cd8",
+    "to": "b5e3592bb5"
+   },
+   "subject": "45cfe4957f"
+  },
+  {
+   "mode": null,
+   "object": "b5e3592bb5",
+   "rel": "a.has_states",
+   "roles": {},
+   "subject": "ac24c67a4e"
+  },
+  {
+   "mode": null,
+   "object": "bcc0f58c2d",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "45cfe4957f"
+  },
+  {
+   "mode": null,
+   "object": "c2cd7c0a4d",
+   "rel": "a.has_states",
+   "roles": {},
+   "subject": "6550b42521"
+  },
+  {
+   "mode": null,
+   "object": "c2cd7c0a4d",
+   "rel": "a.starts_in",
+   "roles": {},
+   "subject": "6550b42521"
+  },
+  {
+   "mode": null,
+   "object": "c755fdf6ca",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "f6eb624ba1"
+  },
+  {
+   "mode": null,
+   "object": "c755fdf6ca",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "3ef8eebb21"
+  },
+  {
+   "mode": null,
+   "object": "cbff699a4f",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "f6eb624ba1"
+  },
+  {
+   "mode": null,
+   "object": "cbff699a4f",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "45cfe4957f"
+  },
+  {
+   "mode": null,
+   "object": "d73463794a",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "c755fdf6ca"
+  },
+  {
+   "mode": null,
+   "object": "e13088b12f",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "f6eb624ba1"
+  },
+  {
+   "mode": null,
+   "object": "e13088b12f",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "45cfe4957f"
+  },
+  {
+   "mode": null,
+   "object": "e81b30d808",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "f6eb624ba1"
+  },
+  {
+   "mode": null,
+   "object": "e81b30d808",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "45cfe4957f"
+  },
+  {
+   "mode": null,
+   "object": "f27bca5af5",
+   "rel": "a.has_states",
+   "roles": {},
+   "subject": "6550b42521"
+  },
+  {
+   "mode": null,
+   "object": "f77a074cd8",
+   "rel": "a.has_states",
+   "roles": {},
+   "subject": "ac24c67a4e"
+  },
+  {
+   "mode": null,
+   "object": "f9e6738b8c",
+   "rel": "a.pins",
+   "roles": {},
+   "subject": "a2e718694b"
+  }
+ ],
+ "invariants": [
+  {
+   "if": [
+    {
+     "adj": "adj.closed",
+     "rel": "prop",
+     "subject": "d251e52a62"
+    }
+   ],
+   "then": [
+    {
+     "mode": null,
+     "object": "4358375669",
+     "rel": "a.removes",
+     "roles": {},
+     "subject": "963996d272"
+    }
+   ],
+   "type": "if"
+  },
+  {
+   "if": [
+    {
+     "adj": "adj.empty",
+     "rel": "prop",
+     "subject": "43c4f8cec7"
+    }
+   ],
+   "then": [
+    {
+     "mode": "not",
+     "object": "e13088b12f",
+     "rel": "a.calls",
+     "roles": {},
+     "subject": "45cfe4957f"
+    }
+   ],
+   "type": "if"
+  },
+  {
+   "if": [
+    {
+     "adj": "adj.empty",
+     "rel": "prop",
+     "subject": "64e7d44ab3"
+    }
+   ],
+   "then": [
+    {
+     "mode": "not",
+     "object": "6d8bbf6879",
+     "rel": "a.removes",
+     "roles": {},
+     "subject": "45cfe4957f"
+    }
+   ],
+   "type": "if"
+  },
+  {
+   "if": [
+    {
+     "mode": null,
+     "object": "4d62062974",
+     "rel": "a.raises",
+     "roles": {},
+     "subject": "a2e718694b"
+    }
+   ],
+   "then": [
+    {
+     "mode": null,
+     "object": "a17b381298",
+     "rel": "a.removes",
+     "roles": {},
+     "subject": "85c0eea447"
+    }
+   ],
+   "type": "if"
+  },
+  {
+   "if": [
+    {
+     "op": "<",
+     "rel": "c.limit",
+     "subject": "11cde3eb51",
+     "value": 0.0
+    }
+   ],
+   "then": [
+    {
+     "mode": null,
+     "object": "f1669c4ad2",
+     "rel": "a.flips",
+     "roles": {},
+     "subject": "85c0eea447"
+    }
+   ],
+   "type": "if"
+  }
+ ],
+ "rules": [],
+ "gaps": [
+  {
+   "entity": "67bf7a68f3",
+   "role": "unit",
+   "type": "m.mesh"
+  },
+  {
+   "entity": "d251e52a62",
+   "role": "unit",
+   "type": "m.mesh"
+  }
+ ],
+ "warnings": [
+  {
+   "entity": "5f80381484",
+   "text": "assumes 'mm', but 'panels' inherits the unit of 'mesh', which has no declared unit"
+  },
+  {
+   "entity": "a61a54ba7a",
+   "text": "assumes 'mm', but 'panels' inherits the unit of 'mesh', which has no declared unit"
+  }
+ ],
+ "errors": [],
+ "notes": []
+}

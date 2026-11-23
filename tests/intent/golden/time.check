@@ -1,0 +1,9 @@
+error line 7: 'times out after': invalid time literal "30 seconds": invalid time unit 'seconds' (use ms, s, min, h or d)
+  hint: a time is a number and a unit (ms, s, min, h, d) in quotes: "30 s", or a range "1 s to 60 s"
+error line 8: 'times out after': invalid time literal "30": missing unit in '30' (use ms, s, min, h or d)
+  hint: a time is a number and a unit (ms, s, min, h, d) in quotes: "30 s", or a range "1 s to 60 s"
+error line 9: 'repeats every': invalid time literal "60 s to 1 s": reversed time range: '60 s to 1 s' (the start is after the end)
+  hint: a time is a number and a unit (ms, s, min, h, d) in quotes: "30 s", or a range "1 s to 60 s"
+error line 10: 'times out after' expects a quoted literal after the verb, found an object (the <type> "<name>")
+  hint: form: The <type> "<name>" times out after "<literal>"
+4 errors, 10 entities, 5 facts, 0 invariants, 0 rules, 1 gaps, 0 warnings

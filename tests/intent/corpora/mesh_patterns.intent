@@ -1,0 +1,57 @@
+# mesh_patterns: 3D mesh -> flat panels by LSCM -> SVG and PDF patterns at 1:1 scale.
+
+# --- structure
+The program "mesh_patterns" contains the module "main", the module "loader", the window "viewer", the module "flattener", the module "distortion" and the module "exporter".
+The module "loader" contains the mesh "mesh".
+The window "viewer" contains the state machine "seam mode", the list "seam_edges", the stack "seam_segments", the graph "edge graph", the list "panels" and the state machine "distortion mode".
+The module "flattener" contains the function "segment_by_seams", the function "cut_to_disk", the algorithm "lscm" and the function "flatten_patch".
+The module "distortion" contains the function "compute_distortion" and the percentile "angular p95".
+The module "exporter" contains the function "export_svg" and the function "export_pdf".
+
+# --- relations
+The module "main" uses the module "loader" and the window "viewer".
+The window "viewer" uses the module "flattener", the module "distortion" and the module "exporter".
+The module "loader" reads the mesh "mesh" from the stl file "model.stl".
+The module "loader" uses the library "trimesh".
+The window "viewer" uses the library "pyvista".
+The module "flattener" uses the library "scipy".
+The module "exporter" uses the library "reportlab".
+The module "exporter" writes the list "panels" to the svg file "patterns.svg".
+The module "exporter" writes the list "panels" to the pdf file "patterns.pdf".
+The function "segment_by_seams" converts the mesh "mesh" into the list "face groups".
+The function "flatten_patch" uses the function "cut_to_disk" and the algorithm "lscm".
+The window "viewer" changes the list "seam_edges".
+The window "viewer" changes the stack "seam_segments".
+
+# --- primitives and roles
+The algorithm "lscm" follows the method "Levy et al. 2002".
+The algorithm "lscm" pins the value "two boundary vertices".
+The percentile "angular p95" uses the method "numpy linear interpolation".
+The percentile "angular p95" measures the value "angular distortion per face".
+The list "panels" has the same unit as the mesh "mesh".
+The function "export_pdf" has the unit "mm".
+The function "export_svg" has the unit "mm".
+The function "export_pdf" reads the list "panels".
+The function "export_svg" reads the list "panels".
+
+# --- viewer state machines
+The state machine "seam mode" has the states "navigation", "seam without point" and "seam with point".
+The state machine "seam mode" starts in the state "navigation".
+The window "viewer" moves the state machine "seam mode" from the state "navigation" to the state "seam without point".
+The window "viewer" moves the state machine "seam mode" from the state "seam without point" to the state "seam with point".
+The window "viewer" moves the state machine "seam mode" from the state "seam with point" to the state "seam without point".
+The window "viewer" moves the state machine "seam mode" from the state "seam without point" to the state "navigation".
+The window "viewer" moves the state machine "seam mode" from the state "seam with point" to the state "navigation".
+The state machine "distortion mode" has the states "angular", "area" and "none".
+The state machine "distortion mode" starts in the state "angular".
+The window "viewer" moves the state machine "distortion mode" from the state "angular" to the state "area".
+The window "viewer" moves the state machine "distortion mode" from the state "area" to the state "none".
+The window "viewer" moves the state machine "distortion mode" from the state "none" to the state "angular".
+
+# --- invariants
+If the mesh "patch" is closed, the function "cut_to_disk" removes the value "last face".
+If the algorithm "lscm" raises the error "Exception", the function "flatten_patch" drops the value "panel".
+If the list "panels" is empty, the window "viewer" does not call the module "exporter".
+If the value "2D area" is less than 0, the function "flatten_patch" flips the value "u axis".
+If the stack "seam_segments" is empty, the window "viewer" does not remove the list "seam_edges".
+The module "loader" removes the value "degenerate faces" from the mesh "mesh".

@@ -1,0 +1,298 @@
+{
+ "lexicon": "0.3",
+ "entities": [
+  {
+   "id": "15f8a37b5d",
+   "name": "m",
+   "type": "p.state_machine",
+   "attrs": {}
+  },
+  {
+   "id": "194e7e78d2",
+   "name": "b",
+   "type": "e.function",
+   "attrs": {}
+  },
+  {
+   "id": "282e4f6718",
+   "name": "c",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "3a08210d9c",
+   "name": "q",
+   "type": "p.state",
+   "attrs": {}
+  },
+  {
+   "id": "4e4597d96b",
+   "name": "x",
+   "type": "p.state",
+   "attrs": {}
+  },
+  {
+   "id": "51e1ccf2e4",
+   "name": "queue",
+   "type": "p.priority_queue",
+   "attrs": {}
+  },
+  {
+   "id": "54dd6bf7c4",
+   "name": "a",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "9602e7b2c5",
+   "name": "dup",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "9b71a266a9",
+   "name": "k",
+   "type": "e.library",
+   "attrs": {}
+  },
+  {
+   "id": "9c61e4b6fe",
+   "name": "y",
+   "type": "p.state",
+   "attrs": {}
+  },
+  {
+   "id": "a76ec0a5c5",
+   "name": "t",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "adf2ceadd0",
+   "name": "lat",
+   "type": "m.percentile",
+   "attrs": {}
+  },
+  {
+   "id": "c14c6e5aff",
+   "name": "r",
+   "type": "p.record",
+   "attrs": {}
+  },
+  {
+   "id": "c6f28d3c66",
+   "name": "p",
+   "type": "p.state",
+   "attrs": {}
+  },
+  {
+   "id": "ceede8540f",
+   "name": "dup",
+   "type": "p.record",
+   "attrs": {}
+  },
+  {
+   "id": "d3ff4b4ba5",
+   "name": "nearest",
+   "type": "e.method",
+   "attrs": {}
+  },
+  {
+   "id": "df3638dc9e",
+   "name": "k",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "e8d1796f74",
+   "name": "k",
+   "type": "e.process",
+   "attrs": {}
+  },
+  {
+   "id": "ebe65d0071",
+   "name": "b",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "f38dd94066",
+   "name": "v",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "f88a624566",
+   "name": "z",
+   "type": "p.state",
+   "attrs": {}
+  }
+ ],
+ "facts": [
+  {
+   "mode": null,
+   "object": "15f8a37b5d",
+   "rel": "a.moves",
+   "roles": {
+    "from": "c6f28d3c66",
+    "to": "f88a624566"
+   },
+   "subject": "c14c6e5aff"
+  },
+  {
+   "mode": null,
+   "object": "194e7e78d2",
+   "rel": "a.validates",
+   "roles": {},
+   "subject": "54dd6bf7c4"
+  },
+  {
+   "mode": null,
+   "object": "3a08210d9c",
+   "rel": "a.has_states",
+   "roles": {},
+   "subject": "15f8a37b5d"
+  },
+  {
+   "mode": null,
+   "object": "4e4597d96b",
+   "rel": "a.has_states",
+   "roles": {},
+   "subject": "54dd6bf7c4"
+  },
+  {
+   "mode": null,
+   "object": "54dd6bf7c4",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "54dd6bf7c4"
+  },
+  {
+   "mode": null,
+   "object": "9b71a266a9",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "df3638dc9e"
+  },
+  {
+   "mode": null,
+   "object": "9c61e4b6fe",
+   "rel": "a.has_states",
+   "roles": {},
+   "subject": "54dd6bf7c4"
+  },
+  {
+   "mode": null,
+   "object": "a76ec0a5c5",
+   "rel": "a.ordered_by",
+   "roles": {},
+   "subject": "51e1ccf2e4"
+  },
+  {
+   "mode": null,
+   "object": "c6f28d3c66",
+   "rel": "a.has_states",
+   "roles": {},
+   "subject": "15f8a37b5d"
+  },
+  {
+   "mode": null,
+   "object": "ceede8540f",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "9602e7b2c5"
+  },
+  {
+   "mode": null,
+   "object": "d3ff4b4ba5",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "adf2ceadd0"
+  },
+  {
+   "mode": null,
+   "object": "df3638dc9e",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "e8d1796f74"
+  },
+  {
+   "mode": null,
+   "object": "f38dd94066",
+   "rel": "a.measures",
+   "roles": {},
+   "subject": "adf2ceadd0"
+  }
+ ],
+ "invariants": [
+  {
+   "if": [
+    {
+     "mode": null,
+     "object": "ebe65d0071",
+     "rel": "a.uses",
+     "roles": {},
+     "subject": "54dd6bf7c4"
+    },
+    {
+     "mode": null,
+     "object": "282e4f6718",
+     "rel": "a.uses",
+     "roles": {},
+     "subject": "54dd6bf7c4"
+    }
+   ],
+   "then": [
+    {
+     "mode": "not",
+     "object": "54dd6bf7c4",
+     "rel": "a.contains",
+     "roles": {},
+     "subject": "54dd6bf7c4"
+    }
+   ],
+   "type": "if"
+  }
+ ],
+ "rules": [],
+ "gaps": [
+  {
+   "entity": "15f8a37b5d",
+   "role": "initial state",
+   "type": "p.state_machine"
+  },
+  {
+   "entity": "3a08210d9c",
+   "role": "outgoing transition",
+   "type": "p.state"
+  },
+  {
+   "entity": "4e4597d96b",
+   "role": "outgoing transition",
+   "type": "p.state"
+  },
+  {
+   "entity": "51e1ccf2e4",
+   "role": "tie-breaker",
+   "type": "p.priority_queue"
+  },
+  {
+   "entity": "9c61e4b6fe",
+   "role": "outgoing transition",
+   "type": "p.state"
+  }
+ ],
+ "warnings": [],
+ "errors": [
+  "line 17: expected a type (like module) after 'The', found the verb 'measures'",
+  "line 5: 'uses' does not accept the preposition 'to' (accepted: none)",
+  "line 6: 'moves' requires the preposition 'to' in the sentence",
+  "line 4: 'validates' does not accept an object of type 'function' (\"b\"); accepts object: configuration, field, module, file",
+  "line 3: 'has the states' does not accept a subject of type 'module' (\"a\"); accepts subject: state machine",
+  "line 9: 'uses' does not accept the same thing on both sides: \"a\"",
+  "line 3: 'has the states' does not accept a subject of type 'module' (\"a\"); accepts subject: state machine",
+  "line 16: 'contains' does not accept the same thing on both sides: \"a\"",
+  "line 8: the transition uses the state \"z\", which the state machine \"m\" does not declare (declared states: \"q\", \"p\")"
+ ],
+ "notes": []
+}

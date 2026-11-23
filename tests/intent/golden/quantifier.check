@@ -1,0 +1,5 @@
+error line 14: the quantifier 'every' only applies in a simple sentence, without a condition (understood so far: 'If')
+  hint: for a condition and a quantifier together, write two sentences
+error line 13: 'starts in' does not accept a subject of type 'module' (the rule's 'every module'); accepts subject: state machine
+  hint: general verbs that accept 'module' as subject: 'uses', 'reads', 'calls'; or give the thing one of the types 'starts in' accepts
+2 errors, 12 entities, 16 facts, 3 invariants, 6 rules, 0 gaps, 1 warnings

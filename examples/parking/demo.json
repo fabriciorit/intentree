@@ -1,0 +1,127 @@
+{
+  "title": "Parking garage",
+  "tagline": "Two entries, one exit, a payment kiosk and a controller that owns the count of free spaces.",
+  "system": "system.intent",
+  "sources": [
+    "system.intent",
+    "README.md",
+    "demo.json",
+    "index.html",
+    "style.css",
+    "domain/barrier.js",
+    "domain/bus.js",
+    "domain/clock.js",
+    "domain/controller.js",
+    "domain/entry-gate-1.js",
+    "domain/entry-gate-2.js",
+    "domain/entry-gate.js",
+    "domain/exit-gate.js",
+    "domain/garage.js",
+    "domain/kiosk.js",
+    "domain/layout.js",
+    "domain/protocol.js",
+    "domain/ticket.js",
+    "domain/traffic.js",
+    "ui/machines.js",
+    "ui/main.js",
+    "ui/panels.js",
+    "ui/scene.js",
+    "tests/barrier.test.js",
+    "tests/bus.test.js",
+    "tests/controller.test.js",
+    "tests/garage.test.js",
+    "tests/helpers.js",
+    "tests/ticket.test.js"
+  ],
+  "views": [
+    {
+      "id": "structure",
+      "label": "Structure",
+      "question": "What is it made of, and which layer does each piece live in?"
+    },
+    {
+      "id": "deployment",
+      "label": "Deployment",
+      "question": "Where does each piece run and who talks to whom?"
+    },
+    {
+      "id": "concurrency",
+      "label": "Concurrency",
+      "question": "Who shares what, and what happens when two things want it at once?"
+    },
+    {
+      "id": "constraints",
+      "label": "Constraints",
+      "question": "Which rules must always hold, and which parts do they protect?"
+    },
+    {
+      "id": "roles",
+      "label": "Roles",
+      "question": "What does the design say about every address, queue, key and clock, and what does it deliberately leave out?"
+    },
+    {
+      "id": "machine:Ticket",
+      "label": "Ticket machine",
+      "question": "Which states can a ticket be in, and who moves it?"
+    },
+    {
+      "id": "machine:Barrier",
+      "label": "Barrier machine",
+      "question": "Which states can a barrier be in, and what makes it stop?"
+    }
+  ],
+  "whereExamples": [
+    "where is the free-space counter changed",
+    "where does the exit barrier open",
+    "where is a paid ticket expired after the grace period"
+  ],
+  "tour": [
+    {
+      "title": "The parts",
+      "view": "structure",
+      "text": "The garage is five separate actors (the controller, two entry gates, the exit gate and the payment kiosk) plus a message bus between them, a simulated world of cars, and this page. The layers show who may depend on whom."
+    },
+    {
+      "title": "Who talks to whom",
+      "view": "deployment",
+      "do": "arriveAtEntry1",
+      "text": "A car just reached Entry 1. The gate does not decide anything: it sends 'request space' to the controller and waits. The deployment view shows each actor on its own machine and every arrow in the conversation."
+    },
+    {
+      "title": "A barrier is a state machine",
+      "view": "machine:Barrier",
+      "do": "arriveAtEntry2",
+      "text": "Entry 2 receives a car too. Watch the barrier machine: the arm opens only after the controller answers with a ticket, stays open while a car is under it, then closes. Each gate is a chip on the state it is in."
+    },
+    {
+      "title": "A ticket cannot skip payment",
+      "view": "machine:Ticket",
+      "do": "tryLeaveUnpaid",
+      "text": "One of the parked cars drives to the exit without paying and is refused. The ticket machine has no way from issued straight to exited, so the exit barrier has nothing to open for."
+    },
+    {
+      "title": "Two entries, one last space",
+      "view": "concurrency",
+      "do": "rushHour",
+      "text": "A rush hour sends both entries more cars than there are spaces. Their requests meet in one queue and a single request loop serves them one at a time under a lock, so the counter never goes negative and the last cars see FULL."
+    },
+    {
+      "title": "The rules behind it",
+      "view": "constraints",
+      "do": "payTicket",
+      "text": "A parked car pays at the kiosk. The controller records the payment before it may ever grant an exit, and every rule here points at the code that enforces it, with the parts it protects."
+    },
+    {
+      "title": "Time can expire a ticket",
+      "view": "machine:Ticket",
+      "do": "waitPastGrace",
+      "text": "Sixteen simulated minutes pass. A paid ticket that has not left within the grace period moves to expired and must be paid again, a branch you could not see until time passed."
+    },
+    {
+      "title": "A barrier never closes on a car",
+      "view": "machine:Barrier",
+      "do": "obstacleUnderBarrier",
+      "text": "Someone steps under an arm as it starts to lower. The barrier goes to blocked, lifts the arm and waits until the sensor is clear, then closes. It never closes on a person or a car."
+    }
+  ]
+}

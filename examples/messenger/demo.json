@@ -1,0 +1,96 @@
+{
+  "title": "Messenger",
+  "tagline": "Two phones, a server and a push gateway: follow one message from the clock icon to the two blue ticks.",
+  "system": "system.intent",
+  "sources": [
+    "system.intent",
+    "README.md",
+    "demo.json",
+    "index.html",
+    "style.css",
+    "src/clock.js",
+    "src/message-states.js",
+    "src/network.js",
+    "src/server.js",
+    "src/push-gateway.js",
+    "src/phone.js",
+    "src/phone-a.js",
+    "src/phone-b.js",
+    "src/world.js",
+    "src/scenarios.js",
+    "ui/app.js",
+    "ui/phone-view.js",
+    "ui/wire-view.js",
+    "ui/log-view.js",
+    "ui/controls.js",
+    "tests/clock.test.js",
+    "tests/message-states.test.js",
+    "tests/network.test.js",
+    "tests/server.test.js",
+    "tests/phone.test.js",
+    "tests/scenarios.test.js"
+  ],
+  "views": [
+    { "id": "structure", "label": "Structure", "question": "What is it made of, and who may depend on whom?" },
+    { "id": "deployment", "label": "Deployment", "question": "Where does each piece run and who talks to whom?" },
+    { "id": "concurrency", "label": "Concurrency", "question": "What runs on its own timer, and what state do those timers share?" },
+    { "id": "constraints", "label": "Constraints", "question": "What must never happen, and which parts enforce it?" },
+    { "id": "roles", "label": "Roles", "question": "What does each building block need, and what was left out on purpose?" },
+    { "id": "machine:message", "label": "Message ticks", "question": "Which states does one message go through, and who moves it?" },
+    { "id": "machine:connection", "label": "Phone connection", "question": "What can a phone's link to the server be?" },
+    { "id": "machine:presence", "label": "Server presence", "question": "How does the server decide a phone is online?" }
+  ],
+  "whereExamples": [
+    "who decides the order of messages",
+    "push when the phone is offline",
+    "what happens when the wifi comes back"
+  ],
+  "tour": [
+    {
+      "title": "Five actors, one wire",
+      "text": "Two phones, a server, a push gateway and a network module that carries every packet. Structure shows the pieces and the layers: nothing in the actors layer may reach upward, and the actors never call each other.",
+      "view": "structure"
+    },
+    {
+      "title": "Where things run",
+      "text": "Alice sends a message and little packets cross the wire. Deployment shows what the code alone does not say: each actor is its own process on its own machine, and everything between them travels through the network.",
+      "view": "deployment",
+      "do": "sendMessage"
+    },
+    {
+      "title": "One message, five states",
+      "text": "Bob opens the chat and the two grey ticks turn blue. The ticks are drawn from this state machine: composing, queued, sent, delivered, read. It can only move forward, one step at a time, so a message is never read before it is delivered.",
+      "view": "machine:message",
+      "do": "openChatOnB"
+    },
+    {
+      "title": "Bob loses Wi-Fi",
+      "text": "Bob's phone drops from online to offline. A different machine, a different question: what can the phone's link be? It must say hello and be welcomed (syncing) before it sends anything again.",
+      "view": "machine:connection",
+      "do": "goOffline"
+    },
+    {
+      "title": "The server notices, then nudges",
+      "text": "Alice writes to an offline Bob. Her message is stored (one grey tick), but the server only learns Bob is gone after five quiet seconds. Only then does it ask the push gateway to nudge his phone: wait a few seconds and watch.",
+      "view": "machine:presence",
+      "do": "sendMessage"
+    },
+    {
+      "title": "The rules behind it",
+      "text": "Bob comes back, says hello, and the server resends what it was holding. The constraints list what must never happen: the server never lets a message go before its recipient confirms, a message is never shown twice, and push is never used for an online phone.",
+      "view": "constraints",
+      "do": "goOnline"
+    },
+    {
+      "title": "A flaky network",
+      "text": "Packets start to disappear. The outbox retries with a doubling delay and the server dedupes by message id, so everything still arrives once, in the server's order. Concurrency shows those retry timers and the shared state they touch.",
+      "view": "concurrency",
+      "do": "flakyNetwork"
+    },
+    {
+      "title": "What was left out on purpose",
+      "text": "Roles list what each building block needs: a key for every map, a capacity for every queue, a tie-break for every ordering. Two endpoints say outright that they check nobody's identity: this is a simulation, and the absence is declared, not forgotten.",
+      "view": "roles"
+    }
+  ]
+}

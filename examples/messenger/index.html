@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Messenger: ticks, packets and a server</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div>
+      <h1>Messenger</h1>
+      <p class="tagline">Two phones, a server and a push gateway, with a visible wire in between. Cut a phone's Wi-Fi, slow the network down, and watch the ticks.</p>
+    </div>
+  </header>
+
+  <div class="layout">
+    <main class="sim">
+      <section class="stage" id="stage" aria-label="Two phones, a server and a push gateway">
+        <svg class="lines" id="lines" aria-hidden="true"></svg>
+        <div class="phone-slot" id="slot-a"></div>
+        <div class="center">
+          <div class="node node--server" id="node-server">
+            <div class="node__title">Server</div>
+            <div class="node__stat" id="server-seq">no conversation yet</div>
+            <div class="node__stat" id="server-kept">holding 0 messages</div>
+            <div class="node__presence">
+              <span class="who"><i class="dot" id="presence-a"></i>A</span>
+              <span class="who"><i class="dot" id="presence-b"></i>B</span>
+            </div>
+          </div>
+          <div class="node node--gateway" id="node-gateway">
+            <div class="node__title">Push gateway</div>
+            <div class="node__stat" id="gateway-count">0 nudges sent</div>
+          </div>
+        </div>
+        <div class="phone-slot" id="slot-b"></div>
+        <div class="packets" id="packets" aria-hidden="true"></div>
+      </section>
+
+      <section class="panel controls" aria-label="Controls">
+        <div class="control-group">
+          <h2>Scenarios</h2>
+          <div class="buttons" id="scenario-buttons"></div>
+        </div>
+        <div class="control-group">
+          <h2>Network</h2>
+          <label class="slider">Latency <output id="latency-out">500 ms</output>
+            <input type="range" id="latency" min="0" max="3000" step="50" value="500">
+          </label>
+          <label class="slider">Packet loss <output id="loss-out">0 %</output>
+            <input type="range" id="loss" min="0" max="90" step="5" value="0">
+          </label>
+        </div>
+        <div class="control-group">
+          <h2>Time <span class="clock" id="clock">0.0 s</span></h2>
+          <div class="segmented" id="speed" role="group" aria-label="Speed">
+            <button type="button" data-speed="0" title="Pause">Pause</button>
+            <button type="button" data-speed="0.25">0.25x</button>
+            <button type="button" data-speed="0.5">0.5x</button>
+            <button type="button" data-speed="1" class="is-on">1x</button>
+            <button type="button" data-speed="2">2x</button>
+            <button type="button" data-speed="4">4x</button>
+          </div>
+          <button type="button" class="ghost" id="reset">Start over</button>
+        </div>
+      </section>
+
+      <section class="panel log" aria-label="Message log">
+        <div class="log__head">
+          <h2>What happened</h2>
+          <label class="check"><input type="checkbox" id="log-quiet"> show heartbeats and acknowledgements</label>
+        </div>
+        <ol class="log__list" id="log-list"></ol>
+      </section>
+    </main>
+    <aside id="intentree-panel" hidden></aside>
+  </div>
+
+  <script type="module" src="../../web/shell.js"></script>
+  <script type="module" src="ui/app.js"></script>
+</body>
+</html>

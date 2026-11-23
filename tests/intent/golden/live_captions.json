@@ -1,0 +1,1046 @@
+{
+ "lexicon": "0.3",
+ "entities": [
+  {
+   "id": "0711d0e2bc",
+   "name": "PipeWire monitor",
+   "type": "e.device",
+   "attrs": {}
+  },
+  {
+   "id": "07c3458d2b",
+   "name": "single instance",
+   "type": "e.dbus_service",
+   "attrs": {}
+  },
+  {
+   "id": "0dcb781218",
+   "name": "history",
+   "type": "e.window",
+   "attrs": {}
+  },
+  {
+   "id": "18c395ca82",
+   "name": "preferences",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "1ab26a585f",
+   "name": "segment",
+   "type": "p.state_machine",
+   "attrs": {}
+  },
+  {
+   "id": "238111864d",
+   "name": "sink-watch",
+   "type": "p.thread",
+   "attrs": {}
+  },
+  {
+   "id": "306c40926c",
+   "name": "partial_lock",
+   "type": "p.lock",
+   "attrs": {}
+  },
+  {
+   "id": "3242088a87",
+   "name": "loaded_key",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "3b8f247da9",
+   "name": "config engine",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "3eaab14783",
+   "name": "app",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "4670d447e8",
+   "name": "transcript .txt .srt",
+   "type": "f.text",
+   "attrs": {}
+  },
+  {
+   "id": "4a7bb9ffec",
+   "name": "context prompt",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "4c4d2659ff",
+   "name": "partial",
+   "type": "p.slot",
+   "attrs": {}
+  },
+  {
+   "id": "4df63b8bbb",
+   "name": "engine lock",
+   "type": "p.lock",
+   "attrs": {}
+  },
+  {
+   "id": "52dc226df9",
+   "name": "config",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "5decc7ca64",
+   "name": "parec",
+   "type": "e.process",
+   "attrs": {}
+  },
+  {
+   "id": "5ef3693ee7",
+   "name": "speech",
+   "type": "p.state",
+   "attrs": {}
+  },
+  {
+   "id": "5f1a1e4e23",
+   "name": "audio",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "5fc822780e",
+   "name": "overlay",
+   "type": "e.window",
+   "attrs": {}
+  },
+  {
+   "id": "6819e625fc",
+   "name": "vad window",
+   "type": "p.ring_buffer",
+   "attrs": {}
+  },
+  {
+   "id": "68a816b2c6",
+   "name": "preroll",
+   "type": "p.ring_buffer",
+   "attrs": {}
+  },
+  {
+   "id": "6aa843b9c0",
+   "name": "config.json",
+   "type": "f.text",
+   "attrs": {}
+  },
+  {
+   "id": "6e70d04754",
+   "name": "inference",
+   "type": "p.thread",
+   "attrs": {}
+  },
+  {
+   "id": "72a58db118",
+   "name": "speech chunk",
+   "type": "f.wav",
+   "attrs": {}
+  },
+  {
+   "id": "839df14d4f",
+   "name": "silence",
+   "type": "p.state",
+   "attrs": {}
+  },
+  {
+   "id": "879bbcaee0",
+   "name": "capture",
+   "type": "p.thread",
+   "attrs": {}
+  },
+  {
+   "id": "8e99507859",
+   "name": "app state",
+   "type": "p.state_machine",
+   "attrs": {}
+  },
+  {
+   "id": "8f30e4cee2",
+   "name": "127.0.0.1 free port",
+   "type": "f.http",
+   "attrs": {}
+  },
+  {
+   "id": "925df3713f",
+   "name": "whisper.cpp Vulkan",
+   "type": "e.library",
+   "attrs": {}
+  },
+  {
+   "id": "94118c949c",
+   "name": "live_captions",
+   "type": "e.program",
+   "attrs": {}
+  },
+  {
+   "id": "9423b503d8",
+   "name": "on_final",
+   "type": "e.function",
+   "attrs": {}
+  },
+  {
+   "id": "a4e11f9666",
+   "name": "pactl subscribe",
+   "type": "e.process",
+   "attrs": {}
+  },
+  {
+   "id": "ada3f82760",
+   "name": "pipeline",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "ade8a05004",
+   "name": "30 ms frames",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "af5f7cc5d3",
+   "name": "prefs",
+   "type": "e.window",
+   "attrs": {}
+  },
+  {
+   "id": "b87b95c7d0",
+   "name": "logwriter",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "ba281467c8",
+   "name": "config audio",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "bb69b3210d",
+   "name": "wake",
+   "type": "p.event_flag",
+   "attrs": {}
+  },
+  {
+   "id": "c22f30d0aa",
+   "name": "off",
+   "type": "p.state",
+   "attrs": {}
+  },
+  {
+   "id": "cc18cdded9",
+   "name": "on_partial",
+   "type": "e.function",
+   "attrs": {}
+  },
+  {
+   "id": "d3bfd7eb4a",
+   "name": "final phrases",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "db8e889d95",
+   "name": "hotkeys",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "e0233561df",
+   "name": "loading",
+   "type": "p.state",
+   "attrs": {}
+  },
+  {
+   "id": "e26bbaec55",
+   "name": "error",
+   "type": "p.state",
+   "attrs": {}
+  },
+  {
+   "id": "e8c8fe25e5",
+   "name": "engine",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "e93102d6f7",
+   "name": "gtk",
+   "type": "p.thread",
+   "attrs": {}
+  },
+  {
+   "id": "f9672cd2f3",
+   "name": "whisper-server",
+   "type": "e.process",
+   "attrs": {}
+  },
+  {
+   "id": "f9d3024779",
+   "name": "on",
+   "type": "p.state",
+   "attrs": {}
+  },
+  {
+   "id": "fc09ff2eb2",
+   "name": "finals",
+   "type": "p.queue",
+   "attrs": {}
+  }
+ ],
+ "facts": [
+  {
+   "adj": "adj.daemonic",
+   "rel": "prop",
+   "subject": "6e70d04754"
+  },
+  {
+   "adj": "adj.daemonic",
+   "rel": "prop",
+   "subject": "879bbcaee0"
+  },
+  {
+   "adj": "adj.unbounded",
+   "rel": "prop",
+   "subject": "fc09ff2eb2"
+  },
+  {
+   "literal": "120 s",
+   "mode": null,
+   "rel": "a.times_out_after",
+   "roles": {},
+   "seconds": [
+    120.0
+   ],
+   "subject": "f9672cd2f3"
+  },
+  {
+   "mode": null,
+   "object": "07c3458d2b",
+   "rel": "a.runs_in",
+   "roles": {},
+   "subject": "3eaab14783"
+  },
+  {
+   "mode": null,
+   "object": "0dcb781218",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "94118c949c"
+  },
+  {
+   "mode": null,
+   "object": "0dcb781218",
+   "rel": "a.shows",
+   "roles": {},
+   "subject": "3eaab14783"
+  },
+  {
+   "mode": null,
+   "object": "18c395ca82",
+   "rel": "a.reads",
+   "roles": {
+    "from": "6aa843b9c0"
+   },
+   "subject": "52dc226df9"
+  },
+  {
+   "mode": null,
+   "object": "18c395ca82",
+   "rel": "a.writes",
+   "roles": {
+    "to": "6aa843b9c0"
+   },
+   "subject": "52dc226df9"
+  },
+  {
+   "mode": null,
+   "object": "1ab26a585f",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "ada3f82760"
+  },
+  {
+   "mode": null,
+   "object": "1ab26a585f",
+   "rel": "a.moves",
+   "roles": {
+    "from": "5ef3693ee7",
+    "to": "839df14d4f"
+   },
+   "subject": "879bbcaee0"
+  },
+  {
+   "mode": null,
+   "object": "1ab26a585f",
+   "rel": "a.moves",
+   "roles": {
+    "from": "839df14d4f",
+    "to": "5ef3693ee7"
+   },
+   "subject": "879bbcaee0"
+  },
+  {
+   "mode": null,
+   "object": "238111864d",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "5f1a1e4e23"
+  },
+  {
+   "mode": null,
+   "object": "306c40926c",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "ada3f82760"
+  },
+  {
+   "mode": null,
+   "object": "306c40926c",
+   "rel": "a.protected_by",
+   "roles": {},
+   "subject": "4c4d2659ff"
+  },
+  {
+   "mode": null,
+   "object": "3242088a87",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "e8c8fe25e5"
+  },
+  {
+   "mode": null,
+   "object": "3eaab14783",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "94118c949c"
+  },
+  {
+   "mode": null,
+   "object": "4c4d2659ff",
+   "rel": "a.consumes",
+   "roles": {},
+   "subject": "6e70d04754"
+  },
+  {
+   "mode": null,
+   "object": "4c4d2659ff",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "ada3f82760"
+  },
+  {
+   "mode": null,
+   "object": "4c4d2659ff",
+   "rel": "a.overwrites",
+   "roles": {},
+   "subject": "879bbcaee0"
+  },
+  {
+   "mode": null,
+   "object": "4df63b8bbb",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "e8c8fe25e5"
+  },
+  {
+   "mode": null,
+   "object": "52dc226df9",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "94118c949c"
+  },
+  {
+   "mode": null,
+   "object": "52dc226df9",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "3eaab14783"
+  },
+  {
+   "mode": null,
+   "object": "5decc7ca64",
+   "rel": "a.launches",
+   "roles": {},
+   "subject": "5f1a1e4e23"
+  },
+  {
+   "mode": null,
+   "object": "5ef3693ee7",
+   "rel": "a.has_states",
+   "roles": {},
+   "subject": "1ab26a585f"
+  },
+  {
+   "mode": null,
+   "object": "5ef3693ee7",
+   "rel": "a.has_states",
+   "roles": {},
+   "subject": "8e99507859"
+  },
+  {
+   "mode": null,
+   "object": "5f1a1e4e23",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "94118c949c"
+  },
+  {
+   "mode": null,
+   "object": "5f1a1e4e23",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "ada3f82760"
+  },
+  {
+   "mode": null,
+   "object": "5fc822780e",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "94118c949c"
+  },
+  {
+   "mode": null,
+   "object": "5fc822780e",
+   "rel": "a.shows",
+   "roles": {},
+   "subject": "3eaab14783"
+  },
+  {
+   "mode": null,
+   "object": "6819e625fc",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "ada3f82760"
+  },
+  {
+   "mode": null,
+   "object": "68a816b2c6",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "ada3f82760"
+  },
+  {
+   "mode": null,
+   "object": "6e70d04754",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "ada3f82760"
+  },
+  {
+   "mode": null,
+   "object": "72a58db118",
+   "rel": "a.sends",
+   "roles": {
+    "to": "8f30e4cee2"
+   },
+   "subject": "e8c8fe25e5"
+  },
+  {
+   "mode": null,
+   "object": "839df14d4f",
+   "rel": "a.has_states",
+   "roles": {},
+   "subject": "1ab26a585f"
+  },
+  {
+   "mode": null,
+   "object": "839df14d4f",
+   "rel": "a.starts_in",
+   "roles": {},
+   "subject": "1ab26a585f"
+  },
+  {
+   "mode": null,
+   "object": "879bbcaee0",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "5f1a1e4e23"
+  },
+  {
+   "mode": null,
+   "object": "8e99507859",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "3eaab14783"
+  },
+  {
+   "mode": null,
+   "object": "8e99507859",
+   "rel": "a.moves",
+   "roles": {
+    "from": "5ef3693ee7",
+    "to": "c22f30d0aa"
+   },
+   "subject": "3eaab14783"
+  },
+  {
+   "mode": null,
+   "object": "8e99507859",
+   "rel": "a.moves",
+   "roles": {
+    "from": "5ef3693ee7",
+    "to": "f9d3024779"
+   },
+   "subject": "ada3f82760"
+  },
+  {
+   "mode": null,
+   "object": "8e99507859",
+   "rel": "a.moves",
+   "roles": {
+    "from": "c22f30d0aa",
+    "to": "e0233561df"
+   },
+   "subject": "3eaab14783"
+  },
+  {
+   "mode": null,
+   "object": "8e99507859",
+   "rel": "a.moves",
+   "roles": {
+    "from": "e0233561df",
+    "to": "e26bbaec55"
+   },
+   "subject": "3eaab14783"
+  },
+  {
+   "mode": null,
+   "object": "8e99507859",
+   "rel": "a.moves",
+   "roles": {
+    "from": "e0233561df",
+    "to": "f9d3024779"
+   },
+   "subject": "3eaab14783"
+  },
+  {
+   "mode": null,
+   "object": "8e99507859",
+   "rel": "a.moves",
+   "roles": {
+    "from": "e26bbaec55",
+    "to": "e0233561df"
+   },
+   "subject": "3eaab14783"
+  },
+  {
+   "mode": null,
+   "object": "8e99507859",
+   "rel": "a.moves",
+   "roles": {
+    "from": "f9d3024779",
+    "to": "5ef3693ee7"
+   },
+   "subject": "ada3f82760"
+  },
+  {
+   "mode": null,
+   "object": "8e99507859",
+   "rel": "a.moves",
+   "roles": {
+    "from": "f9d3024779",
+    "to": "c22f30d0aa"
+   },
+   "subject": "3eaab14783"
+  },
+  {
+   "mode": null,
+   "object": "8e99507859",
+   "rel": "a.moves",
+   "roles": {
+    "from": "f9d3024779",
+    "to": "e0233561df"
+   },
+   "subject": "3eaab14783"
+  },
+  {
+   "mode": null,
+   "object": "8f30e4cee2",
+   "rel": "a.listens_on",
+   "roles": {},
+   "subject": "f9672cd2f3"
+  },
+  {
+   "mode": null,
+   "object": "925df3713f",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "f9672cd2f3"
+  },
+  {
+   "mode": null,
+   "object": "9423b503d8",
+   "rel": "a.schedules",
+   "roles": {
+    "on": "e93102d6f7"
+   },
+   "subject": "6e70d04754"
+  },
+  {
+   "mode": null,
+   "object": "a4e11f9666",
+   "rel": "a.launches",
+   "roles": {},
+   "subject": "5f1a1e4e23"
+  },
+  {
+   "mode": null,
+   "object": "ada3f82760",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "94118c949c"
+  },
+  {
+   "mode": null,
+   "object": "ada3f82760",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "3eaab14783"
+  },
+  {
+   "mode": null,
+   "object": "ade8a05004",
+   "rel": "a.reads",
+   "roles": {
+    "from": "0711d0e2bc"
+   },
+   "subject": "5decc7ca64"
+  },
+  {
+   "mode": null,
+   "object": "af5f7cc5d3",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "94118c949c"
+  },
+  {
+   "mode": null,
+   "object": "af5f7cc5d3",
+   "rel": "a.shows",
+   "roles": {},
+   "subject": "3eaab14783"
+  },
+  {
+   "mode": null,
+   "object": "b87b95c7d0",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "94118c949c"
+  },
+  {
+   "mode": null,
+   "object": "b87b95c7d0",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "3eaab14783"
+  },
+  {
+   "mode": null,
+   "object": "bb69b3210d",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "ada3f82760"
+  },
+  {
+   "mode": null,
+   "object": "c22f30d0aa",
+   "rel": "a.has_states",
+   "roles": {},
+   "subject": "8e99507859"
+  },
+  {
+   "mode": null,
+   "object": "c22f30d0aa",
+   "rel": "a.starts_in",
+   "roles": {},
+   "subject": "8e99507859"
+  },
+  {
+   "mode": null,
+   "object": "cc18cdded9",
+   "rel": "a.schedules",
+   "roles": {
+    "on": "e93102d6f7"
+   },
+   "subject": "6e70d04754"
+  },
+  {
+   "mode": null,
+   "object": "d3bfd7eb4a",
+   "rel": "a.writes",
+   "roles": {
+    "to": "4670d447e8"
+   },
+   "subject": "b87b95c7d0"
+  },
+  {
+   "mode": null,
+   "object": "db8e889d95",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "94118c949c"
+  },
+  {
+   "mode": null,
+   "object": "db8e889d95",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "3eaab14783"
+  },
+  {
+   "mode": null,
+   "object": "e0233561df",
+   "rel": "a.has_states",
+   "roles": {},
+   "subject": "8e99507859"
+  },
+  {
+   "mode": null,
+   "object": "e26bbaec55",
+   "rel": "a.has_states",
+   "roles": {},
+   "subject": "8e99507859"
+  },
+  {
+   "mode": null,
+   "object": "e8c8fe25e5",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "94118c949c"
+  },
+  {
+   "mode": null,
+   "object": "e8c8fe25e5",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "3eaab14783"
+  },
+  {
+   "mode": null,
+   "object": "e8c8fe25e5",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "ada3f82760"
+  },
+  {
+   "mode": null,
+   "object": "e93102d6f7",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "3eaab14783"
+  },
+  {
+   "mode": null,
+   "object": "f9672cd2f3",
+   "rel": "a.launches",
+   "roles": {},
+   "subject": "e8c8fe25e5"
+  },
+  {
+   "mode": null,
+   "object": "f9d3024779",
+   "rel": "a.has_states",
+   "roles": {},
+   "subject": "8e99507859"
+  },
+  {
+   "mode": null,
+   "object": "fc09ff2eb2",
+   "rel": "a.consumes",
+   "roles": {},
+   "subject": "6e70d04754"
+  },
+  {
+   "mode": null,
+   "object": "fc09ff2eb2",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "ada3f82760"
+  },
+  {
+   "mode": null,
+   "object": "fc09ff2eb2",
+   "rel": "a.fills",
+   "roles": {},
+   "subject": "879bbcaee0"
+  },
+  {
+   "op": "<=",
+   "rel": "c.limit",
+   "subject": "6819e625fc",
+   "value": 8.0
+  },
+  {
+   "op": "<=",
+   "rel": "c.limit",
+   "subject": "68a816b2c6",
+   "value": 10.0
+  }
+ ],
+ "invariants": [
+  {
+   "if": [
+    {
+     "mode": null,
+     "object": "0711d0e2bc",
+     "rel": "a.changes",
+     "roles": {},
+     "subject": "5f1a1e4e23"
+    }
+   ],
+   "then": [
+    {
+     "mode": null,
+     "object": "5decc7ca64",
+     "rel": "a.restarts",
+     "roles": {},
+     "subject": "238111864d"
+    }
+   ],
+   "type": "when"
+  },
+  {
+   "if": [
+    {
+     "mode": null,
+     "object": "3b8f247da9",
+     "rel": "a.changes",
+     "roles": {},
+     "subject": "3eaab14783"
+    }
+   ],
+   "then": [
+    {
+     "mode": null,
+     "object": "f9672cd2f3",
+     "rel": "a.restarts",
+     "roles": {},
+     "subject": "3eaab14783"
+    }
+   ],
+   "type": "when"
+  },
+  {
+   "if": [
+    {
+     "mode": null,
+     "object": "4c4d2659ff",
+     "rel": "a.consumes",
+     "roles": {},
+     "subject": "6e70d04754"
+    }
+   ],
+   "then": [
+    {
+     "mode": "not",
+     "object": "4a7bb9ffec",
+     "rel": "a.uses",
+     "roles": {},
+     "subject": "e8c8fe25e5"
+    }
+   ],
+   "type": "if"
+  },
+  {
+   "if": [
+    {
+     "mode": null,
+     "object": "ba281467c8",
+     "rel": "a.changes",
+     "roles": {},
+     "subject": "3eaab14783"
+    }
+   ],
+   "then": [
+    {
+     "mode": null,
+     "object": "ada3f82760",
+     "rel": "a.restarts",
+     "roles": {},
+     "subject": "3eaab14783"
+    }
+   ],
+   "type": "when"
+  },
+  {
+   "if": [
+    {
+     "mode": null,
+     "object": null,
+     "rel": "a.times_out",
+     "roles": {},
+     "subject": "f9672cd2f3"
+    }
+   ],
+   "then": [
+    {
+     "mode": null,
+     "object": "8e99507859",
+     "rel": "a.moves",
+     "roles": {
+      "from": "e0233561df",
+      "to": "e26bbaec55"
+     },
+     "subject": "3eaab14783"
+    }
+   ],
+   "type": "if"
+  },
+  {
+   "then": [
+    {
+     "mode": "not",
+     "object": "5fc822780e",
+     "rel": "a.calls",
+     "roles": {},
+     "subject": "879bbcaee0"
+    }
+   ],
+   "type": "not"
+  },
+  {
+   "then": [
+    {
+     "mode": "not",
+     "object": "fc09ff2eb2",
+     "rel": "a.removes",
+     "roles": {},
+     "subject": "6e70d04754"
+    }
+   ],
+   "type": "not"
+  },
+  {
+   "then": [
+    {
+     "mode": "not",
+     "object": null,
+     "rel": "a.blocks",
+     "roles": {},
+     "subject": "879bbcaee0"
+    }
+   ],
+   "type": "not"
+  }
+ ],
+ "rules": [],
+ "gaps": [
+  {
+   "entity": "8f30e4cee2",
+   "role": "authentication",
+   "type": "f.http"
+  }
+ ],
+ "warnings": [],
+ "errors": [],
+ "notes": []
+}

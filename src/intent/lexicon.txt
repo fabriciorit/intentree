@@ -1,0 +1,258 @@
+# Lexicon of the .intent format: the approved words and the roles each type presupposes.
+# One entry per line: =class id | field: value | ... ; lists use ", ", maps use "key=value",
+# a boolean field is the bare word. Extensions in a project's .intent files use the same lines.
+# A verb with `target: literal|entity|time` requires that kind of object after the verb: the check
+# errors on a literal where the verb expects an entity, or the other way round.
+
+=version 0.3
+
+# ---------------------------------------------------------------- grammatical core
+=core article | en: the
+=core conditional | if: se | when: quando | while: enquanto
+=core negation | en: does not, never
+=core universal | en: always
+# declared exception: the relation that goes up a layer on purpose
+=core exception | en: exceptionally
+# quantifier: Every <type> in the <type> "<name>" <predicate>.
+=core quantifier | en: every
+=core coordination | en: and
+# prepositions and copula
+=core preposition | en: from, to, for, into, through, on, with, in, onto
+=core copula | en: is
+# negated copula: inequality (X is not the value Y) and, before a verb with "is", the negation
+# of that verb (is not in, is not keyed by), generated from the verb itself
+=core negated_copula | en: is not
+
+# ---------------------------------------------------------------- nouns (types)
+=type e.program | en: program | pt: programa | g: m | layer: element
+=type e.module | en: module | pt: módulo | g: m | layer: element | structural | syn: package, class
+=type e.command | en: command | pt: comando | g: m | layer: element | structural
+=type e.file | en: file | pt: arquivo | g: m | layer: element | structural | syn: document, resource
+=type e.tests | en: test suite | pt: suíte de testes | g: f | layer: element | structural | syn: specs
+=type e.config | en: configuration | pt: configuração | g: f | layer: element | requires: source=a.reads inverse, validation=a.validates inverse | syn: config, settings, setting, preferences
+=type e.field | en: field | pt: campo | g: m | layer: element | requires: limit=c.limit | syn: attribute, property, parameter, argument
+=type e.metric | en: metric | pt: métrica | g: f | layer: element | requires: definition=a.measures
+=type e.strategy | en: strategy | pt: estratégia | g: f | layer: element | requires: input=a.receives, output=a.returns
+=type e.report | en: report | pt: relatório | g: m | layer: element | syn: summary
+=type e.error | en: error | pt: erro | g: m | layer: element | syn: exception, failure, fault
+=type e.value | en: value | pt: valor | g: m | layer: element | syn: variable, constant, number
+=type e.unit | en: unit | pt: unidade | g: f | layer: element
+=type e.method | en: method | pt: método | g: m | layer: element | syn: approach, technique
+=type p.priority_queue | en: priority queue | pt: fila de prioridade | g: f | layer: primitive | requires: order=a.ordered_by, tie-breaker=a.breaks_ties_by
+=type p.state_machine | en: state machine | pt: máquina de estados | g: f | layer: primitive | requires: states=a.has_states, transitions=a.moves inverse, initial state=a.starts_in | syn: fsm, automaton
+=type p.state | en: state | pt: estado | g: m | layer: primitive | syn: mode, phase
+=type p.record | en: record | pt: registro | g: m | layer: primitive | syn: row, entry, struct, tuple
+=type p.list | en: list | pt: lista | g: f | layer: primitive | syn: array, vector, sequence
+=type p.set | en: set | pt: conjunto | g: m | layer: primitive | syn: bag, collection
+=type p.random_generator | en: random generator | pt: gerador aleatório | g: m | layer: primitive | requires: seed=a.seeded_with
+=type p.clock | en: clock | pt: relógio | g: m | layer: primitive | requires: unit=a.has_unit
+=type p.registry | en: registry | pt: catálogo | g: m | layer: primitive | requires: contents=a.contains
+=type f.json | en: json document | pt: documento JSON | g: m | layer: format | syn: json
+=type f.csv | en: csv file | pt: arquivo CSV | g: m | layer: format | structural
+=type m.poisson | en: poisson process | pt: processo de Poisson | g: m | layer: math | requires: rate=a.parameterized_by
+=type m.percentile | en: percentile | pt: percentil | g: m | layer: math | parent: e.metric | requires: method=a.uses e.method
+=type e.process | en: process | pt: processo | g: m | layer: element | structural | syn: daemon, subprocess
+=type e.service_worker | en: service worker | pt: service worker | g: m | layer: element | structural
+=type e.content_script | en: content script | pt: script de conteúdo | g: m | layer: element | structural
+=type e.page_script | en: page script | pt: script de página | g: m | layer: element | structural
+=type e.window | en: window | pt: janela | g: f | layer: element | structural
+=type e.library | en: library | pt: biblioteca | g: f | layer: element | structural | syn: crate, dependency
+=type e.device | en: device | pt: dispositivo | g: m | layer: element | structural | syn: sensor, hardware, peripheral
+=type e.directory | en: directory | pt: pasta | g: f | layer: element | structural | syn: folder, dir
+=type e.dbus_service | en: d-bus service | pt: serviço D-Bus | g: m | layer: element | structural
+=type e.message | en: message | pt: mensagem | g: f | layer: element | syn: packet, payload, response
+=type e.event | en: event | pt: evento | g: m | layer: element | syn: notification
+=type e.text_field | en: text field | pt: campo de texto | g: m | layer: element
+=type e.connection | en: connection | pt: conexão | g: f | layer: element
+=type e.function | en: function | pt: função | g: f | layer: element | syn: procedure, routine, callback
+=type e.tab | en: tab | pt: aba | g: f | layer: element
+=type p.execution_context | en: execution context | pt: contexto de execução | g: m | layer: primitive
+=type p.thread | en: thread | pt: thread | g: f | layer: primitive | syn: worker, task, job, loop
+=type p.queue | en: queue | pt: fila | g: f | layer: primitive | requires: capacity=prop adj.bounded,adj.unbounded | syn: channel, backlog
+=type p.slot | en: slot | pt: slot | g: m | layer: primitive | requires: synchronization=a.protected_by
+=type p.lock | en: lock | pt: trava | g: f | layer: primitive | syn: mutex, semaphore
+=type p.event_flag | en: event flag | pt: sinal | g: m | layer: primitive | syn: flag
+=type p.ring_buffer | en: ring buffer | pt: buffer circular | g: m | layer: primitive | requires: capacity=c.limit | syn: ring, circular buffer
+=type p.map | en: map | pt: mapa | g: m | layer: primitive | requires: key=a.keyed_by | syn: dict, dictionary, hash, cache
+=type p.key_value_store | en: key-value store | pt: armazenamento chave-valor | g: m | layer: primitive | requires: key=a.keyed_by | syn: store, database, db
+=type p.stack | en: stack | pt: pilha | g: f | layer: primitive | syn: lifo
+=type p.graph | en: graph | pt: grafo | g: m | layer: primitive
+=type p.counter | en: counter | pt: contador | g: m | layer: primitive | syn: tally
+=type p.timer | en: timer | pt: temporizador | g: m | layer: primitive | requires: period=a.repeats_every | syn: ticker
+=type m.mesh | en: mesh | pt: malha | g: f | layer: math | requires: unit=a.has_unit
+=type m.algorithm | en: algorithm | pt: algoritmo | g: m | layer: math | requires: reference=a.follows
+=type f.websocket | en: websocket endpoint | pt: endpoint WebSocket | g: m | layer: format | structural | requires: address=a.listens_on inverse, authentication=a.authenticates | syn: socket, ws endpoint
+=type f.http | en: http endpoint | pt: endpoint HTTP | g: m | layer: format | structural | requires: address=a.listens_on inverse, authentication=a.authenticates | syn: endpoint
+=type f.svg | en: svg file | pt: arquivo SVG | g: m | layer: format | structural
+=type f.pdf | en: pdf file | pt: arquivo PDF | g: m | layer: format | structural
+=type f.stl | en: stl file | pt: arquivo STL | g: m | layer: format | structural
+=type f.wav | en: wav buffer | pt: buffer WAV | g: m | layer: format
+=type f.text | en: text file | pt: arquivo de texto | g: m | layer: format | structural | syn: log file
+=type e.machine | en: machine | pt: máquina | g: f | layer: element | structural | syn: host, node
+=type e.shell_script | en: shell script | pt: script de shell | g: m | layer: element | structural | syn: script, bash script
+=type e.web_service | en: web service | pt: serviço web | g: m | layer: element | structural | syn: service, server, api
+=type e.page | en: page | pt: página | g: f | layer: element
+=type e.alert | en: alert | pt: alerta | g: m | layer: element
+=type f.tcp | en: tcp endpoint | pt: endpoint TCP | g: m | layer: format | structural | requires: address=a.listens_on inverse, authentication=a.authenticates
+=type f.mqtt | en: mqtt endpoint | pt: endpoint MQTT | g: m | layer: format | structural | requires: address=a.listens_on inverse, authentication=a.authenticates
+=type f.cdp | en: devtools endpoint | pt: endpoint DevTools | g: m | layer: format | structural | requires: address=a.listens_on inverse, authentication=a.authenticates
+# HTTP and CLI
+=type f.route | en: route | pt: rota | g: f | layer: format
+=type f.status | en: status code | pt: código de status | g: m | layer: format | syn: http status
+=type f.header | en: header | pt: cabeçalho | g: m | layer: format
+=type f.request | en: request | pt: requisição | g: f | layer: format
+=type e.environment_variable | en: environment variable | pt: variável de ambiente | g: f | layer: element | syn: env var, env
+=type e.option | en: option | pt: opção | g: f | layer: element | requires: default=a.defaults_to | syn: switch
+=type p.table | en: table | pt: tabela | g: f | layer: primitive
+=type e.stream | en: stream | pt: fluxo | g: m | layer: element | syn: stdout, stderr, pipe
+=type m.digest | en: digest | pt: digest | g: m | layer: math | syn: checksum, fingerprint
+# architecture layers: X is in the layer "L"; the layer "A" is above the layer "B"
+=type e.layer | en: layer | pt: camada | g: f | layer: element
+# generic component: a tool word, not a domain word; rewrite it into more specific types when possible
+=type e.component | en: component | pt: componente | g: m | layer: element | structural | syn: subsystem
+# declared views: tool words, not domain words. The literals of the view verbs (types, grouping
+# relation, shape, marks) are checked in vistas/declarada.rs.
+=type e.view | en: view | pt: vista | g: f | layer: tool
+
+# ---------------------------------------------------------------- verbs (frames)
+=verb a.uses | en: uses, use, depends on, depend on | pt: usa | irreflexive | syn: imports, requires, employs, relies on, needs
+=verb a.contains | en: contains, contain | pt: contém | irreflexive | syn: includes, holds, owns, comprises
+=verb a.reads | en: reads, read, loads, load | pt: lê | preps: from=de, with=com | syn: opens, fetches, retrieves, gets, imports, consults
+=verb a.writes | en: writes, write, exports, export | pt: grava | preps: to=em | syn: saves, stores, persists, dumps, outputs, appends
+=verb a.changes | en: changes, change, mutates, mutate | pt: altera | pt_intransitivo: muda | syn: modifies, updates, edits, sets, assigns
+=verb a.moves | subject_type: | object_type: p.state_machine | target: entity | en: moves, move | pt: leva | preps: from=de, to=para | required: from, to
+=verb a.has_states | subject_type: p.state_machine | en: has the states | pt: tem os estados | literal_list | target: literal
+=verb a.starts_in | en: starts in, start in | pt: começa em | subject_type: p.state_machine | target: entity
+=verb a.creates | en: creates, create, builds, build | pt: cria | preps: for=para | syn: generates, makes, produces, constructs, allocates
+=verb a.chooses | en: chooses, choose, selects, select | pt: escolhe | preps: from=entre
+=verb a.ordered_by | subject_type: p.priority_queue | en: is ordered by | pt: é ordenada por
+=verb a.breaks_ties_by | subject_type: p.priority_queue | en: breaks ties by, break ties by | pt: desempata por
+=verb a.seeded_with | subject_type: p.random_generator | en: is seeded with | pt: é semeado com
+=verb a.validates | object_type: e.config, e.field, e.module, e.file | en: validates, validate, checks, check | pt: valida | syn: verifies, asserts, ensures, enforces
+=verb a.serves | en: serves, serve, handles, handle | pt: atende | syn: processes, answers, routes
+=verb a.computes | en: computes, compute, calculates, calculate | pt: calcula | preps: from=a partir de | syn: derives, evaluates, estimates
+=verb a.measures | subject_type: e.metric | en: measures, measure | pt: mede
+=verb a.receives | en: receives, receive | pt: recebe | syn: accepts, takes, obtains, gets
+=verb a.returns | en: returns, return | pt: devolve | syn: responds, replies, yields
+=verb a.parameterized_by | en: is parameterized by | pt: é parametrizado por
+=verb a.has_unit | en: has the unit | pt: tem a unidade | target: literal
+=verb a.prints | en: prints, print | pt: imprime | syn: logs, echoes
+=verb a.raises | en: raises, raise | pt: levanta | syn: throws, fails with, aborts with
+=verb a.exits_with | en: exits with, exit with | pt: sai com
+=verb a.skips | en: skips, skip, discards, discard | pt: descarta | syn: ignores, drops out, rejects
+=verb a.sends | en: sends, send | pt: envia | preps: to=para, through=por | syn: posts, transmits, delivers
+=verb a.listens_on | en: listens on, listen on | pt: escuta em
+=verb a.connects_to | en: connects to, connect to | pt: conecta a | syn: dials, links to, attaches to
+=verb a.injects | en: injects, inject | pt: injeta | preps: into=em
+=verb a.forwards | en: forwards, forward | pt: repassa | preps: to=para
+=verb a.replaces | en: replaces, replace | pt: substitui | preps: with=por | syn: swaps, overrides
+=verb a.closes | en: closes, close | pt: fecha
+=verb a.times_out_after | en: times out after, time out after | pt: expira após | target: time
+=verb a.times_out | en: times out, time out | pt: expira
+=verb a.keyed_by | en: is keyed by | pt: é indexado por
+=verb a.protected_by | en: is protected by | pt: é protegido por | syn: guards, locks
+=verb a.authenticates | en: authenticates, authenticate | pt: autentica
+=verb a.repeats_every | en: repeats every, repeat every | pt: repete a cada | target: time
+=verb a.runs_in | en: runs in, run in, runs on, run on | pt: roda em
+=verb a.launches | en: launches, launch, starts, start | pt: inicia | syn: spawns, runs, executes, invokes, boots
+=verb a.terminates | en: terminates, terminate, stops, stop | pt: encerra | syn: kills, ends, quits
+=verb a.calls | en: calls, call | pt: chama | preps: on=na | syn: triggers, requests
+=verb a.schedules | en: schedules, schedule | pt: agenda | preps: on=na | syn: queues, plans
+=verb a.fills | en: fills, fill, feeds, feed | pt: alimenta | syn: supplies, populates, loads into
+=verb a.consumes | en: consumes, consume, drains, drain | pt: consome | syn: takes from
+=verb a.overwrites | en: overwrites, overwrite | pt: sobrescreve
+=verb a.converts | en: converts, convert, splits, split | pt: converte | preps: into=em | syn: transforms, maps, translates, serializes, encodes, decodes
+=verb a.shows | en: shows, show, displays, display | pt: mostra | syn: presents, reports, exposes
+=verb a.restarts | en: restarts, restart | pt: reinicia | syn: retries, resets, reloads
+=verb a.removes | en: removes, remove, drops, drop | pt: remove | preps: from=de | syn: deletes, erases, unlinks, clears
+=verb a.adds | en: adds, add | pt: adiciona | preps: to=a
+=verb a.pins | en: pins, pin | pt: fixa
+=verb a.flips | en: flips, flip | pt: inverte
+=verb a.follows | en: follows, follow | pt: segue
+=verb a.blocks | en: blocks, block | pt: bloqueia | syn: stalls
+=verb a.dispatches | en: dispatches, dispatch, emits, emit | pt: dispara | preps: on=em | syn: triggers, fires, notifies
+=verb a.has_same_unit_as | en: has the same unit as | pt: tem a mesma unidade que | target: entity
+=verb a.picks | en: picks, pick | pt: pega
+=verb a.subscribes_to | en: subscribes to, subscribe to | pt: assina | syn: watches, observes
+=verb a.renders | en: renders, render | pt: renderiza | preps: into=em
+=verb a.publishes | en: publishes, publish | pt: publica | preps: to=em
+=verb a.invalidates | en: invalidates, invalidate | pt: invalida
+=verb a.falls_back_to | en: falls back to, fall back to | pt: recorre a | syn: degrades to
+=verb a.resolves | en: resolves, resolve | pt: resolve | syn: looks up, finds
+=verb a.pushes | en: pushes, push | pt: empilha | preps: onto=em
+=verb a.pops | en: pops, pop | pt: desempilha | preps: from=de
+# HTTP and CLI. `records` has the base form `record`, which is also the type `record`: after
+# 'does not' (negation) the lexicon reads the word as a verb.
+=verb a.responds_with | en: responds with, respond with | pt: responde com | subject_type: f.route, f.http, f.websocket, e.web_service, e.module, e.function, e.method, e.program | object_type: f.status, e.value, e.message, e.error, e.page, f.json | syn: replies with
+=verb a.redirects_to | en: redirects to, redirect to | pt: redireciona para | subject_type: f.route, f.http, e.web_service, e.module, e.function, e.method | object_type: f.route, f.http, e.page, e.value
+=verb a.parses | en: parses, parse | pt: interpreta | preps: from=de, into=em | syn: tokenizes
+=verb a.tests | en: tests, test | pt: testa | subject_type: e.tests | syn: exercises
+=verb a.records | en: records, record | pt: registra | preps: to=em | syn: logs to
+=verb a.waits_for | en: waits for, wait for | pt: espera | syn: awaits, joins
+=verb a.defaults_to | en: defaults to, default to | pt: assume por padrão | subject_type: e.option, e.config, e.field, e.environment_variable, e.value
+=verb a.retries_up_to | en: retries up to, retry up to | pt: tenta até
+# anchoring in code: the object is always a glob literal, relative to the project root
+=verb a.implemented_in | en: is implemented in | pt: reside em | target: literal
+=verb a.excludes | en: excludes, exclude | pt: exclui | target: literal
+# membership: X is in Y (set, list, layer); negated: X is not in Y
+=verb a.is_in | en: is in | pt: está em | target: entity | irreflexive
+=verb a.above | en: is above | pt: está acima de | subject_type: e.layer | object_type: e.layer | target: entity | irreflexive
+# declared views: selection (`shows`: entities; `shows every`: all of a type), grouping, shape and
+# marks
+=verb a.shows_every | en: shows every, show every | pt: mostra todo o tipo | subject_type: e.view | target: literal
+=verb a.groups_by | en: groups by, group by | pt: agrupa por | syn: aggregates by, buckets by
+=verb a.has_form | en: has the form | pt: tem a forma | subject_type: e.view | target: literal
+=verb a.marks | en: marks, mark | pt: marca | subject_type: e.view | target: literal
+
+# ---------------------------------------------------------------- adjectives
+=adjective adj.immutable | en: immutable | pt: imutável, imutável | syn: readonly, constant, frozen
+=adjective adj.mutable | en: mutable | pt: mutável, mutável | syn: changeable, writable
+=adjective adj.deterministic | en: deterministic | pt: determinístico, determinística
+=adjective adj.stateful | en: stateful | pt: com estado, com estado
+=adjective adj.empty | en: empty | pt: vazio, vazia | pt_estar
+=adjective adj.full | en: full | pt: cheio, cheia | pt_estar
+=adjective adj.idempotent | en: idempotent | pt: idempotente, idempotente | syn: repeatable
+=adjective adj.bounded | en: bounded | pt: limitado, limitada | syn: capped, finite
+=adjective adj.unbounded | en: unbounded | pt: ilimitado, ilimitada | syn: infinite, uncapped
+=adjective adj.persistent | en: persistent | pt: persistente, persistente | syn: durable, saved
+=adjective adj.closed | en: closed | pt: fechado, fechada | pt_estar
+=adjective adj.busy | en: busy | pt: ocupado, ocupada | pt_estar
+=adjective adj.daemonic | en: daemonic | pt: daemon, daemon
+=adjective adj.monochrome | en: monochrome | pt: monocromático, monocromática
+# boolean condition: If the value "simulate" is true, ...
+=adjective adj.true | en: true | pt: verdadeiro, verdadeira
+=adjective adj.false | en: false | pt: falso, falsa
+
+# ---------------------------------------------------------------- comparisons
+# a number or a value (the <type> "<name>") follows the comparison; "is bounded by" is a synonym
+# of "is at most" (the canonical form is the last one with the same operator)
+=comparison c.limit | is at least: >= | is greater than: > | is bounded by: <= | is at most: <= | is less than: <
+
+# ---------------------------------------------------------------- declared absences
+# "The <type> "<name>" <en>." fills the presupposed role with "none, on purpose".
+# role: the role name in `requires` (or "unit", of the quantities); only valid for a type that presupposes it.
+=absence r.authentication | role: authentication | en: needs no authentication | pt: não precisa de autenticação
+=absence r.validation | role: validation | en: needs no validation | pt: não precisa de validação
+=absence r.synchronization | role: synchronization | en: needs no synchronization | pt: não precisa de sincronização
+=absence r.limit | role: limit | en: has no limit | pt: não tem limite
+=absence r.seed | role: seed | en: has no seed | pt: não tem semente
+=absence r.unit | role: unit | en: has no unit | pt: não tem unidade
+=absence r.tie_breaker | role: tie-breaker | en: has no tie-breaker | pt: não tem desempate
+=absence r.reference | role: reference | en: has no reference | pt: não tem referência
+=absence r.default | role: default | en: has no default | pt: não tem padrão
+=absence r.initial_state | role: initial state | en: has no initial state | pt: não tem estado inicial
+
+# ---------------------------------------------------------------- quantities and units
+=quantity q.speed | names: speed | dimension: distance/time
+=quantity q.rate | names: rate | dimension: 1/time
+=quantity q.duration | names: duration, door_time | dimension: time
+=unit s | dimension: time
+=unit floor | dimension: distance
+=unit floor/s | dimension: distance/time
+=unit s/floor | dimension: time/distance
+=unit passengers/min | dimension: 1/time
+=unit mm | dimension: distance
+=unit m | dimension: distance
+=unit ms | dimension: time
+=unit Hz | dimension: 1/time
+=unit px | dimension: screen

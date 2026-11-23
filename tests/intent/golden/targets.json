@@ -1,0 +1,138 @@
+{
+ "lexicon": "0.3",
+ "entities": [
+  {
+   "id": "16255ebe48",
+   "name": "m",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "481cb09144",
+   "name": "n",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "4bd2351249",
+   "name": "a",
+   "type": "p.state",
+   "attrs": {}
+  },
+  {
+   "id": "4be5992fcb",
+   "name": "c",
+   "type": "p.state",
+   "attrs": {}
+  },
+  {
+   "id": "8279b95399",
+   "name": "s",
+   "type": "e.unit",
+   "attrs": {}
+  },
+  {
+   "id": "91b5a94581",
+   "name": "b",
+   "type": "p.state",
+   "attrs": {}
+  },
+  {
+   "id": "980d40c099",
+   "name": "sm",
+   "type": "p.state_machine",
+   "attrs": {}
+  },
+  {
+   "id": "aa2a8d5aed",
+   "name": "w",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "cdf16dc89c",
+   "name": "tests",
+   "type": "e.directory",
+   "attrs": {}
+  },
+  {
+   "id": "e3101f3f38",
+   "name": "p",
+   "type": "e.program",
+   "attrs": {}
+  },
+  {
+   "id": "f38dd94066",
+   "name": "v",
+   "type": "e.value",
+   "attrs": {}
+  }
+ ],
+ "facts": [
+  {
+   "literal": "s",
+   "mode": null,
+   "rel": "a.has_unit",
+   "roles": {},
+   "subject": "f38dd94066"
+  },
+  {
+   "mode": null,
+   "object": "4bd2351249",
+   "rel": "a.has_states",
+   "roles": {},
+   "subject": "980d40c099"
+  },
+  {
+   "mode": null,
+   "object": "91b5a94581",
+   "rel": "a.has_states",
+   "roles": {},
+   "subject": "980d40c099"
+  },
+  {
+   "mode": null,
+   "object": "f38dd94066",
+   "rel": "a.has_same_unit_as",
+   "roles": {},
+   "subject": "aa2a8d5aed"
+  }
+ ],
+ "invariants": [],
+ "rules": [],
+ "gaps": [
+  {
+   "entity": "4bd2351249",
+   "role": "outgoing transition",
+   "type": "p.state"
+  },
+  {
+   "entity": "91b5a94581",
+   "role": "outgoing transition",
+   "type": "p.state"
+  },
+  {
+   "entity": "980d40c099",
+   "role": "initial state",
+   "type": "p.state_machine"
+  },
+  {
+   "entity": "980d40c099",
+   "role": "transitions",
+   "type": "p.state_machine"
+  }
+ ],
+ "warnings": [],
+ "errors": [
+  "line 3: 'moves' expects an object (the <type> \"<name>\") after the verb, found a quoted literal",
+  "line 4: 'has the unit' expects a quoted literal after the verb, found an object (the <type> \"<name>\")",
+  "line 5: 'has the same unit as' expects an object (the <type> \"<name>\") after the verb, found a quoted literal",
+  "line 6: 'has the same unit as' requires an object (the <type> \"<name>\") after the verb",
+  "line 7: 'has the unit' requires a quoted literal after the verb",
+  "line 8: 'starts in' expects an object (the <type> \"<name>\") after the verb, found a quoted literal",
+  "line 9: 'has the states' expects a quoted literal after the verb, found an object (the <type> \"<name>\")",
+  "line 10: 'is implemented in' expects a quoted literal after the verb, found an object (the <type> \"<name>\")",
+  "line 11: 'excludes' expects a quoted literal after the verb, found an object (the <type> \"<name>\")"
+ ],
+ "notes": []
+}

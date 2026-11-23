@@ -1,0 +1,68 @@
+O script de conteúdo “content” é idempotente.
+O script de página “main-world” é idempotente.
+O armazenamento chave-valor “chrome.storage.local” é persistente.
+O mapa “pending” expira após “10 s”.
+O temporizador “field-bridge-reconnect” repete a cada “5 s”.
+A mensagem “first message” expira após “5 s”.
+O mapa “pending main-world” expira após “8 s”.
+O script de conteúdo “content” contém a máquina de estados “selection mode”.
+O script de conteúdo “content” leva a máquina de estados “selection mode” do estado “selecting” para o estado “idle”.
+A janela “popup” leva a máquina de estados “selection mode” do estado “idle” para o estado “selecting”.
+O service worker “background” pega a aba “first tab with authorized field”.
+O mapa “pending main-world” é indexado pelo valor “request id”.
+O mapa “pending” é indexado pelo valor “request id”.
+O service worker “background” roda no contexto de execução “service worker”.
+O script de página “main-world” contém a função “getDiagnostics”.
+O script de página “main-world” contém o conjunto “watching”.
+O programa “field_bridge” contém o processo “bridge”.
+O processo “bridge” altera o conjunto “watchers”.
+O processo “bridge” contém o conjunto “watchers”.
+O programa “field_bridge” contém o processo “cmd”.
+O processo “cmd” conecta ao endpoint WebSocket “ws://127.0.0.1:8797”.
+O service worker “background” conecta ao endpoint WebSocket “ws://127.0.0.1:8797”.
+O processo “bridge” escuta no endpoint WebSocket “ws://127.0.0.1:8797”.
+O programa “field_bridge” contém o script de conteúdo “content”.
+A janela “popup” injeta o script de conteúdo “content” na aba “active tab”.
+O service worker “background” injeta o script de conteúdo “content” na aba “each tab”.
+A janela “popup” roda no contexto de execução “extension popup”.
+O script de conteúdo “content” contém o armazenamento chave-valor “chrome.storage.local”.
+O script de página “main-world” roda no contexto de execução “MAIN world”.
+O processo “bridge” roda no contexto de execução “python asyncio”.
+O processo “cmd” roda no contexto de execução “python asyncio”.
+O script de página “main-world” envia o evento “field-bridge-change” pelo contexto de execução “DOM window” para o script de conteúdo “content”.
+O script de conteúdo “content” contém o mapa “pending main-world”.
+O processo “bridge” altera o mapa “pending”.
+O processo “bridge” contém o mapa “pending”.
+O script de página “main-world” envia o evento “field-bridge-response” pelo contexto de execução “DOM window” para o script de conteúdo “content”.
+O service worker “background” contém o temporizador “field-bridge-reconnect”.
+A máquina de estados “selection mode” tem os estados “selecting”.
+O programa “field_bridge” contém a janela “popup”.
+O processo “bridge” repassa a mensagem “change event” para o conjunto “watchers”.
+O service worker “background” envia a mensagem “change event” para o processo “bridge”.
+O script de conteúdo “content” envia a mensagem “change event” para o service worker “background”.
+O script de página “main-world” lê o valor “window.ace”.
+O script de conteúdo “content” roda no contexto de execução “isolated world”.
+O programa “field_bridge” contém o script de página “main-world”.
+A janela “popup” injeta o script de página “main-world” na aba “active tab”.
+O service worker “background” injeta o script de página “main-world” na aba “each tab”.
+O armazenamento chave-valor “chrome.storage.local” é indexado pelo valor “origin plus path”.
+O script de conteúdo “content” contém o campo de texto “authorized field”.
+O script de conteúdo “content” envia o evento “field-bridge-request” pelo contexto de execução “DOM window” para o script de página “main-world”.
+O processo “bridge” contém o contador “id_counter”.
+A máquina de estados “selection mode” tem os estados “idle”.
+A máquina de estados “selection mode” começa no estado “idle”.
+A janela “popup” envia a mensagem “start-select” para o script de conteúdo “content”.
+O programa “field_bridge” contém o service worker “background”.
+O processo “cmd” contém a mensagem “command”.
+O processo “bridge” repassa a mensagem “command” para o service worker “background”.
+O processo “cmd” envia a mensagem “command” para o processo “bridge”.
+O service worker “background” envia a mensagem “command” para o script de conteúdo “content”.
+
+Se o service worker “background” não conecta ao processo “bridge”, o processo “bridge” envia a mensagem “extension not connected” para o processo “cmd”.
+Quando o service worker “background” conecta ao processo “bridge”, o processo “bridge” substitui a conexão “previous extension”.
+Se o script de página “main-world” altera o campo de texto “authorized field”, o script de página “main-world” dispara o evento “change”.
+Se o script de página “main-world” altera o campo de texto “authorized field”, o script de página “main-world” dispara o evento “input”.
+Se a mensagem “first message” expira, o processo “bridge” fecha a conexão “client”.
+Se o temporizador “field-bridge-reconnect” expira, o service worker “background” conecta ao processo “bridge”.
+O service worker “background” não pega a aba “active tab”.
+O script de conteúdo “content” não lê o valor “window.ace”.

@@ -1,0 +1,20 @@
+$ where tie queue events
+where: tie queue events (1 of 1)
+1 simulator · module · layer domain
+  files elevator/{simulator,events}.py
+  symbols elevator/events.py: EventQueue
+  symbols elevator/simulator.py: Simulator
+  - The priority queue "EventQueue" breaks ties by the value "scheduling order". ^elevator/events.py#EventQueue
+  - The module "simulator" contains the priority queue "EventQueue".
+  - The module "simulator" is deterministic. ^elevator/events.py#EventQueue
+  - The priority queue "EventQueue" is ordered by the value "simulated time". ^elevator/events.py#EventQueue
+  uses elevator
+  used by execution, tests
+
+$ where elevator/report.py
+where: elevator/report.py (1 of 1)
+1 text_output · module · layer interface
+  files elevator/{report,timeline}.py
+  symbols elevator/timeline.py: _symbol
+  used by cli, tests
+

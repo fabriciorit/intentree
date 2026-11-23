@@ -1,0 +1,20 @@
+The machine "server host" contains the process "server".
+The process "server" runs in the machine "server host".
+The program "app" contains the key-value store "Store".
+The program "app" contains the process "client".
+The program "app" contains the process "server".
+The thread "clock" fills the key-value store "Store".
+The thread "monitor" reads the key-value store "Store".
+The thread "mqtt" fills the key-value store "Store".
+The view "deployment" groups by "runs on".
+The view "deployment" shows every "machine".
+The view "deployment" shows every "process".
+The view "energy" has the form "matrix".
+The view "energy" marks "gaps".
+The view "energy" marks "states".
+The view "energy" shows every "thread".
+The view "energy" shows the key-value store "Store".
+The view "f" has the form "list".
+The view "f" has the form "matrix".
+The view "f" shows every "thread".
+The view "g" has the form "list".

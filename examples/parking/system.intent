@@ -1,0 +1,180 @@
+# parking: a paid parking garage with barriers, simulated in the browser.
+# Five actors talk only through a message bus; the controller alone owns the count of free spaces.
+
+# --- components and the files that implement them
+The program "parking" contains the process "controller", the process "entry gate 1", the process "entry gate 2", the process "exit gate", the process "payment kiosk", the module "entry gate logic", the module "barrier", the module "ticket", the module "message bus", the module "protocol", the module "time", the module "garage", the module "traffic", the module "layout", the module "page", the module "scene", the module "panels", the file "readme", the file "manifest" and the test suite "tests".
+The process "controller" is implemented in "domain/controller.js".
+The process "entry gate 1" is implemented in "domain/entry-gate-1.js".
+The process "entry gate 2" is implemented in "domain/entry-gate-2.js".
+The process "exit gate" is implemented in "domain/exit-gate.js".
+The process "payment kiosk" is implemented in "domain/kiosk.js".
+The module "entry gate logic" is implemented in "domain/entry-gate.js".
+The module "barrier" is implemented in "domain/barrier.js".
+The module "ticket" is implemented in "domain/ticket.js".
+The module "message bus" is implemented in "domain/bus.js".
+The module "protocol" is implemented in "domain/protocol.js".
+The module "time" is implemented in "domain/clock.js".
+The module "garage" is implemented in "domain/garage.js".
+The module "traffic" is implemented in "domain/traffic.js".
+The module "layout" is implemented in "domain/layout.js".
+The module "page" is implemented in "{index.html,style.css,ui/main.js}".
+The module "scene" is implemented in "ui/scene.js".
+The module "panels" is implemented in "ui/{panels,machines}.js".
+The file "readme" is implemented in "README.md".
+The file "manifest" is implemented in "demo.json".
+The test suite "tests" is implemented in "tests/**".
+
+# --- relations (who imports whom)
+The process "controller" uses the module "protocol" and the module "ticket".
+The process "entry gate 1" uses the module "entry gate logic" and the module "protocol".
+The process "entry gate 2" uses the module "entry gate logic" and the module "protocol".
+The module "entry gate logic" uses the module "barrier" and the module "protocol".
+The process "exit gate" uses the module "barrier" and the module "protocol".
+The process "payment kiosk" uses the module "protocol".
+The module "traffic" uses the module "layout".
+The module "garage" uses the process "controller", the process "entry gate 1", the process "entry gate 2", the process "exit gate", the process "payment kiosk", the module "traffic", the module "message bus", the module "time" and the module "protocol".
+The module "scene" uses the module "layout".
+The module "panels" uses the module "ticket", the module "barrier", the module "protocol" and the module "time".
+The module "page" uses the module "garage", the module "scene", the module "panels" and the module "time".
+The test suite "tests" uses the process "controller", the process "entry gate 1", the process "entry gate 2", the process "exit gate", the process "payment kiosk", the module "barrier", the module "ticket", the module "message bus", the module "protocol", the module "time" and the module "garage".
+
+# --- layers (each layer sits above the next)
+The layer "interface" is above the layer "assembly".
+The layer "assembly" is above the layer "actors".
+The layer "actors" is above the layer "world".
+The layer "world" is above the layer "core".
+The module "page" is in the layer "interface".
+The module "scene" is in the layer "interface".
+The module "panels" is in the layer "interface".
+The module "garage" is in the layer "assembly".
+The process "controller" is in the layer "actors".
+The process "entry gate 1" is in the layer "actors".
+The process "entry gate 2" is in the layer "actors".
+The process "exit gate" is in the layer "actors".
+The process "payment kiosk" is in the layer "actors".
+The module "entry gate logic" is in the layer "actors".
+The module "traffic" is in the layer "world".
+The module "layout" is in the layer "world".
+The module "barrier" is in the layer "core".
+The module "ticket" is in the layer "core".
+The module "message bus" is in the layer "core".
+The module "protocol" is in the layer "core".
+The module "time" is in the layer "core".
+
+# --- machines, processes and the wire between them
+The process "controller" runs on the machine "server room".
+The process "entry gate 1" runs on the machine "entry post 1".
+The process "entry gate 2" runs on the machine "entry post 2".
+The process "exit gate" runs on the machine "exit post".
+The process "payment kiosk" runs on the machine "kiosk cabinet".
+The process "controller" listens on the tcp endpoint "server room:7000".
+The tcp endpoint "server room:7000" needs no authentication.
+Note: the garage network is closed; in this demo the message bus plays the part of the wire and every process runs inside the browser page.
+The process "entry gate 1" connects to the tcp endpoint "server room:7000".
+The process "entry gate 2" connects to the tcp endpoint "server room:7000".
+The process "exit gate" connects to the tcp endpoint "server room:7000".
+The process "payment kiosk" connects to the tcp endpoint "server room:7000".
+The process "entry gate 1" sends the message "request space" to the process "controller" through the module "message bus".
+The process "entry gate 2" sends the message "request space" to the process "controller" through the module "message bus".
+The process "controller" sends the message "ticket granted" to the process "entry gate 1" through the module "message bus".
+The process "controller" sends the message "ticket granted" to the process "entry gate 2" through the module "message bus".
+The process "controller" sends the message "garage full" to the process "entry gate 1" through the module "message bus".
+The process "controller" sends the message "garage full" to the process "entry gate 2" through the module "message bus".
+The process "controller" sends the message "free count" to the process "entry gate 1" through the module "message bus".
+The process "controller" sends the message "free count" to the process "entry gate 2" through the module "message bus".
+The process "payment kiosk" sends the message "pay" to the process "controller" through the module "message bus".
+The process "controller" sends the message "payment accepted" to the process "payment kiosk" through the module "message bus".
+The process "controller" sends the message "payment rejected" to the process "payment kiosk" through the module "message bus".
+The process "exit gate" sends the message "exit request" to the process "controller" through the module "message bus".
+The process "controller" sends the message "exit granted" to the process "exit gate" through the module "message bus".
+The process "controller" sends the message "exit denied" to the process "exit gate" through the module "message bus".
+The module "message bus" runs on the machine "garage network".
+The module "message bus" contains the queue "wire queue" and the value "latency".
+The queue "wire queue" is unbounded.
+The value "latency" has the unit "s".
+Note: the bus keeps messages until the clock reaches their delivery time; a message for an offline destination is dropped, so a gate that hears nothing gives no ticket.
+
+# --- inside each process
+The process "controller" contains the thread "request loop", the thread "expiry sweep", the queue "request queue", the counter "free spaces", the map "ticket book", the lock "counter lock" and the clock "simulated time".
+The process "entry gate 1" contains the device "entry barrier 1" and the device "ticket printer 1".
+The process "entry gate 2" contains the device "entry barrier 2" and the device "ticket printer 2".
+The process "exit gate" contains the device "exit barrier" and the device "ticket reader".
+The process "payment kiosk" contains the device "card reader".
+The module "page" contains the thread "frame loop".
+
+# --- shared state and what touches it
+The queue "request queue" is unbounded.
+The map "ticket book" is keyed by the value "ticket id".
+The clock "simulated time" has the unit "s".
+The counter "free spaces" is mutable.
+The map "ticket book" is mutable.
+The process "entry gate 1" fills the queue "request queue".
+The process "entry gate 2" fills the queue "request queue".
+The process "exit gate" fills the queue "request queue".
+The process "payment kiosk" fills the queue "request queue".
+The thread "request loop" consumes the queue "request queue".
+The thread "request loop" changes the counter "free spaces".
+The thread "request loop" changes the map "ticket book".
+The thread "request loop" uses the lock "counter lock".
+The thread "request loop" reads the clock "simulated time".
+The thread "expiry sweep" changes the map "ticket book".
+The thread "expiry sweep" repeats every "250 ms".
+Note: the sweep expires paid tickets as simulated time passes, even if nobody asks about them.
+The thread "frame loop" repeats every "16 ms".
+The thread "frame loop" changes the clock "simulated time".
+Note: each frame advances simulated time in steps of at most 0.25 s, so a speed of 64 times still serves every request in order.
+
+# --- state machine: Ticket
+The module "ticket" contains the state machine "Ticket".
+The state machine "Ticket" has the states "issued", "paid", "expired" and "exited".
+The state machine "Ticket" starts in the state "issued".
+The process "controller" moves the state machine "Ticket" from the state "issued" to the state "paid".
+The process "controller" moves the state machine "Ticket" from the state "paid" to the state "exited".
+The process "controller" moves the state machine "Ticket" from the state "paid" to the state "expired".
+The process "controller" moves the state machine "Ticket" from the state "expired" to the state "paid".
+The process "controller" moves the state machine "Ticket" from the state "exited" to the state "exited".
+Note: this loop is a refused second use: a ticket that already left stays exited and the exit barrier stays down.
+
+# --- state machine: Barrier
+The module "barrier" contains the state machine "Barrier".
+The state machine "Barrier" has the states "closed", "opening", "open", "closing" and "blocked".
+The state machine "Barrier" starts in the state "closed".
+The module "barrier" moves the state machine "Barrier" from the state "closed" to the state "opening".
+The module "barrier" moves the state machine "Barrier" from the state "opening" to the state "open".
+The module "barrier" moves the state machine "Barrier" from the state "open" to the state "closing".
+The module "barrier" moves the state machine "Barrier" from the state "closing" to the state "closed".
+The module "barrier" moves the state machine "Barrier" from the state "closing" to the state "opening".
+The module "barrier" moves the state machine "Barrier" from the state "closing" to the state "blocked".
+The module "barrier" moves the state machine "Barrier" from the state "blocked" to the state "closing".
+The module "barrier" moves the state machine "Barrier" from the state "blocked" to the state "opening".
+
+# --- invariants: the count of free spaces
+The counter "free spaces" is at least 0. ^domain/controller.js#checkInvariants
+The counter "free spaces" is at most the value "capacity". ^domain/controller.js#checkInvariants
+While the lock "counter lock" is busy, the thread "request loop" never serves the message "request space". ^domain/controller.js#receive
+Note: both entries, the kiosk and the exit write to the same inbox and the controller serves one request at a time, so two entries can never take the same last space.
+If the counter "free spaces" is 0, the process "controller" never creates the record "ticket". ^domain/controller.js#requestSpace
+If the counter "free spaces" is 0, the module "entry gate logic" shows the value "FULL". ^domain/entry-gate.js#createEntryGate
+Note: a sign shows what the controller last told the gate; the gate still asks the controller for every car, so a stale sign can never let a car in.
+
+# --- invariants: barriers
+When the process "entry gate 1" receives the message "ticket granted", the process "entry gate 1" starts the device "entry barrier 1". ^domain/entry-gate-1.js#createEntryGate1
+Note: this is the only path that raises an entry arm; no ticket from the controller, no open barrier. Entry gate 2 is built from the same logic.
+If the value "sensor" is true, the module "barrier" never moves the state machine "Barrier" from the state "closing" to the state "closed". ^domain/barrier.js#createBarrier
+Note: when the sensor sees a car under a closing arm, the barrier is blocked: it goes back up and waits; this is a safety stop, not a new permission to enter or leave.
+
+# --- invariants: tickets and payment
+When the process "controller" receives the message "pay", the process "controller" records the value "payment" to the map "ticket book". ^domain/controller.js#pay
+If the value "ticket state" is not the value "paid", the process "controller" never sends the message "exit granted" to the process "exit gate". ^domain/controller.js#exitRequest
+Note: payment is recorded before the exit can be granted, so the exit barrier never opens for an unpaid or expired ticket.
+When the process "exit gate" receives the message "exit granted", the process "exit gate" starts the device "exit barrier". ^domain/exit-gate.js#createExitGate
+If the value "ticket state" is the value "exited", the process "controller" sends the message "exit denied" to the process "exit gate". ^domain/controller.js#exitRequest
+If the value "time since payment" is greater than the value "grace period", the process "controller" moves the state machine "Ticket" from the state "paid" to the state "expired". ^domain/controller.js#refresh
+The value "grace period" has the unit "s".
+Note: a ticket that waits 15 simulated minutes after payment expires and must be paid again, which charges the extra time.
+
+# --- invariants: the wire
+If the message "request space" times out, the process "entry gate 1" never starts the device "entry barrier 1". ^domain/entry-gate-1.js#createEntryGate1
+The message "request space" times out after "10 s".
+The process "entry gate 1" never calls the process "controller". ^domain/entry-gate-1.js#createEntryGate1
+Note: the gates, the kiosk and the controller only meet through the message bus, never by calling each other.

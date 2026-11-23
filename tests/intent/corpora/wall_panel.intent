@@ -1,0 +1,100 @@
+# wall_panel: an e-ink panel device as a remote framebuffer; the server draws, the device only applies blits and returns touches.
+# Live path: paneld (C, on the device) + panel-server (Rust, on the server host) + chrome-headless-shell + HTML pages.
+# Outside the live path (legacy): panel/, srv/, device/.
+
+# --- machines
+The program "wall_panel" contains the process "paneld", the process "panel-server", the process "chrome-headless-shell", the process "mosquitto", the process "curl", the shell script "deploy.sh" and the directory "pages".
+The process "paneld" runs on the machine "panel device".
+The process "panel-server" runs on the machine "server host".
+The process "chrome-headless-shell" runs on the machine "server host".
+The process "mosquitto" runs on the machine "server host".
+The process "curl" runs on the machine "server host".
+The shell script "deploy.sh" runs on the machine "dev workstation".
+The process "paneld" runs in the execution context "init session".
+The process "panel-server" runs in the execution context "systemd panel-server.service".
+The process "chrome-headless-shell" runs in the execution context "systemd, Nice 19".
+
+# --- inside each process
+The process "paneld" contains the state machine "screen ownership", the device "EPDC framebuffer", the device "digitizer", the list "touch targets" and the timer "reconnect backoff".
+The process "panel-server" contains the thread "accept device", the thread "session ping", the thread "control", the thread "monitor", the thread "mqtt", the thread "weather", the thread "clock", the key-value store "Store", the queue "alert queue", the stack "navigation stack", the map "screen cache" and the configuration "config.json".
+The directory "pages" contains the page "home.html", the page "launcher.html" and the page "dark theme".
+
+# --- endpoints and connections
+The process "panel-server" listens on the tcp endpoint "server:8993".
+The process "panel-server" listens on the http endpoint "server:9000".
+The process "chrome-headless-shell" listens on the devtools endpoint "0.0.0.0:9222".
+The process "mosquitto" listens on the mqtt endpoint "127.0.0.1:1883".
+The process "paneld" connects to the tcp endpoint "server:8993".
+# the device protocol does not authenticate: the local network is the boundary
+The tcp endpoint "server:8993" needs no authentication.
+The process "panel-server" connects to the devtools endpoint "0.0.0.0:9222".
+The thread "mqtt" connects to the mqtt endpoint "127.0.0.1:1883".
+The thread "mqtt" subscribes to the value "home/energy/#", the value "home/weather/#" and the value "home/sensor/data".
+The thread "weather" launches the process "curl".
+The process "curl" reads the value "forecast" from the web service "open-meteo".
+The process "panel-server" sends the message "BLIT" to the process "paneld".
+The process "paneld" sends the message "TOUCH" to the process "panel-server".
+The process "panel-server" sends the message "CMD launch app" to the process "paneld".
+The process "panel-server" renders the page "home.html" into the device "buffer L8 1072x1448".
+The process "panel-server" uses the process "chrome-headless-shell".
+The process "panel-server" reads the page "home.html" from the directory "pages".
+The process "panel-server" reads the configuration "config.json".
+The shell script "deploy.sh" writes the process "panel-server" to the machine "server host".
+The shell script "deploy.sh" writes the directory "pages" to the machine "server host".
+
+# --- threads and what they share
+The thread "mqtt" fills the key-value store "Store".
+The thread "weather" fills the key-value store "Store".
+The thread "clock" fills the key-value store "Store".
+The thread "accept device" consumes the key-value store "Store".
+The thread "accept device" consumes the queue "alert queue".
+The thread "monitor" consumes the key-value store "Store".
+The thread "monitor" fills the queue "alert queue".
+The thread "control" fills the queue "alert queue".
+The thread "accept device" changes the map "screen cache".
+The thread "accept device" changes the stack "navigation stack".
+The thread "session ping" repeats every "5 s".
+The thread "clock" repeats every "60 s".
+The thread "weather" repeats every "1800 s".
+The key-value store "Store" is keyed by the value "data key".
+The map "screen cache" is keyed by the value "page".
+The queue "alert queue" is bounded.
+The timer "reconnect backoff" repeats every "1 s to 60 s".
+
+# --- state machines
+The state machine "screen ownership" has the states "session" and "external app".
+The state machine "screen ownership" starts in the state "session".
+The process "paneld" moves the state machine "screen ownership" from the state "session" to the state "external app".
+The process "paneld" moves the state machine "screen ownership" from the state "external app" to the state "session".
+The process "panel-server" contains the state machine "SOC alert".
+The state machine "SOC alert" has the states "normal" and "alert".
+The state machine "SOC alert" starts in the state "normal".
+The thread "monitor" moves the state machine "SOC alert" from the state "normal" to the state "alert".
+The thread "monitor" moves the state machine "SOC alert" from the state "alert" to the state "normal".
+The process "paneld" contains the state machine "connection".
+The state machine "connection" has the states "disconnected", "connected" and "waiting backoff".
+The state machine "connection" starts in the state "disconnected".
+The process "paneld" moves the state machine "connection" from the state "disconnected" to the state "connected".
+The process "paneld" moves the state machine "connection" from the state "connected" to the state "waiting backoff".
+The process "paneld" moves the state machine "connection" from the state "waiting backoff" to the state "disconnected".
+
+# --- invariants: e-ink
+The process "paneld" never calls the function "FB_WAIT_UPDATE".
+The process "panel-server" never changes the value "physical screen edge".
+If the value "rectangle" is monochrome, the process "panel-server" uses the value "A2".
+If the stack "navigation stack" changes, the process "panel-server" uses the value "GC16".
+If the counter "consecutive A2 per region" is at least 8, the process "panel-server" dispatches the event "ghosting cleanup".
+The process "paneld" resolves the list "touch targets".
+
+# --- invariants: resilience
+If the devtools endpoint "0.0.0.0:9222" times out, the process "panel-server" falls back to the function "native render".
+If the connection "session" closes, the process "paneld" connects to the tcp endpoint "server:8993".
+If the connection "session" times out, the process "paneld" launches the process "udhcpc".
+The connection "session" times out after "30 s".
+If the value "home.soc" is less than 30, the thread "monitor" publishes the alert "low SOC" to the queue "alert queue".
+If the value "home.soc" is greater than 35, the thread "monitor" removes the alert "low SOC" from the queue "alert queue".
+If the thread "mqtt" times out, the thread "monitor" publishes the alert "dead source" to the queue "alert queue".
+The configuration "config.json" is immutable.
+The process "panel-server" validates the configuration "config.json".
+The shell script "deploy.sh" never overwrites the configuration "config.json".
+When the process "chrome-headless-shell" starts, the process "chrome-headless-shell" removes the value "SingletonLock".

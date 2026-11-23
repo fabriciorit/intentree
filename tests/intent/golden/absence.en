@@ -1,0 +1,12 @@
+If the field "rate" has no limit, the module "m" validates the field "rate".
+The clock "clock" has no unit.
+The clock "clock" has the unit "s".
+The field "floors" has no limit.
+The field "floors" is at least 2.
+The field "seed" has no limit.
+The priority queue "queue" has no tie-breaker.
+The priority queue "queue" is ordered by the value "t".
+The process "srv" listens on the tcp endpoint "server:8993".
+The random generator "rng" has no seed.
+The tcp endpoint "server:8993" needs no authentication.
+The value "duration" has no unit.

@@ -1,0 +1,13 @@
+O campo “floors” é limitado pelo campo “max floors”.
+A thread “executor” é limitada pelo valor “jobs”.
+O valor “mode” é o valor “default”.
+
+Se o valor “dry run” é falso, o módulo “cli” inicia o processo “shell”.
+Se o valor “dry run” é verdadeiro, o módulo “cli” imprime “plan”.
+Se o valor “name” não está no conjunto “done”, o módulo “executor” inicia o processo “shell”.
+Se o valor “name” está no conjunto “done”, o módulo “executor” descarta o registro “target”.
+Se o valor “stored hash” não é o valor “current hash”, o módulo “decision” altera o registro “target”.
+Se o valor “code” não é 0, o módulo “commands” levanta o erro “MinimakeError”.
+Se o valor “code” é 0, o módulo “commands” devolve o valor “success”.
+O módulo “m” não reside em “legacy/**”.
+O armazenamento chave-valor “Store” não é indexado pelo valor “hour”.

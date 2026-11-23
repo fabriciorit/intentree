@@ -1,0 +1,26 @@
+# Declared views: selection, grouping, form and marks, as relations of a view entity.
+The program "app" contains the process "server", the process "client" and the key-value store "Store".
+The machine "server host" contains the process "server".
+The process "server" runs on the machine "server host".
+The thread "mqtt" fills the key-value store "Store".
+The thread "clock" fills the key-value store "Store".
+The thread "monitor" reads the key-value store "Store".
+# selection by entity and by type; form and marks
+The view "energy" shows the key-value store "Store".
+The view "energy" shows every "thread".
+The view "energy" has the form "matrix".
+The view "energy" marks "gaps" and "states".
+# grouping by a lexicon relation; without a form or marks sentence the defaults apply
+The view "deployment" shows every "process" and "machine".
+The view "deployment" groups by "runs on".
+# errors: unknown type and relation, form and mark outside the vocabulary, negation, repeated form,
+# view without a selection
+The view "a" shows every "gizmo".
+The view "b" groups by "flies over".
+The view "c" has the form "circle".
+The view "d" marks "colors".
+The view "e" never shows every "thread".
+The view "f" shows every "thread".
+The view "f" has the form "list".
+The view "f" has the form "matrix".
+The view "g" has the form "list".

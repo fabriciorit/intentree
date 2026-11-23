@@ -1,0 +1,19 @@
+error line 17: expected a type (like module) after 'The', found the verb 'measures'
+  hint: after 'the' comes a type from the lexicon (e.g. 'module', 'process', 'file', 'value', 'thread')
+error line 5: 'uses' does not accept the preposition 'to' (accepted: none)
+  hint: verbs that accept 'to': 'writes', 'moves', 'sends', 'forwards'; or write the target as an object (and) or in another sentence
+error line 6: 'moves' requires the preposition 'to' in the sentence
+  hint: full form: The <type> "<name>" moves the <type> "<name>" from the <type> "<name>" to the <type> "<name>".
+error line 4: 'validates' does not accept an object of type 'function' ("b"); accepts object: configuration, field, module, file
+  hint: general verbs that accept 'function' as object: 'uses', 'reads', 'calls'; or give the thing one of the types 'validates' accepts
+error line 3: 'has the states' does not accept a subject of type 'module' ("a"); accepts subject: state machine
+  hint: general verbs that accept 'module' as subject: 'uses', 'reads', 'calls'; or give the thing one of the types 'has the states' accepts
+error line 9: 'uses' does not accept the same thing on both sides: "a"
+  hint: use two different things (the same name with the same type is the same thing)
+error line 3: 'has the states' does not accept a subject of type 'module' ("a"); accepts subject: state machine
+  hint: general verbs that accept 'module' as subject: 'uses', 'reads', 'calls'; or give the thing one of the types 'has the states' accepts
+error line 16: 'contains' does not accept the same thing on both sides: "a"
+  hint: use two different things (the same name with the same type is the same thing)
+error line 8: the transition uses the state "z", which the state machine "m" does not declare (declared states: "q", "p")
+  hint: declare it first: The state machine "m" has the states "q", "p", "z".
+9 errors, 21 entities, 13 facts, 1 invariants, 0 rules, 5 gaps, 0 warnings

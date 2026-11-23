@@ -1,0 +1,13 @@
+O relógio “clock” tem a unidade “s”.
+O processo “srv” escuta no endpoint TCP “server:8993”.
+A fila de prioridade “queue” é ordenada pelo valor “t”.
+O campo “floors” é no mínimo 2.
+O endpoint TCP “server:8993” não precisa de autenticação.
+O campo “seed” não tem limite.
+O campo “floors” não tem limite.
+O gerador aleatório “rng” não tem semente.
+A fila de prioridade “queue” não tem desempate.
+O valor “duration” não tem unidade.
+O relógio “clock” não tem unidade.
+
+Se o campo “rate” não tem limite, o módulo “m” valida o campo “rate”.

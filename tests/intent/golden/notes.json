@@ -1,0 +1,152 @@
+{
+ "lexicon": "0.3",
+ "entities": [
+  {
+   "id": "0222fed510",
+   "name": ".minimake/cache.json.tmp",
+   "type": "e.file",
+   "attrs": {}
+  },
+  {
+   "id": "041a480b8d",
+   "name": "executor",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "550ea438b9",
+   "name": "graph",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "7ca08d07ea",
+   "name": "code",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "83e30126ec",
+   "name": "MinimakeError",
+   "type": "e.error",
+   "attrs": {}
+  },
+  {
+   "id": "89f360a803",
+   "name": ".minimake/cache.json",
+   "type": "f.json",
+   "attrs": {}
+  },
+  {
+   "id": "9bce9c8453",
+   "name": "commands",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "a3d50bf950",
+   "name": "cli",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "f0c814f2fe",
+   "name": "cache",
+   "type": "e.module",
+   "attrs": {}
+  }
+ ],
+ "facts": [
+  {
+   "mode": null,
+   "object": "0222fed510",
+   "rel": "a.writes",
+   "roles": {},
+   "subject": "f0c814f2fe"
+  },
+  {
+   "mode": null,
+   "object": "041a480b8d",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "a3d50bf950"
+  },
+  {
+   "mode": null,
+   "object": "550ea438b9",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "a3d50bf950"
+  },
+  {
+   "mode": null,
+   "object": "89f360a803",
+   "rel": "a.overwrites",
+   "roles": {},
+   "subject": "041a480b8d"
+  }
+ ],
+ "invariants": [
+  {
+   "if": [
+    {
+     "op": "!=",
+     "rel": "c.equal",
+     "subject": "7ca08d07ea",
+     "value": 0.0
+    }
+   ],
+   "then": [
+    {
+     "mode": null,
+     "object": "83e30126ec",
+     "rel": "a.raises",
+     "roles": {},
+     "subject": "9bce9c8453"
+    }
+   ],
+   "type": "if"
+  }
+ ],
+ "rules": [],
+ "gaps": [],
+ "warnings": [],
+ "errors": [
+  "line 15: word outside the lexicon: 'frobs' (after 'The module \"x\"'; expected a verb)",
+  "line 17: empty note"
+ ],
+ "notes": [
+  {
+   "file": "",
+   "text": "written by hand from the old intent.map; notes do not enter the formal IR."
+  },
+  {
+   "sentence": "If the value \"code\" is not 0, the module \"commands\" raises the error \"MinimakeError\".",
+   "text": "a command with a nonzero code becomes a target error."
+  },
+  {
+   "sentence": "The module \"cache\" writes the file \".minimake/cache.json.tmp\".",
+   "text": "writes tmp and os.replace."
+  },
+  {
+   "sentence": "The module \"cli\" uses the module \"executor\".",
+   "text": "the order of the imports does not matter."
+  },
+  {
+   "sentence": "The module \"cli\" uses the module \"executor\".",
+   "text": "two notes in a row stay with the same sentence."
+  },
+  {
+   "sentence": "The module \"cli\" uses the module \"graph\".",
+   "text": "the order of the imports does not matter."
+  },
+  {
+   "sentence": "The module \"cli\" uses the module \"graph\".",
+   "text": "two notes in a row stay with the same sentence."
+  },
+  {
+   "sentence": "The module \"executor\" overwrites the json document \".minimake/cache.json\".",
+   "text": "before rebuilding a target it deletes its cache entry and rewrites it only after success."
+  }
+ ]
+}

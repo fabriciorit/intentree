@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Parking garage</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div>
+      <h1>Parking garage</h1>
+      <p class="sub">Two entries, one exit, a payment kiosk and a controller that owns the count of free spaces.</p>
+    </div>
+    <div class="clockbox" title="Simulated time">
+      <span id="clock">08:00:00</span>
+      <small>simulated time</small>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="stage">
+      <div class="card scene">
+        <svg id="scene" role="img" aria-label="Top-down view of the parking garage"></svg>
+      </div>
+
+      <div class="card controls">
+        <div class="group">
+          <span class="group-title">Time</span>
+          <div class="segmented" role="group" aria-label="Speed of time">
+            <button id="pause" aria-pressed="false">Pause</button>
+            <button data-speed="1">1&times;</button>
+            <button data-speed="4">4&times;</button>
+            <button data-speed="16">16&times;</button>
+            <button data-speed="64">64&times;</button>
+          </div>
+        </div>
+        <div class="group sliders">
+          <label>Car arrivals <output id="rate-out"></output>
+            <input id="rate" type="range" min="0" max="12" step="1" value="4">
+          </label>
+          <label>Network delay <output id="latency-out"></output>
+            <input id="latency" type="range" min="0" max="3" step="0.5" value="0">
+          </label>
+          <label class="check"><input id="offline" type="checkbox"> Controller offline</label>
+        </div>
+        <div class="group">
+          <span class="group-title">Cars</span>
+          <div class="buttons">
+            <button id="rush" class="primary" title="Sends both entries a burst at the last free spaces">Rush hour</button>
+            <button id="arrive1">Arrive at entry 1</button>
+            <button id="arrive2">Arrive at entry 2</button>
+          </div>
+        </div>
+        <div class="group">
+          <span class="group-title">Your parked car</span>
+          <div class="buttons">
+            <button id="pay">Pay ticket</button>
+            <button id="leave">Leave</button>
+            <button id="try-leave">Try to leave without paying</button>
+          </div>
+        </div>
+        <div class="group">
+          <span class="group-title">Trouble</span>
+          <div class="buttons">
+            <button id="grace" title="Jumps 16 simulated minutes ahead">Wait past the grace period</button>
+            <button id="obstacle" title="Someone steps under the arm as it starts to lower">Obstacle under a barrier</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="side">
+      <div class="card">
+        <h2>Ticket book <small id="ticket-summary"></small></h2>
+        <ul id="tickets" class="tickets"></ul>
+      </div>
+      <div class="card">
+        <h2>State machines <small>live</small></h2>
+        <h3>Ticket <small>number of tickets in each state</small></h3>
+        <div id="machine-ticket"></div>
+        <h3>Barrier <small>E1, E2 entries &middot; X exit</small></h3>
+        <div id="machine-barrier"></div>
+      </div>
+      <div class="card">
+        <h2>Event log</h2>
+        <ul id="log" class="log"></ul>
+      </div>
+    </section>
+  </main>
+
+  <aside id="intentree-panel" hidden></aside>
+  <script type="module" src="../../web/shell.js"></script>
+  <script type="module" src="ui/main.js"></script>
+</body>
+</html>

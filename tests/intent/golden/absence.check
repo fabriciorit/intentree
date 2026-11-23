@@ -1,0 +1,7 @@
+error line 10: 'm' (module) does not presuppose the role 'limit' ('has no limit'); presupposed roles: none
+  hint: this type presupposes no role: there is no absence to declare
+error line 11: 'server:8993' (tcp endpoint) does not presuppose the role 'seed' ('has no seed'); presupposed roles: address, authentication
+  hint: only a role the type presupposes can be declared absent: 'needs no authentication'
+error 'clock': role 'unit' declared absent and filled
+error 'floors': role 'limit' declared absent and filled
+4 errors, 11 entities, 11 facts, 1 invariants, 0 rules, 2 gaps, 0 warnings

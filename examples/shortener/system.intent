@@ -1,0 +1,70 @@
+# shortener: link shortener in Python (stdlib + SQLite) with a static page.
+# Components, globs, exclusions, relations and anchored rules. Anchors come after the period: ^file#symbol.
+
+# --- components and the files that implement them
+The program "server" is implemented in "shortener/**".
+The program "server" contains the module "server.routes", the module "server.entry", the module "server.static", the module "server.stats", the module "server.rules", the module "server.store" and the module "server.code".
+The module "server.routes" is implemented in "shortener/server.py".
+The module "server.entry" is implemented in "shortener/__main__.py".
+The module "server.static" is implemented in "shortener/static.py".
+The module "server.stats" is implemented in "shortener/stats.py".
+The module "server.rules" is implemented in "shortener/{validate,rate_limit}.py".
+The module "server.store" is implemented in "shortener/store.py".
+The module "server.code" is implemented in "shortener/code.py".
+The page "page" is implemented in "static/**".
+The file "gitignore" is implemented in ".gitignore".
+The test suite "tests" is implemented in "tests/**".
+
+# --- relations
+The page "page" uses the module "server.routes".
+The module "server.entry" uses the module "server.routes" and the module "server.store".
+The module "server.routes" uses the module "server.rules", the module "server.store", the module "server.static" and the module "server.stats".
+The module "server.static" reads the page "page".
+The module "server.stats" uses the module "server.store".
+The module "server.store" uses the module "server.code".
+The module "server.store" writes the file "shortener.db".
+The file "gitignore" skips the file "shortener.db".
+The test suite "tests" uses the module "server.routes", the module "server.rules", the module "server.store" and the module "server.code".
+
+# --- environment and headers
+The module "server.routes" reads the environment variable "SHORTENER_ADMIN".
+Note: with SHORTENER_ADMIN unset, deletion always refuses; the value is compared in constant time (hmac.compare_digest).
+The module "server.routes" reads the header "X-Admin-Token", the header "Content-Length" and the header "Referer".
+The module "server.routes" writes the header "Location" and the header "Content-Type".
+
+# --- routes and responses
+The module "server.routes" serves the route "POST /api/links", the route "GET /{code}", the route "GET /api/links/{code}/stats", the route "DELETE /api/links/{code}" and the route "GET /".
+Note: "/" and "/static/app.js" come from the allow list in static.py; the code has 6 base62 characters.
+The route "POST /api/links" responds with the status code "201".
+The route "POST /api/links" responds with the status code "400".
+Note: 400 for a body that is not a JSON object, an invalid URL or an invalid ttl.
+The route "POST /api/links" responds with the status code "429".
+Note: token bucket per IP: 10 creations per 60 s window.
+The route "GET /{code}" redirects to the value "link url".
+Note: responds 302 with the Location header and records the click.
+The route "GET /{code}" responds with the status code "404".
+The route "GET /{code}" responds with the status code "410".
+The route "GET /api/links/{code}/stats" responds with the status code "200".
+The route "GET /api/links/{code}/stats" responds with the status code "404".
+The route "DELETE /api/links/{code}" responds with the status code "204".
+The route "DELETE /api/links/{code}" responds with the status code "403".
+The route "DELETE /api/links/{code}" responds with the status code "404".
+
+# --- numbers and times
+The value "body" is at most 4096.
+Note: BODY_LIMIT, in bytes; a larger or negative Content-Length is refused with 400.
+The value "ttl" is greater than 0.
+Note: in seconds; without a ttl the link never expires.
+The value "tokens" is at most the value "capacity".
+Note: the bucket refills at capacity/window tokens per second and never exceeds the capacity.
+
+# --- rules (anchored)
+# DELETE without a valid token responds 403 before looking up the link; with SHORTENER_ADMIN unset it always refuses
+If the value "admin token" is empty, the route "DELETE /api/links/{code}" responds with the status code "403". ^shortener/server.py#do_DELETE
+# an expired link responds 410 and records no click
+If the record "link" times out, the route "GET /{code}" responds with the status code "410". ^shortener/server.py#do_GET
+If the record "link" times out, the module "server.routes" never writes the record "click".
+# only allow-listed paths are read; any other gives 404
+The module "server.static" never serves the file "shortener.db". ^shortener/static.py#read_page
+# every store write takes the lock and commits before returning
+The module "server.store" is protected by the lock "write lock". ^shortener/store.py#Store

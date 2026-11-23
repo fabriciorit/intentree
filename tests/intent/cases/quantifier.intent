@@ -1,0 +1,14 @@
+# Quantifier: the rule holds for the known members and stays in the IR for future ones.
+The module "dispatch" contains the registry "STRATEGIES".
+The registry "STRATEGIES" contains the strategy "nearest", the strategy "round robin" and the strategy "zone".
+Every strategy in the registry "STRATEGIES" receives the value "floor" and the list "candidates".
+Every strategy in the registry "STRATEGIES" returns the record "Elevator".
+Every strategy in the registry "STRATEGIES" never changes the record "Elevator".
+Every strategy in the registry "STRATEGIES" is deterministic.
+# an explicit sentence equal to an expansion is not duplicated
+The strategy "zone" returns the record "Elevator".
+# empty set: warning
+Every strategy in the module "simulator" returns the value "None".
+# errors: quantified subject outside the frame, quantifier in the condition
+Every module in the program "p" starts in the state "x".
+If every strategy in the registry "STRATEGIES" returns the value "None", the module "simulator" skips the list "waiting".

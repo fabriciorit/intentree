@@ -1,0 +1,1442 @@
+{
+ "lexicon": "0.3",
+ "entities": [
+  {
+   "id": "00875aba79",
+   "name": "curl",
+   "type": "e.process",
+   "attrs": {}
+  },
+  {
+   "id": "0269e0168a",
+   "name": "127.0.0.1:1883",
+   "type": "f.mqtt",
+   "attrs": {}
+  },
+  {
+   "id": "0e12378dce",
+   "name": "external app",
+   "type": "p.state",
+   "attrs": {}
+  },
+  {
+   "id": "0ff6504f28",
+   "name": "dev workstation",
+   "type": "e.machine",
+   "attrs": {}
+  },
+  {
+   "id": "1247479c6e",
+   "name": "consecutive A2 per region",
+   "type": "p.counter",
+   "attrs": {}
+  },
+  {
+   "id": "1539d84453",
+   "name": "screen ownership",
+   "type": "p.state_machine",
+   "attrs": {}
+  },
+  {
+   "id": "1a64cfa1bd",
+   "name": "ghosting cleanup",
+   "type": "e.event",
+   "attrs": {}
+  },
+  {
+   "id": "1b61f866ea",
+   "name": "control",
+   "type": "p.thread",
+   "attrs": {}
+  },
+  {
+   "id": "1bad577731",
+   "name": "chrome-headless-shell",
+   "type": "e.process",
+   "attrs": {}
+  },
+  {
+   "id": "21499af11a",
+   "name": "mosquitto",
+   "type": "e.process",
+   "attrs": {}
+  },
+  {
+   "id": "24aa6b87db",
+   "name": "wall_panel",
+   "type": "e.program",
+   "attrs": {}
+  },
+  {
+   "id": "27f856766d",
+   "name": "open-meteo",
+   "type": "e.web_service",
+   "attrs": {}
+  },
+  {
+   "id": "283f67821e",
+   "name": "udhcpc",
+   "type": "e.process",
+   "attrs": {}
+  },
+  {
+   "id": "2ae6af90e6",
+   "name": "GC16",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "2da1fad8ec",
+   "name": "server:8993",
+   "type": "f.tcp",
+   "attrs": {}
+  },
+  {
+   "id": "32e4a7e7b5",
+   "name": "normal",
+   "type": "p.state",
+   "attrs": {}
+  },
+  {
+   "id": "34e7e089b9",
+   "name": "session ping",
+   "type": "p.thread",
+   "attrs": {}
+  },
+  {
+   "id": "352ec705f8",
+   "name": "alert",
+   "type": "p.state",
+   "attrs": {}
+  },
+  {
+   "id": "3fb15ad482",
+   "name": "waiting backoff",
+   "type": "p.state",
+   "attrs": {}
+  },
+  {
+   "id": "4979ac44b9",
+   "name": "session",
+   "type": "e.connection",
+   "attrs": {}
+  },
+  {
+   "id": "498efc8ebb",
+   "name": "connection",
+   "type": "p.state_machine",
+   "attrs": {}
+  },
+  {
+   "id": "51b51ab6d0",
+   "name": "systemd, Nice 19",
+   "type": "p.execution_context",
+   "attrs": {}
+  },
+  {
+   "id": "55abfefd0c",
+   "name": "disconnected",
+   "type": "p.state",
+   "attrs": {}
+  },
+  {
+   "id": "55f3657921",
+   "name": "dark theme",
+   "type": "e.page",
+   "attrs": {}
+  },
+  {
+   "id": "5a9e08d2d6",
+   "name": "low SOC",
+   "type": "e.alert",
+   "attrs": {}
+  },
+  {
+   "id": "5e5c01a021",
+   "name": "0.0.0.0:9222",
+   "type": "f.cdp",
+   "attrs": {}
+  },
+  {
+   "id": "5f58b24d3d",
+   "name": "rectangle",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "5f5f6b4c17",
+   "name": "paneld",
+   "type": "e.process",
+   "attrs": {}
+  },
+  {
+   "id": "5f9c4bedcb",
+   "name": "init session",
+   "type": "p.execution_context",
+   "attrs": {}
+  },
+  {
+   "id": "5fc8e60f4b",
+   "name": "launcher.html",
+   "type": "e.page",
+   "attrs": {}
+  },
+  {
+   "id": "617040a222",
+   "name": "SOC alert",
+   "type": "p.state_machine",
+   "attrs": {}
+  },
+  {
+   "id": "63999eed7d",
+   "name": "Store",
+   "type": "p.key_value_store",
+   "attrs": {}
+  },
+  {
+   "id": "67b4fc0589",
+   "name": "home/sensor/data",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "6852f53d7b",
+   "name": "forecast",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "6ac0aaccb9",
+   "name": "connected",
+   "type": "p.state",
+   "attrs": {}
+  },
+  {
+   "id": "6ac54e3f73",
+   "name": "native render",
+   "type": "e.function",
+   "attrs": {}
+  },
+  {
+   "id": "6b0956d036",
+   "name": "FB_WAIT_UPDATE",
+   "type": "e.function",
+   "attrs": {}
+  },
+  {
+   "id": "852e6a4d2a",
+   "name": "buffer L8 1072x1448",
+   "type": "e.device",
+   "attrs": {}
+  },
+  {
+   "id": "86fe8d78d6",
+   "name": "accept device",
+   "type": "p.thread",
+   "attrs": {}
+  },
+  {
+   "id": "87a58a5cd4",
+   "name": "config.json",
+   "type": "e.config",
+   "attrs": {}
+  },
+  {
+   "id": "8844a5312d",
+   "name": "BLIT",
+   "type": "e.message",
+   "attrs": {}
+  },
+  {
+   "id": "8bc8605841",
+   "name": "TOUCH",
+   "type": "e.message",
+   "attrs": {}
+  },
+  {
+   "id": "8c20394c1a",
+   "name": "home/weather/#",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "92a3927bd6",
+   "name": "digitizer",
+   "type": "e.device",
+   "attrs": {}
+  },
+  {
+   "id": "937d2999dc",
+   "name": "data key",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "96a04763bf",
+   "name": "touch targets",
+   "type": "p.list",
+   "attrs": {}
+  },
+  {
+   "id": "96df3238e3",
+   "name": "pages",
+   "type": "e.directory",
+   "attrs": {}
+  },
+  {
+   "id": "9dc0418aa1",
+   "name": "session",
+   "type": "p.state",
+   "attrs": {}
+  },
+  {
+   "id": "a2457f4a6e",
+   "name": "A2",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "a309bc53d9",
+   "name": "server host",
+   "type": "e.machine",
+   "attrs": {}
+  },
+  {
+   "id": "a4b166b197",
+   "name": "mqtt",
+   "type": "p.thread",
+   "attrs": {}
+  },
+  {
+   "id": "a629d52541",
+   "name": "EPDC framebuffer",
+   "type": "e.device",
+   "attrs": {}
+  },
+  {
+   "id": "adbe167c05",
+   "name": "weather",
+   "type": "p.thread",
+   "attrs": {}
+  },
+  {
+   "id": "b14ef7003f",
+   "name": "alert queue",
+   "type": "p.queue",
+   "attrs": {}
+  },
+  {
+   "id": "b9ef05c2e9",
+   "name": "clock",
+   "type": "p.thread",
+   "attrs": {}
+  },
+  {
+   "id": "bbd012d88c",
+   "name": "deploy.sh",
+   "type": "e.shell_script",
+   "attrs": {}
+  },
+  {
+   "id": "c0256a685e",
+   "name": "reconnect backoff",
+   "type": "p.timer",
+   "attrs": {}
+  },
+  {
+   "id": "c37e8cb857",
+   "name": "navigation stack",
+   "type": "p.stack",
+   "attrs": {}
+  },
+  {
+   "id": "c46581e75a",
+   "name": "SingletonLock",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "cbc66a7c59",
+   "name": "panel device",
+   "type": "e.machine",
+   "attrs": {}
+  },
+  {
+   "id": "d54ed0e22e",
+   "name": "page",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "db0f77958f",
+   "name": "panel-server",
+   "type": "e.process",
+   "attrs": {}
+  },
+  {
+   "id": "dbe742e24b",
+   "name": "home.html",
+   "type": "e.page",
+   "attrs": {}
+  },
+  {
+   "id": "e2cade7145",
+   "name": "physical screen edge",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "e347ac0cc7",
+   "name": "home/energy/#",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "ed53af471a",
+   "name": "systemd panel-server.service",
+   "type": "p.execution_context",
+   "attrs": {}
+  },
+  {
+   "id": "ee8ff7efc2",
+   "name": "monitor",
+   "type": "p.thread",
+   "attrs": {}
+  },
+  {
+   "id": "ee9dcf0e3d",
+   "name": "server:9000",
+   "type": "f.http",
+   "attrs": {}
+  },
+  {
+   "id": "eead0da46d",
+   "name": "dead source",
+   "type": "e.alert",
+   "attrs": {}
+  },
+  {
+   "id": "eec3b9c979",
+   "name": "CMD launch app",
+   "type": "e.message",
+   "attrs": {}
+  },
+  {
+   "id": "f94c4a234d",
+   "name": "home.soc",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "ffd99a9f84",
+   "name": "screen cache",
+   "type": "p.map",
+   "attrs": {}
+  }
+ ],
+ "facts": [
+  {
+   "adj": "adj.bounded",
+   "rel": "prop",
+   "subject": "b14ef7003f"
+  },
+  {
+   "adj": "adj.immutable",
+   "rel": "prop",
+   "subject": "87a58a5cd4"
+  },
+  {
+   "literal": "1 s to 60 s",
+   "mode": null,
+   "rel": "a.repeats_every",
+   "roles": {},
+   "seconds": [
+    1.0,
+    60.0
+   ],
+   "subject": "c0256a685e"
+  },
+  {
+   "literal": "1800 s",
+   "mode": null,
+   "rel": "a.repeats_every",
+   "roles": {},
+   "seconds": [
+    1800.0
+   ],
+   "subject": "adbe167c05"
+  },
+  {
+   "literal": "30 s",
+   "mode": null,
+   "rel": "a.times_out_after",
+   "roles": {},
+   "seconds": [
+    30.0
+   ],
+   "subject": "4979ac44b9"
+  },
+  {
+   "literal": "5 s",
+   "mode": null,
+   "rel": "a.repeats_every",
+   "roles": {},
+   "seconds": [
+    5.0
+   ],
+   "subject": "34e7e089b9"
+  },
+  {
+   "literal": "60 s",
+   "mode": null,
+   "rel": "a.repeats_every",
+   "roles": {},
+   "seconds": [
+    60.0
+   ],
+   "subject": "b9ef05c2e9"
+  },
+  {
+   "mode": null,
+   "object": "00875aba79",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "24aa6b87db"
+  },
+  {
+   "mode": null,
+   "object": "00875aba79",
+   "rel": "a.launches",
+   "roles": {},
+   "subject": "adbe167c05"
+  },
+  {
+   "mode": null,
+   "object": "0269e0168a",
+   "rel": "a.connects_to",
+   "roles": {},
+   "subject": "a4b166b197"
+  },
+  {
+   "mode": null,
+   "object": "0269e0168a",
+   "rel": "a.listens_on",
+   "roles": {},
+   "subject": "21499af11a"
+  },
+  {
+   "mode": null,
+   "object": "0e12378dce",
+   "rel": "a.has_states",
+   "roles": {},
+   "subject": "1539d84453"
+  },
+  {
+   "mode": null,
+   "object": "0ff6504f28",
+   "rel": "a.runs_in",
+   "roles": {},
+   "subject": "bbd012d88c"
+  },
+  {
+   "mode": null,
+   "object": "1539d84453",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "5f5f6b4c17"
+  },
+  {
+   "mode": null,
+   "object": "1539d84453",
+   "rel": "a.moves",
+   "roles": {
+    "from": "0e12378dce",
+    "to": "9dc0418aa1"
+   },
+   "subject": "5f5f6b4c17"
+  },
+  {
+   "mode": null,
+   "object": "1539d84453",
+   "rel": "a.moves",
+   "roles": {
+    "from": "9dc0418aa1",
+    "to": "0e12378dce"
+   },
+   "subject": "5f5f6b4c17"
+  },
+  {
+   "mode": null,
+   "object": "1b61f866ea",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "db0f77958f"
+  },
+  {
+   "mode": null,
+   "object": "1bad577731",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "24aa6b87db"
+  },
+  {
+   "mode": null,
+   "object": "1bad577731",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "db0f77958f"
+  },
+  {
+   "mode": null,
+   "object": "21499af11a",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "24aa6b87db"
+  },
+  {
+   "mode": null,
+   "object": "2da1fad8ec",
+   "rel": "a.connects_to",
+   "roles": {},
+   "subject": "5f5f6b4c17"
+  },
+  {
+   "mode": null,
+   "object": "2da1fad8ec",
+   "rel": "a.listens_on",
+   "roles": {},
+   "subject": "db0f77958f"
+  },
+  {
+   "mode": null,
+   "object": "32e4a7e7b5",
+   "rel": "a.has_states",
+   "roles": {},
+   "subject": "617040a222"
+  },
+  {
+   "mode": null,
+   "object": "32e4a7e7b5",
+   "rel": "a.starts_in",
+   "roles": {},
+   "subject": "617040a222"
+  },
+  {
+   "mode": null,
+   "object": "34e7e089b9",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "db0f77958f"
+  },
+  {
+   "mode": null,
+   "object": "352ec705f8",
+   "rel": "a.has_states",
+   "roles": {},
+   "subject": "617040a222"
+  },
+  {
+   "mode": null,
+   "object": "3fb15ad482",
+   "rel": "a.has_states",
+   "roles": {},
+   "subject": "498efc8ebb"
+  },
+  {
+   "mode": null,
+   "object": "498efc8ebb",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "5f5f6b4c17"
+  },
+  {
+   "mode": null,
+   "object": "498efc8ebb",
+   "rel": "a.moves",
+   "roles": {
+    "from": "3fb15ad482",
+    "to": "55abfefd0c"
+   },
+   "subject": "5f5f6b4c17"
+  },
+  {
+   "mode": null,
+   "object": "498efc8ebb",
+   "rel": "a.moves",
+   "roles": {
+    "from": "55abfefd0c",
+    "to": "6ac0aaccb9"
+   },
+   "subject": "5f5f6b4c17"
+  },
+  {
+   "mode": null,
+   "object": "498efc8ebb",
+   "rel": "a.moves",
+   "roles": {
+    "from": "6ac0aaccb9",
+    "to": "3fb15ad482"
+   },
+   "subject": "5f5f6b4c17"
+  },
+  {
+   "mode": null,
+   "object": "51b51ab6d0",
+   "rel": "a.runs_in",
+   "roles": {},
+   "subject": "1bad577731"
+  },
+  {
+   "mode": null,
+   "object": "55abfefd0c",
+   "rel": "a.has_states",
+   "roles": {},
+   "subject": "498efc8ebb"
+  },
+  {
+   "mode": null,
+   "object": "55abfefd0c",
+   "rel": "a.starts_in",
+   "roles": {},
+   "subject": "498efc8ebb"
+  },
+  {
+   "mode": null,
+   "object": "55f3657921",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "96df3238e3"
+  },
+  {
+   "mode": null,
+   "object": "5e5c01a021",
+   "rel": "a.connects_to",
+   "roles": {},
+   "subject": "db0f77958f"
+  },
+  {
+   "mode": null,
+   "object": "5e5c01a021",
+   "rel": "a.listens_on",
+   "roles": {},
+   "subject": "1bad577731"
+  },
+  {
+   "mode": null,
+   "object": "5f5f6b4c17",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "24aa6b87db"
+  },
+  {
+   "mode": null,
+   "object": "5f9c4bedcb",
+   "rel": "a.runs_in",
+   "roles": {},
+   "subject": "5f5f6b4c17"
+  },
+  {
+   "mode": null,
+   "object": "5fc8e60f4b",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "96df3238e3"
+  },
+  {
+   "mode": null,
+   "object": "617040a222",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "db0f77958f"
+  },
+  {
+   "mode": null,
+   "object": "617040a222",
+   "rel": "a.moves",
+   "roles": {
+    "from": "32e4a7e7b5",
+    "to": "352ec705f8"
+   },
+   "subject": "ee8ff7efc2"
+  },
+  {
+   "mode": null,
+   "object": "617040a222",
+   "rel": "a.moves",
+   "roles": {
+    "from": "352ec705f8",
+    "to": "32e4a7e7b5"
+   },
+   "subject": "ee8ff7efc2"
+  },
+  {
+   "mode": null,
+   "object": "63999eed7d",
+   "rel": "a.consumes",
+   "roles": {},
+   "subject": "86fe8d78d6"
+  },
+  {
+   "mode": null,
+   "object": "63999eed7d",
+   "rel": "a.consumes",
+   "roles": {},
+   "subject": "ee8ff7efc2"
+  },
+  {
+   "mode": null,
+   "object": "63999eed7d",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "db0f77958f"
+  },
+  {
+   "mode": null,
+   "object": "63999eed7d",
+   "rel": "a.fills",
+   "roles": {},
+   "subject": "a4b166b197"
+  },
+  {
+   "mode": null,
+   "object": "63999eed7d",
+   "rel": "a.fills",
+   "roles": {},
+   "subject": "adbe167c05"
+  },
+  {
+   "mode": null,
+   "object": "63999eed7d",
+   "rel": "a.fills",
+   "roles": {},
+   "subject": "b9ef05c2e9"
+  },
+  {
+   "mode": null,
+   "object": "67b4fc0589",
+   "rel": "a.subscribes_to",
+   "roles": {},
+   "subject": "a4b166b197"
+  },
+  {
+   "mode": null,
+   "object": "6852f53d7b",
+   "rel": "a.reads",
+   "roles": {
+    "from": "27f856766d"
+   },
+   "subject": "00875aba79"
+  },
+  {
+   "mode": null,
+   "object": "6ac0aaccb9",
+   "rel": "a.has_states",
+   "roles": {},
+   "subject": "498efc8ebb"
+  },
+  {
+   "mode": null,
+   "object": "86fe8d78d6",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "db0f77958f"
+  },
+  {
+   "mode": null,
+   "object": "87a58a5cd4",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "db0f77958f"
+  },
+  {
+   "mode": null,
+   "object": "87a58a5cd4",
+   "rel": "a.reads",
+   "roles": {},
+   "subject": "db0f77958f"
+  },
+  {
+   "mode": null,
+   "object": "87a58a5cd4",
+   "rel": "a.validates",
+   "roles": {},
+   "subject": "db0f77958f"
+  },
+  {
+   "mode": null,
+   "object": "8844a5312d",
+   "rel": "a.sends",
+   "roles": {
+    "to": "5f5f6b4c17"
+   },
+   "subject": "db0f77958f"
+  },
+  {
+   "mode": null,
+   "object": "8bc8605841",
+   "rel": "a.sends",
+   "roles": {
+    "to": "db0f77958f"
+   },
+   "subject": "5f5f6b4c17"
+  },
+  {
+   "mode": null,
+   "object": "8c20394c1a",
+   "rel": "a.subscribes_to",
+   "roles": {},
+   "subject": "a4b166b197"
+  },
+  {
+   "mode": null,
+   "object": "92a3927bd6",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "5f5f6b4c17"
+  },
+  {
+   "mode": null,
+   "object": "937d2999dc",
+   "rel": "a.keyed_by",
+   "roles": {},
+   "subject": "63999eed7d"
+  },
+  {
+   "mode": null,
+   "object": "96a04763bf",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "5f5f6b4c17"
+  },
+  {
+   "mode": null,
+   "object": "96a04763bf",
+   "rel": "a.resolves",
+   "roles": {},
+   "subject": "5f5f6b4c17"
+  },
+  {
+   "mode": null,
+   "object": "96df3238e3",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "24aa6b87db"
+  },
+  {
+   "mode": null,
+   "object": "96df3238e3",
+   "rel": "a.writes",
+   "roles": {
+    "to": "a309bc53d9"
+   },
+   "subject": "bbd012d88c"
+  },
+  {
+   "mode": null,
+   "object": "9dc0418aa1",
+   "rel": "a.has_states",
+   "roles": {},
+   "subject": "1539d84453"
+  },
+  {
+   "mode": null,
+   "object": "9dc0418aa1",
+   "rel": "a.starts_in",
+   "roles": {},
+   "subject": "1539d84453"
+  },
+  {
+   "mode": null,
+   "object": "a309bc53d9",
+   "rel": "a.runs_in",
+   "roles": {},
+   "subject": "00875aba79"
+  },
+  {
+   "mode": null,
+   "object": "a309bc53d9",
+   "rel": "a.runs_in",
+   "roles": {},
+   "subject": "1bad577731"
+  },
+  {
+   "mode": null,
+   "object": "a309bc53d9",
+   "rel": "a.runs_in",
+   "roles": {},
+   "subject": "21499af11a"
+  },
+  {
+   "mode": null,
+   "object": "a309bc53d9",
+   "rel": "a.runs_in",
+   "roles": {},
+   "subject": "db0f77958f"
+  },
+  {
+   "mode": null,
+   "object": "a4b166b197",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "db0f77958f"
+  },
+  {
+   "mode": null,
+   "object": "a629d52541",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "5f5f6b4c17"
+  },
+  {
+   "mode": null,
+   "object": "adbe167c05",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "db0f77958f"
+  },
+  {
+   "mode": null,
+   "object": "b14ef7003f",
+   "rel": "a.consumes",
+   "roles": {},
+   "subject": "86fe8d78d6"
+  },
+  {
+   "mode": null,
+   "object": "b14ef7003f",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "db0f77958f"
+  },
+  {
+   "mode": null,
+   "object": "b14ef7003f",
+   "rel": "a.fills",
+   "roles": {},
+   "subject": "1b61f866ea"
+  },
+  {
+   "mode": null,
+   "object": "b14ef7003f",
+   "rel": "a.fills",
+   "roles": {},
+   "subject": "ee8ff7efc2"
+  },
+  {
+   "mode": null,
+   "object": "b9ef05c2e9",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "db0f77958f"
+  },
+  {
+   "mode": null,
+   "object": "bbd012d88c",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "24aa6b87db"
+  },
+  {
+   "mode": null,
+   "object": "c0256a685e",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "5f5f6b4c17"
+  },
+  {
+   "mode": null,
+   "object": "c37e8cb857",
+   "rel": "a.changes",
+   "roles": {},
+   "subject": "86fe8d78d6"
+  },
+  {
+   "mode": null,
+   "object": "c37e8cb857",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "db0f77958f"
+  },
+  {
+   "mode": null,
+   "object": "cbc66a7c59",
+   "rel": "a.runs_in",
+   "roles": {},
+   "subject": "5f5f6b4c17"
+  },
+  {
+   "mode": null,
+   "object": "d54ed0e22e",
+   "rel": "a.keyed_by",
+   "roles": {},
+   "subject": "ffd99a9f84"
+  },
+  {
+   "mode": null,
+   "object": "db0f77958f",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "24aa6b87db"
+  },
+  {
+   "mode": null,
+   "object": "db0f77958f",
+   "rel": "a.writes",
+   "roles": {
+    "to": "a309bc53d9"
+   },
+   "subject": "bbd012d88c"
+  },
+  {
+   "mode": null,
+   "object": "dbe742e24b",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "96df3238e3"
+  },
+  {
+   "mode": null,
+   "object": "dbe742e24b",
+   "rel": "a.reads",
+   "roles": {
+    "from": "96df3238e3"
+   },
+   "subject": "db0f77958f"
+  },
+  {
+   "mode": null,
+   "object": "dbe742e24b",
+   "rel": "a.renders",
+   "roles": {
+    "into": "852e6a4d2a"
+   },
+   "subject": "db0f77958f"
+  },
+  {
+   "mode": null,
+   "object": "e347ac0cc7",
+   "rel": "a.subscribes_to",
+   "roles": {},
+   "subject": "a4b166b197"
+  },
+  {
+   "mode": null,
+   "object": "ed53af471a",
+   "rel": "a.runs_in",
+   "roles": {},
+   "subject": "db0f77958f"
+  },
+  {
+   "mode": null,
+   "object": "ee8ff7efc2",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "db0f77958f"
+  },
+  {
+   "mode": null,
+   "object": "ee9dcf0e3d",
+   "rel": "a.listens_on",
+   "roles": {},
+   "subject": "db0f77958f"
+  },
+  {
+   "mode": null,
+   "object": "eec3b9c979",
+   "rel": "a.sends",
+   "roles": {
+    "to": "5f5f6b4c17"
+   },
+   "subject": "db0f77958f"
+  },
+  {
+   "mode": null,
+   "object": "ffd99a9f84",
+   "rel": "a.changes",
+   "roles": {},
+   "subject": "86fe8d78d6"
+  },
+  {
+   "mode": null,
+   "object": "ffd99a9f84",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "db0f77958f"
+  },
+  {
+   "rel": "absent",
+   "role": "authentication",
+   "subject": "2da1fad8ec"
+  }
+ ],
+ "invariants": [
+  {
+   "if": [
+    {
+     "adj": "adj.monochrome",
+     "rel": "prop",
+     "subject": "5f58b24d3d"
+    }
+   ],
+   "then": [
+    {
+     "mode": null,
+     "object": "a2457f4a6e",
+     "rel": "a.uses",
+     "roles": {},
+     "subject": "db0f77958f"
+    }
+   ],
+   "type": "if"
+  },
+  {
+   "if": [
+    {
+     "mode": null,
+     "object": null,
+     "rel": "a.changes",
+     "roles": {},
+     "subject": "c37e8cb857"
+    }
+   ],
+   "then": [
+    {
+     "mode": null,
+     "object": "2ae6af90e6",
+     "rel": "a.uses",
+     "roles": {},
+     "subject": "db0f77958f"
+    }
+   ],
+   "type": "if"
+  },
+  {
+   "if": [
+    {
+     "mode": null,
+     "object": null,
+     "rel": "a.closes",
+     "roles": {},
+     "subject": "4979ac44b9"
+    }
+   ],
+   "then": [
+    {
+     "mode": null,
+     "object": "2da1fad8ec",
+     "rel": "a.connects_to",
+     "roles": {},
+     "subject": "5f5f6b4c17"
+    }
+   ],
+   "type": "if"
+  },
+  {
+   "if": [
+    {
+     "mode": null,
+     "object": null,
+     "rel": "a.launches",
+     "roles": {},
+     "subject": "1bad577731"
+    }
+   ],
+   "then": [
+    {
+     "mode": null,
+     "object": "c46581e75a",
+     "rel": "a.removes",
+     "roles": {},
+     "subject": "1bad577731"
+    }
+   ],
+   "type": "when"
+  },
+  {
+   "if": [
+    {
+     "mode": null,
+     "object": null,
+     "rel": "a.times_out",
+     "roles": {},
+     "subject": "4979ac44b9"
+    }
+   ],
+   "then": [
+    {
+     "mode": null,
+     "object": "283f67821e",
+     "rel": "a.launches",
+     "roles": {},
+     "subject": "5f5f6b4c17"
+    }
+   ],
+   "type": "if"
+  },
+  {
+   "if": [
+    {
+     "mode": null,
+     "object": null,
+     "rel": "a.times_out",
+     "roles": {},
+     "subject": "5e5c01a021"
+    }
+   ],
+   "then": [
+    {
+     "mode": null,
+     "object": "6ac54e3f73",
+     "rel": "a.falls_back_to",
+     "roles": {},
+     "subject": "db0f77958f"
+    }
+   ],
+   "type": "if"
+  },
+  {
+   "if": [
+    {
+     "mode": null,
+     "object": null,
+     "rel": "a.times_out",
+     "roles": {},
+     "subject": "a4b166b197"
+    }
+   ],
+   "then": [
+    {
+     "mode": null,
+     "object": "eead0da46d",
+     "rel": "a.publishes",
+     "roles": {
+      "to": "b14ef7003f"
+     },
+     "subject": "ee8ff7efc2"
+    }
+   ],
+   "type": "if"
+  },
+  {
+   "if": [
+    {
+     "op": "<",
+     "rel": "c.limit",
+     "subject": "f94c4a234d",
+     "value": 30.0
+    }
+   ],
+   "then": [
+    {
+     "mode": null,
+     "object": "5a9e08d2d6",
+     "rel": "a.publishes",
+     "roles": {
+      "to": "b14ef7003f"
+     },
+     "subject": "ee8ff7efc2"
+    }
+   ],
+   "type": "if"
+  },
+  {
+   "if": [
+    {
+     "op": ">",
+     "rel": "c.limit",
+     "subject": "f94c4a234d",
+     "value": 35.0
+    }
+   ],
+   "then": [
+    {
+     "mode": null,
+     "object": "5a9e08d2d6",
+     "rel": "a.removes",
+     "roles": {
+      "from": "b14ef7003f"
+     },
+     "subject": "ee8ff7efc2"
+    }
+   ],
+   "type": "if"
+  },
+  {
+   "if": [
+    {
+     "op": ">=",
+     "rel": "c.limit",
+     "subject": "1247479c6e",
+     "value": 8.0
+    }
+   ],
+   "then": [
+    {
+     "mode": null,
+     "object": "1a64cfa1bd",
+     "rel": "a.dispatches",
+     "roles": {},
+     "subject": "db0f77958f"
+    }
+   ],
+   "type": "if"
+  },
+  {
+   "then": [
+    {
+     "mode": "not",
+     "object": "6b0956d036",
+     "rel": "a.calls",
+     "roles": {},
+     "subject": "5f5f6b4c17"
+    }
+   ],
+   "type": "not"
+  },
+  {
+   "then": [
+    {
+     "mode": "not",
+     "object": "87a58a5cd4",
+     "rel": "a.overwrites",
+     "roles": {},
+     "subject": "bbd012d88c"
+    }
+   ],
+   "type": "not"
+  },
+  {
+   "then": [
+    {
+     "mode": "not",
+     "object": "e2cade7145",
+     "rel": "a.changes",
+     "roles": {},
+     "subject": "db0f77958f"
+    }
+   ],
+   "type": "not"
+  }
+ ],
+ "rules": [],
+ "gaps": [
+  {
+   "entity": "0269e0168a",
+   "role": "authentication",
+   "type": "f.mqtt"
+  },
+  {
+   "entity": "5e5c01a021",
+   "role": "authentication",
+   "type": "f.cdp"
+  },
+  {
+   "entity": "ee9dcf0e3d",
+   "role": "authentication",
+   "type": "f.http"
+  }
+ ],
+ "warnings": [],
+ "errors": [],
+ "notes": []
+}

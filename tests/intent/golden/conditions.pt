@@ -1,0 +1,7 @@
+A máquina de estados “sm” começa no estado “x”.
+
+Enquanto o módulo “m” imprime “a” e “b”, o módulo “m” usa o módulo “n”.
+Quando o módulo “m” lê o valor “rate” e o valor “z”, o módulo “m” não altera o valor “z”.
+Se o módulo “m” envia a mensagem “a”, a mensagem “b” e a mensagem “c” pela conexão “k” para o processo “p”, o processo “p” fecha a conexão “k”.
+Se a máquina de estados “sm” tem os estados “x” e “y”, o módulo “m” inicia o processo “p”.
+Se o módulo “m” grava o registro “r” e o registro “s” no arquivo “f”, o módulo “n” lê o arquivo “f”.

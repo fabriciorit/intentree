@@ -1,0 +1,11 @@
+O catálogo “STRATEGIES” contém a estratégia “round robin”.
+O catálogo “STRATEGIES” contém a estratégia “zone”.
+O módulo “dispatch” contém o catálogo “STRATEGIES”.
+O catálogo “STRATEGIES” contém a estratégia “nearest”.
+
+Toda estratégia no módulo “simulator” devolve o valor “None”.
+Toda estratégia no catálogo “STRATEGIES” é determinística.
+Toda estratégia no catálogo “STRATEGIES” não altera o registro “Elevator”.
+Toda estratégia no catálogo “STRATEGIES” recebe o valor “floor”.
+Toda estratégia no catálogo “STRATEGIES” devolve o registro “Elevator”.
+Toda estratégia no catálogo “STRATEGIES” recebe a lista “candidates”.

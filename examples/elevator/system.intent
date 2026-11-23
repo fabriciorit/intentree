@@ -1,0 +1,77 @@
+# elevator: elevator simulation in Python (Poisson arrivals, three dispatch strategies, metrics, CSV).
+# Components, globs, exclusions, relations and anchored rules. Anchors come after the period.
+
+# --- components and the files that implement them
+The program "elevator" contains the module "cli", the module "text_output", the module "csv_output", the module "execution", the module "simulator", the module "elevator", the module "dispatch", the module "passengers", the module "metrics", the module "config" and the test suite "tests".
+The module "cli" is implemented in "elevator/{__init__,__main__,cli}.py".
+The module "text_output" is implemented in "elevator/{report,timeline}.py".
+The module "csv_output" is implemented in "elevator/output.py".
+The module "execution" is implemented in "elevator/execution.py".
+The module "simulator" is implemented in "elevator/{simulator,events}.py".
+The module "elevator" is implemented in "elevator/elevator.py".
+The module "dispatch" is implemented in "elevator/dispatch.py".
+The module "passengers" is implemented in "elevator/passengers.py".
+The module "metrics" is implemented in "elevator/metrics.py".
+The module "config" is implemented in "elevator/config.py".
+The test suite "tests" is implemented in "tests/**".
+# the .gitignore is not code
+The program "elevator" excludes ".gitignore".
+
+# what each module holds and the rules below cite
+The module "passengers" contains the random generator "per-floor rng".
+The module "simulator" contains the priority queue "EventQueue".
+The module "dispatch" contains the registry "STRATEGIES".
+The registry "STRATEGIES" contains the strategy "nearest", the strategy "round_robin" and the strategy "zone".
+
+# --- relations
+The module "cli" uses the module "dispatch", the module "execution", the module "metrics", the module "text_output", the module "csv_output" and the module "config".
+The module "execution" uses the module "simulator", the module "dispatch" and the module "passengers".
+The module "simulator" uses the module "elevator".
+The module "dispatch" uses the module "elevator".
+The module "config" reads the json document "config.json".
+The module "csv_output" writes the csv file "output.csv".
+The test suite "tests" uses the module "cli", the module "text_output", the module "execution", the module "simulator", the module "elevator", the module "dispatch", the module "passengers", the module "metrics" and the module "config".
+
+# --- layers (each layer sits above the next)
+The layer "interface" is above the layer "execution".
+The layer "execution" is above the layer "domain".
+The layer "domain" is above the layer "data".
+The layer "data" is above the layer "external".
+The module "cli" is in the layer "interface".
+The module "text_output" is in the layer "interface".
+The module "csv_output" is in the layer "interface".
+The module "execution" is in the layer "execution".
+The module "simulator" is in the layer "domain".
+The module "elevator" is in the layer "domain".
+The module "dispatch" is in the layer "domain".
+The module "passengers" is in the layer "domain".
+The module "metrics" is in the layer "domain".
+The module "config" is in the layer "data".
+The json document "config.json" is in the layer "external".
+The csv file "output.csv" is in the layer "external".
+
+# --- rules (anchored)
+# ties at the same instant are broken by scheduling order: deterministic simulation
+The priority queue "EventQueue" is ordered by the value "simulated time". ^elevator/events.py#EventQueue
+The priority queue "EventQueue" breaks ties by the value "scheduling order". ^elevator/events.py#EventQueue
+The module "simulator" is deterministic. ^elevator/events.py#EventQueue
+# an unserved passenger at the end aborts the simulation
+If the value "completed passengers" is not the value "generated passengers", the module "simulator" raises the error "RuntimeError". ^elevator/simulator.py#Simulator
+# round robin keeps state between calls
+The strategy "round_robin" is stateful. ^elevator/dispatch.py#create_round_robin
+# every strategy picks among the candidates for a floor call; with no candidate, None
+Every strategy in the registry "STRATEGIES" receives the value "floor" and the list "candidates".
+Every strategy in the registry "STRATEGIES" returns the record "Elevator" and the value "None".
+# per-floor seed: changing the floor count changes the whole list
+When the field "floors" changes, the random generator "per-floor rng" changes the list "passengers". ^elevator/passengers.py#generate
+The field "floors" is at least 2.
+The random generator "per-floor rng" is seeded with the field "seed" and the value "origin floor".
+The field "seed" has no limit.
+# the timeline has symbols for up to 36 floors; above that it prints ?
+If the field "floors" is greater than 36, the module "text_output" prints the value "?". ^elevator/timeline.py#_symbol
+
+# declared view: the contract of the dispatch strategies
+The view "strategy contract" shows the registry "STRATEGIES".
+The view "strategy contract" shows every "strategy".
+The view "strategy contract" shows the record "Elevator", the list "candidates" and the value "floor".
+The view "strategy contract" has the form "matrix".

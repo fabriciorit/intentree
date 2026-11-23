@@ -1,0 +1,102 @@
+# minimake: minimal make in Python with a content-hash cache, parallel execution and --graph.
+# Components, globs, exclusions, relations and anchored rules. Anchors come after the period: ^file#symbol.
+
+# --- components and the files that implement them
+The program "minimake" contains the module "cli", the module "chart", the module "executor", the module "commands", the module "buildfile", the module "graph", the module "decision", the module "hashing", the module "errors", the module "cache" and the test suite "tests".
+The module "cli" is implemented in "minimake/{__init__,__main__,cli}.py".
+The module "chart" is implemented in "minimake/chart.py".
+The module "executor" is implemented in "minimake/executor.py".
+The module "commands" is implemented in "minimake/commands.py".
+The module "buildfile" is implemented in "minimake/buildfile.py".
+The module "graph" is implemented in "minimake/graph.py".
+The module "decision" is implemented in "minimake/decision.py".
+The module "hashing" is implemented in "minimake/hashing.py".
+The module "errors" is implemented in "minimake/errors.py".
+The module "cache" is implemented in "minimake/cache.py".
+The test suite "tests" is implemented in "tests/**".
+# the .gitignore is not code
+The program "minimake" excludes ".gitignore".
+
+# --- relations
+The module "cli" uses the module "buildfile", the module "graph", the module "chart", the module "executor" and the module "errors".
+The module "chart" uses the module "buildfile".
+The module "graph" uses the module "buildfile" and the module "errors".
+The module "graph" reads the file "target and dependency files".
+The module "buildfile" reads the file "Buildfile".
+The module "buildfile" uses the module "errors".
+The module "decision" uses the module "buildfile" and the module "hashing".
+The module "decision" reads the file "target and dependency files".
+The module "hashing" reads the file "target and dependency files".
+The module "executor" uses the module "buildfile", the module "cache", the module "commands", the module "decision", the module "hashing" and the module "errors".
+The module "commands" uses the module "buildfile" and the module "errors".
+The module "commands" launches the process "shell".
+The module "cache" writes the json document ".minimake/cache.json".
+The module "cache" reads the json document ".minimake/cache.json".
+The test suite "tests" uses the module "cli", the module "executor", the module "graph", the module "buildfile", the module "cache", the module "chart", the module "decision", the module "hashing" and the module "errors".
+
+# --- layers (each layer sits above the next)
+The layer "interface" is above the layer "execution".
+The layer "execution" is above the layer "domain".
+The layer "domain" is above the layer "data".
+The layer "data" is above the layer "external".
+The module "cli" is in the layer "interface".
+The module "chart" is in the layer "interface".
+The test suite "tests" is in the layer "interface".
+The module "executor" is in the layer "execution".
+The module "commands" is in the layer "execution".
+The module "buildfile" is in the layer "domain".
+The module "graph" is in the layer "domain".
+The module "decision" is in the layer "domain".
+The module "hashing" is in the layer "domain".
+The module "errors" is in the layer "domain".
+The module "cache" is in the layer "data".
+The json document ".minimake/cache.json" is in the layer "data".
+The file "Buildfile" is in the layer "external".
+The file "target and dependency files" is in the layer "external".
+The process "shell" is in the layer "external".
+
+# --- rules (anchored)
+# the default target is the first one in the Buildfile and --graph exits before building
+The module "cli" reads the file "Buildfile". ^minimake/cli.py#main
+If the value "requested target" is empty, the module "cli" picks the record "first target of the Buildfile". ^minimake/cli.py#main
+If the value "--graph" is true, the module "cli" never calls the module "executor". ^minimake/cli.py#main
+# up to N commands in parallel (-j)
+The module "executor" is bounded by the value "jobs". ^minimake/executor.py#build
+# before rebuilding a target it deletes its cache entry and rewrites it only after success
+The module "executor" removes the record "target entry" from the json document ".minimake/cache.json". ^minimake/executor.py#build
+Note: the entry goes away before the target's commands run.
+If the module "commands" raises the error "MinimakeError", the module "executor" never writes the record "target entry" to the json document ".minimake/cache.json". ^minimake/executor.py#build
+# on the first failure nothing new is scheduled, running work is awaited and it exits with 1
+If the module "commands" raises the error "MinimakeError", the module "executor" never schedules the record "target". ^minimake/executor.py#build
+Note: commands already running finish before the error is raised.
+If the module "commands" raises the error "MinimakeError", the module "cli" exits with the value "1". ^minimake/cli.py#main
+# a command with a nonzero exit code becomes a target error
+If the value "code" is not 0, the module "commands" raises the error "MinimakeError". ^minimake/commands.py#run
+# a repeated target and a command without a target are errors; file order is preserved
+The map "rules" is keyed by the value "target name".
+If the value "target name" is in the map "rules", the module "buildfile" raises the error "MinimakeError". ^minimake/buildfile.py#parse
+If the record "current target" is empty, the module "buildfile" raises the error "MinimakeError". ^minimake/buildfile.py#parse
+Note: an empty "current target" means a command before any target; the map "rules" keeps the targets in file order.
+# a cycle is an error with its path; a dependency that is not a target must exist as a file
+If the value "target name" is in the list "path", the module "graph" raises the error "MinimakeError". ^minimake/graph.py#plan
+Note: the cycle error message carries the path.
+If the value "dep" is not in the map "rules", the module "graph" reads the file "target and dependency files". ^minimake/graph.py#plan
+Note: a dep that is neither a target nor an existing file is an error.
+# a target without commands is never rebuilt; a target without a file is always rebuilt
+If the list "target commands" is empty, the module "decision" skips the record "target". ^minimake/decision.py#needs_rebuild
+If the value "stored entry" is not the value "current entry", the module "decision" returns the value "rebuild". ^minimake/decision.py#needs_rebuild
+Note: a target with no file on disk is always rebuilt, and --force rebuilds all; a target without commands beats both.
+# a target without a file changes when its commands or a dep hash change
+When the list "target commands" changes, the module "hashing" changes the value "target hash". ^minimake/hashing.py#hash_target
+When the value "dep hash" changes, the module "hashing" changes the value "target hash". ^minimake/hashing.py#hash_target
+Note: this holds for a target without a file; with a file, the target hash is the content hash.
+# atomic write: write a tmp file and os.replace
+The module "cache" writes the file ".minimake/cache.json.tmp". ^minimake/cache.py#save
+The module "cache" replaces the json document ".minimake/cache.json". ^minimake/cache.py#save
+Note: os.replace swaps the cache for the tmp file in one step.
+
+# declared view: the modules by layer
+The view "modules by layer" shows every "module".
+The view "modules by layer" groups by "is in".
+The view "modules by layer" has the form "boxes".
+The view "modules by layer" marks "invariants".

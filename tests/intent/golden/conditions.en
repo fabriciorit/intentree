@@ -1,0 +1,6 @@
+If the module "m" sends the message "a", the message "b" and the message "c" through the connection "k" to the process "p", the process "p" closes the connection "k".
+If the module "m" writes the record "r" and the record "s" to the file "f", the module "n" reads the file "f".
+If the state machine "sm" has the states "x" and "y", the module "m" launches the process "p".
+The state machine "sm" starts in the state "x".
+When the module "m" reads the value "rate" and the value "z", the module "m" does not change the value "z".
+While the module "m" prints "a" and "b", the module "m" uses the module "n".

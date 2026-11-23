@@ -1,0 +1,4 @@
+error line 15: word outside the lexicon: 'frobs' (after 'The module "x"'; expected a verb)
+  hint: no similar approved form; if none fits, propose one: intentree lexicon propose verb "frobs" --meaning "<what it means>"
+error line 17: empty note
+2 errors, 9 entities, 4 facts, 1 invariants, 0 rules, 0 gaps, 0 warnings

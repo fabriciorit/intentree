@@ -1,0 +1,274 @@
+{
+ "lexicon": "0.3",
+ "entities": [
+  {
+   "id": "18c4fcef6a",
+   "name": "client",
+   "type": "e.process",
+   "attrs": {}
+  },
+  {
+   "id": "19bfefba4d",
+   "name": "a",
+   "type": "e.view",
+   "attrs": {}
+  },
+  {
+   "id": "19cc61ab14",
+   "name": "server",
+   "type": "e.process",
+   "attrs": {}
+  },
+  {
+   "id": "391ad4f76d",
+   "name": "f",
+   "type": "e.view",
+   "attrs": {}
+  },
+  {
+   "id": "3b6445428b",
+   "name": "g",
+   "type": "e.view",
+   "attrs": {}
+  },
+  {
+   "id": "56d790a03d",
+   "name": "b",
+   "type": "e.view",
+   "attrs": {}
+  },
+  {
+   "id": "63999eed7d",
+   "name": "Store",
+   "type": "p.key_value_store",
+   "attrs": {}
+  },
+  {
+   "id": "681e903671",
+   "name": "app",
+   "type": "e.program",
+   "attrs": {}
+  },
+  {
+   "id": "6a646a24b1",
+   "name": "energy",
+   "type": "e.view",
+   "attrs": {}
+  },
+  {
+   "id": "8a6d35c07e",
+   "name": "c",
+   "type": "e.view",
+   "attrs": {}
+  },
+  {
+   "id": "a309bc53d9",
+   "name": "server host",
+   "type": "e.machine",
+   "attrs": {}
+  },
+  {
+   "id": "a4b166b197",
+   "name": "mqtt",
+   "type": "p.thread",
+   "attrs": {}
+  },
+  {
+   "id": "b55ad739fc",
+   "name": "e",
+   "type": "e.view",
+   "attrs": {}
+  },
+  {
+   "id": "b9ef05c2e9",
+   "name": "clock",
+   "type": "p.thread",
+   "attrs": {}
+  },
+  {
+   "id": "beeacdf570",
+   "name": "deployment",
+   "type": "e.view",
+   "attrs": {}
+  },
+  {
+   "id": "cabbaa86d6",
+   "name": "d",
+   "type": "e.view",
+   "attrs": {}
+  },
+  {
+   "id": "ee8ff7efc2",
+   "name": "monitor",
+   "type": "p.thread",
+   "attrs": {}
+  }
+ ],
+ "facts": [
+  {
+   "literal": "gaps",
+   "mode": null,
+   "rel": "a.marks",
+   "roles": {},
+   "subject": "6a646a24b1"
+  },
+  {
+   "literal": "list",
+   "mode": null,
+   "rel": "a.has_form",
+   "roles": {},
+   "subject": "391ad4f76d"
+  },
+  {
+   "literal": "list",
+   "mode": null,
+   "rel": "a.has_form",
+   "roles": {},
+   "subject": "3b6445428b"
+  },
+  {
+   "literal": "machine",
+   "mode": null,
+   "rel": "a.shows_every",
+   "roles": {},
+   "subject": "beeacdf570"
+  },
+  {
+   "literal": "matrix",
+   "mode": null,
+   "rel": "a.has_form",
+   "roles": {},
+   "subject": "391ad4f76d"
+  },
+  {
+   "literal": "matrix",
+   "mode": null,
+   "rel": "a.has_form",
+   "roles": {},
+   "subject": "6a646a24b1"
+  },
+  {
+   "literal": "process",
+   "mode": null,
+   "rel": "a.shows_every",
+   "roles": {},
+   "subject": "beeacdf570"
+  },
+  {
+   "literal": "runs on",
+   "mode": null,
+   "rel": "a.groups_by",
+   "roles": {},
+   "subject": "beeacdf570"
+  },
+  {
+   "literal": "states",
+   "mode": null,
+   "rel": "a.marks",
+   "roles": {},
+   "subject": "6a646a24b1"
+  },
+  {
+   "literal": "thread",
+   "mode": null,
+   "rel": "a.shows_every",
+   "roles": {},
+   "subject": "391ad4f76d"
+  },
+  {
+   "literal": "thread",
+   "mode": null,
+   "rel": "a.shows_every",
+   "roles": {},
+   "subject": "6a646a24b1"
+  },
+  {
+   "mode": null,
+   "object": "18c4fcef6a",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "681e903671"
+  },
+  {
+   "mode": null,
+   "object": "19cc61ab14",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "681e903671"
+  },
+  {
+   "mode": null,
+   "object": "19cc61ab14",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "a309bc53d9"
+  },
+  {
+   "mode": null,
+   "object": "63999eed7d",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "681e903671"
+  },
+  {
+   "mode": null,
+   "object": "63999eed7d",
+   "rel": "a.fills",
+   "roles": {},
+   "subject": "a4b166b197"
+  },
+  {
+   "mode": null,
+   "object": "63999eed7d",
+   "rel": "a.fills",
+   "roles": {},
+   "subject": "b9ef05c2e9"
+  },
+  {
+   "mode": null,
+   "object": "63999eed7d",
+   "rel": "a.reads",
+   "roles": {},
+   "subject": "ee8ff7efc2"
+  },
+  {
+   "mode": null,
+   "object": "63999eed7d",
+   "rel": "a.shows",
+   "roles": {},
+   "subject": "6a646a24b1"
+  },
+  {
+   "mode": null,
+   "object": "a309bc53d9",
+   "rel": "a.runs_in",
+   "roles": {},
+   "subject": "19cc61ab14"
+  }
+ ],
+ "invariants": [],
+ "rules": [],
+ "gaps": [
+  {
+   "entity": "63999eed7d",
+   "role": "key",
+   "type": "p.key_value_store"
+  }
+ ],
+ "warnings": [],
+ "errors": [
+  "line 18: 'shows every': 'gizmo' is not a lexicon type (use the English name, like 'thread' or 'key-value store')",
+  "line 19: 'groups by': 'flies over' is not a lexicon relation (use the English form of the verb, like 'runs on' or 'contains')",
+  "line 20: 'has the form': unknown form 'circle'; forms: boxes, matrix, list",
+  "line 21: 'marks': unknown mark 'colors'; marks: gaps, invariants, notes, states",
+  "line 22: 'shows every': a view sentence does not accept negation, 'always' or 'exceptionally'",
+  "the view 'a' selects nothing (use 'shows' or 'shows every')",
+  "the view 'f' has more than one form: \"list\", \"matrix\"",
+  "the view 'g' selects nothing (use 'shows' or 'shows every')",
+  "the view 'b' selects nothing (use 'shows' or 'shows every')",
+  "the view 'c' selects nothing (use 'shows' or 'shows every')",
+  "the view 'e' selects nothing (use 'shows' or 'shows every')",
+  "the view 'd' selects nothing (use 'shows' or 'shows every')"
+ ],
+ "notes": []
+}

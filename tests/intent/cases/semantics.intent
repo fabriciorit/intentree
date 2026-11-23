@@ -1,0 +1,17 @@
+# Semantic errors: wrong type for the role, preposition, required role,
+# irreflexivity, transition with an undeclared state, types outside the chain.
+The module "a" has the states "x" and "y".
+The module "a" validates the function "b".
+The module "a" uses the module "b" to the module "c".
+The record "r" moves the state machine "m" from the state "p".
+The state machine "m" has the states "p" and "q".
+The record "r" moves the state machine "m" from the state "p" to the state "z".
+The module "a" uses the module "a".
+The module "dup" uses the record "dup".
+The metric "lat" measures the value "v".
+The percentile "lat" uses the method "nearest".
+The process "k" contains the module "k".
+The module "k" uses the library "k".
+The priority queue "queue" is ordered by the value "t".
+If the module "a" uses the module "b" and the module "c", the module "a" never contains the module "a".
+The measures "q" contains the module "a".

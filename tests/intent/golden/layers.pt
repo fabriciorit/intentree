@@ -1,0 +1,23 @@
+O módulo “cli” excepcionalmente lê o módulo “rules”.
+O módulo “cache” excepcionalmente chama o módulo “cli”.
+A camada “y” está acima da camada “x”.
+O módulo “double” está na camada “x”.
+O programa “app” contém o módulo “executor”.
+A função “validate” usa o módulo “executor”.
+O módulo “cli” usa o módulo “executor”.
+O módulo “rules” contém a função “validate”.
+O módulo “cli” está na camada “interface”.
+A camada “execution” está acima da camada “domain”.
+O módulo “rules” está na camada “domain”.
+A camada “x” está acima da camada “y”.
+O módulo “double” está na camada “y”.
+O programa “app” contém o módulo “rules”.
+A camada “domain” está acima da camada “data”.
+O módulo “cache” está na camada “data”.
+O programa “app” contém o módulo “cli”.
+A camada “interface” está acima da camada “execution”.
+O módulo “executor” está na camada “execution”.
+O programa “app” contém o módulo “cache”.
+A função “validate” lê o módulo “cache”.
+O módulo “cli” usa o módulo “cache”.
+

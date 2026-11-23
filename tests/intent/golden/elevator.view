@@ -1,0 +1,94 @@
+view structure · elevator
+marks: ● mutable state (← who changes it) · !n invariant n · ? gap: the description does not say · ∅ declared absence: none, on purpose · ⚠ warning · ⏱ timeout · ⟳ period
+
+structure (level 0 uses the ones below)
+level 0:
+cli · module !4
+  commands compare, run
+  → uses dispatch, metrics, timeline, config, execution, report, output
+level 1:
+config · module !4,6,7
+  Config · configuration (immutable)
+  8 fields [speed ⚠] [seed ∅]
+  limits: capacity ≥1; door_time ≥0; duration ≥0; elevators ≥1; floors ≥2; rate ≥0; speed >0
+execution · module
+  → uses dispatch, simulator, passengers
+metrics · module
+  floors traveled · metric
+  mean trip · metric
+  mean wait · metric
+  wait p95 · percentile ?
+output · module
+  → writes output.csv
+report · module
+  summary · report
+timeline · module !7
+  timeline · report
+level 2:
+dispatch · module !5
+  nearest · strategy
+  round robin · strategy ●
+  zone · strategy
+  STRATEGIES · registry
+  → uses elevator
+passengers · module !2,6
+  arrivals · poisson
+  per-floor rng · random
+  Passenger · record ● ← changed by simulator
+simulator · module !1-3,5
+  now · clock
+  completed · list
+  waiting · list
+  event queue · priority
+  → uses elevator
+level 3:
+elevator · module !1,3
+  on board · list
+  Elevator · record ● ← changed by simulator
+  stops · set
+  State · state ● ? ← changed by Elevator, simulator
+
+externals
+output.csv · csv file
+
+state machines
+machine State (in elevator): states going up, door open, stopped, going down
+  ? initial state not declared
+  going up → door open: simulator
+  door open → stopped: simulator
+  stopped → going up: Elevator
+  stopped → door open: simulator
+  stopped → going down: Elevator
+  going down → door open: simulator
+
+roles (what the primitives presuppose)
+Config · configuration: source=config; validation=config
+floors traveled · metric: definition=sum of floors of all elevators
+mean trip · metric: definition=alighting minus boarding
+mean wait · metric: definition=boarding minus arrival
+nearest, round robin, zone · strategy: input=candidates, floor; output=Elevator, None
+wait p95 · percentile: method=nearest rank; definition=?
+arrivals · poisson process: rate=rate
+now · clock: unit=s
+event queue · priority queue: order=simulated time; tie-breaker=scheduling order
+per-floor rng · random generator: seed=origin floor, seed
+STRATEGIES · registry: contents=nearest, round robin, zone
+
+invariants and rules
+!1 If the record "Elevator" is full, the module "simulator" skips the record "Elevator".
+!2 If the module "simulator" does not serve the record "Passenger", the module "simulator" raises the error "RuntimeError".
+!3 If the set "stops" contains the value "called floor", the module "simulator" skips the list "waiting".
+!4 If the module "config" raises the error "ValueError", the command "run" exits with the value "2".
+!5 If the strategy "zone" returns the value "None", the module "simulator" skips the list "waiting".
+!6 When the field "floors" changes, the random generator "per-floor rng" changes the list "passengers".
+!7 If the field "floors" is greater than 36, the report "timeline" prints the value "?".
+∀ Every strategy in the registry "STRATEGIES" returns the value "None".
+∀ Every strategy in the registry "STRATEGIES" receives the value "floor".
+∀ Every strategy in the registry "STRATEGIES" returns the record "Elevator".
+∀ Every strategy in the registry "STRATEGIES" receives the list "candidates".
+
+gaps (the description does not say), warnings and absences (none, on purpose)
+⚠ field “speed”: the name suggests q.speed (distance/time), but the unit 's/floor' is time/distance
+? percentile “wait p95”: missing definition
+? state machine “State”: missing initial state
+∅ field “seed”: no limit, on purpose

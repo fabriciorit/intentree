@@ -1,0 +1,287 @@
+{
+ "lexicon": "0.3",
+ "entities": [
+  {
+   "id": "061e671db6",
+   "name": "rate",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "16255ebe48",
+   "name": "m",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "1a475423fc",
+   "name": "k",
+   "type": "e.connection",
+   "attrs": {}
+  },
+  {
+   "id": "22f05f7da0",
+   "name": "a",
+   "type": "e.message",
+   "attrs": {}
+  },
+  {
+   "id": "481cb09144",
+   "name": "n",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "4e4597d96b",
+   "name": "x",
+   "type": "p.state",
+   "attrs": {}
+  },
+  {
+   "id": "5b3205e8f9",
+   "name": "s",
+   "type": "p.record",
+   "attrs": {}
+  },
+  {
+   "id": "67b2922da5",
+   "name": "c",
+   "type": "e.message",
+   "attrs": {}
+  },
+  {
+   "id": "980d40c099",
+   "name": "sm",
+   "type": "p.state_machine",
+   "attrs": {}
+  },
+  {
+   "id": "9c61e4b6fe",
+   "name": "y",
+   "type": "p.state",
+   "attrs": {}
+  },
+  {
+   "id": "c14c6e5aff",
+   "name": "r",
+   "type": "p.record",
+   "attrs": {}
+  },
+  {
+   "id": "c5f8a65f83",
+   "name": "b",
+   "type": "e.message",
+   "attrs": {}
+  },
+  {
+   "id": "da163a0477",
+   "name": "f",
+   "type": "e.file",
+   "attrs": {}
+  },
+  {
+   "id": "db65eb2649",
+   "name": "p",
+   "type": "e.process",
+   "attrs": {}
+  },
+  {
+   "id": "ee8edb6751",
+   "name": "z",
+   "type": "e.value",
+   "attrs": {}
+  }
+ ],
+ "facts": [
+  {
+   "mode": null,
+   "object": "4e4597d96b",
+   "rel": "a.starts_in",
+   "roles": {},
+   "subject": "980d40c099"
+  }
+ ],
+ "invariants": [
+  {
+   "if": [
+    {
+     "literal": "a",
+     "mode": null,
+     "rel": "a.prints",
+     "roles": {},
+     "subject": "16255ebe48"
+    },
+    {
+     "literal": "b",
+     "mode": null,
+     "rel": "a.prints",
+     "roles": {},
+     "subject": "16255ebe48"
+    }
+   ],
+   "then": [
+    {
+     "mode": null,
+     "object": "481cb09144",
+     "rel": "a.uses",
+     "roles": {},
+     "subject": "16255ebe48"
+    }
+   ],
+   "type": "while"
+  },
+  {
+   "if": [
+    {
+     "mode": null,
+     "object": "061e671db6",
+     "rel": "a.reads",
+     "roles": {},
+     "subject": "16255ebe48"
+    },
+    {
+     "mode": null,
+     "object": "ee8edb6751",
+     "rel": "a.reads",
+     "roles": {},
+     "subject": "16255ebe48"
+    }
+   ],
+   "then": [
+    {
+     "mode": "not",
+     "object": "ee8edb6751",
+     "rel": "a.changes",
+     "roles": {},
+     "subject": "16255ebe48"
+    }
+   ],
+   "type": "when"
+  },
+  {
+   "if": [
+    {
+     "mode": null,
+     "object": "22f05f7da0",
+     "rel": "a.sends",
+     "roles": {
+      "through": "1a475423fc",
+      "to": "db65eb2649"
+     },
+     "subject": "16255ebe48"
+    },
+    {
+     "mode": null,
+     "object": "c5f8a65f83",
+     "rel": "a.sends",
+     "roles": {
+      "through": "1a475423fc",
+      "to": "db65eb2649"
+     },
+     "subject": "16255ebe48"
+    },
+    {
+     "mode": null,
+     "object": "67b2922da5",
+     "rel": "a.sends",
+     "roles": {
+      "through": "1a475423fc",
+      "to": "db65eb2649"
+     },
+     "subject": "16255ebe48"
+    }
+   ],
+   "then": [
+    {
+     "mode": null,
+     "object": "1a475423fc",
+     "rel": "a.closes",
+     "roles": {},
+     "subject": "db65eb2649"
+    }
+   ],
+   "type": "if"
+  },
+  {
+   "if": [
+    {
+     "mode": null,
+     "object": "4e4597d96b",
+     "rel": "a.has_states",
+     "roles": {},
+     "subject": "980d40c099"
+    },
+    {
+     "mode": null,
+     "object": "9c61e4b6fe",
+     "rel": "a.has_states",
+     "roles": {},
+     "subject": "980d40c099"
+    }
+   ],
+   "then": [
+    {
+     "mode": null,
+     "object": "db65eb2649",
+     "rel": "a.launches",
+     "roles": {},
+     "subject": "16255ebe48"
+    }
+   ],
+   "type": "if"
+  },
+  {
+   "if": [
+    {
+     "mode": null,
+     "object": "c14c6e5aff",
+     "rel": "a.writes",
+     "roles": {
+      "to": "da163a0477"
+     },
+     "subject": "16255ebe48"
+    },
+    {
+     "mode": null,
+     "object": "5b3205e8f9",
+     "rel": "a.writes",
+     "roles": {
+      "to": "da163a0477"
+     },
+     "subject": "16255ebe48"
+    }
+   ],
+   "then": [
+    {
+     "mode": null,
+     "object": "da163a0477",
+     "rel": "a.reads",
+     "roles": {},
+     "subject": "481cb09144"
+    }
+   ],
+   "type": "if"
+  }
+ ],
+ "rules": [],
+ "gaps": [
+  {
+   "entity": "061e671db6",
+   "role": "unit",
+   "type": "q.rate"
+  },
+  {
+   "entity": "980d40c099",
+   "role": "states",
+   "type": "p.state_machine"
+  },
+  {
+   "entity": "980d40c099",
+   "role": "transitions",
+   "type": "p.state_machine"
+  }
+ ],
+ "warnings": [],
+ "errors": [],
+ "notes": []
+}

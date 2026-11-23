@@ -1,0 +1,21 @@
+A vista “energy” marca “gaps”.
+A vista “f” tem a forma “list”.
+A vista “g” tem a forma “list”.
+A vista “deployment” mostra todo o tipo “machine”.
+A vista “f” tem a forma “matrix”.
+A vista “energy” tem a forma “matrix”.
+A vista “deployment” mostra todo o tipo “process”.
+A vista “deployment” agrupa por “runs on”.
+A vista “energy” marca “states”.
+A vista “f” mostra todo o tipo “thread”.
+A vista “energy” mostra todo o tipo “thread”.
+O programa “app” contém o processo “client”.
+O programa “app” contém o processo “server”.
+A máquina “server host” contém o processo “server”.
+O programa “app” contém o armazenamento chave-valor “Store”.
+A thread “mqtt” alimenta o armazenamento chave-valor “Store”.
+A thread “clock” alimenta o armazenamento chave-valor “Store”.
+A thread “monitor” lê o armazenamento chave-valor “Store”.
+A vista “energy” mostra o armazenamento chave-valor “Store”.
+O processo “server” roda na máquina “server host”.
+

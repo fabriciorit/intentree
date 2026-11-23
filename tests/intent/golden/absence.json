@@ -1,0 +1,177 @@
+{
+ "lexicon": "0.3",
+ "entities": [
+  {
+   "id": "10183a9cb4",
+   "name": "rng",
+   "type": "p.random_generator",
+   "attrs": {}
+  },
+  {
+   "id": "16255ebe48",
+   "name": "m",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "2da1fad8ec",
+   "name": "server:8993",
+   "type": "f.tcp",
+   "attrs": {}
+  },
+  {
+   "id": "4886257541",
+   "name": "seed",
+   "type": "e.field",
+   "attrs": {}
+  },
+  {
+   "id": "51e1ccf2e4",
+   "name": "queue",
+   "type": "p.priority_queue",
+   "attrs": {}
+  },
+  {
+   "id": "6f2ac9cc6e",
+   "name": "floors",
+   "type": "e.field",
+   "attrs": {}
+  },
+  {
+   "id": "7e73f009f9",
+   "name": "srv",
+   "type": "e.process",
+   "attrs": {}
+  },
+  {
+   "id": "a71d8d204f",
+   "name": "rate",
+   "type": "e.field",
+   "attrs": {}
+  },
+  {
+   "id": "a76ec0a5c5",
+   "name": "t",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "b81df7e59e",
+   "name": "duration",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "d4ff6d849f",
+   "name": "clock",
+   "type": "p.clock",
+   "attrs": {}
+  }
+ ],
+ "facts": [
+  {
+   "literal": "s",
+   "mode": null,
+   "rel": "a.has_unit",
+   "roles": {},
+   "subject": "d4ff6d849f"
+  },
+  {
+   "mode": null,
+   "object": "2da1fad8ec",
+   "rel": "a.listens_on",
+   "roles": {},
+   "subject": "7e73f009f9"
+  },
+  {
+   "mode": null,
+   "object": "a76ec0a5c5",
+   "rel": "a.ordered_by",
+   "roles": {},
+   "subject": "51e1ccf2e4"
+  },
+  {
+   "op": ">=",
+   "rel": "c.limit",
+   "subject": "6f2ac9cc6e",
+   "value": 2.0
+  },
+  {
+   "rel": "absent",
+   "role": "authentication",
+   "subject": "2da1fad8ec"
+  },
+  {
+   "rel": "absent",
+   "role": "limit",
+   "subject": "4886257541"
+  },
+  {
+   "rel": "absent",
+   "role": "limit",
+   "subject": "6f2ac9cc6e"
+  },
+  {
+   "rel": "absent",
+   "role": "seed",
+   "subject": "10183a9cb4"
+  },
+  {
+   "rel": "absent",
+   "role": "tie-breaker",
+   "subject": "51e1ccf2e4"
+  },
+  {
+   "rel": "absent",
+   "role": "unit",
+   "subject": "b81df7e59e"
+  },
+  {
+   "rel": "absent",
+   "role": "unit",
+   "subject": "d4ff6d849f"
+  }
+ ],
+ "invariants": [
+  {
+   "if": [
+    {
+     "rel": "absent",
+     "role": "limit",
+     "subject": "a71d8d204f"
+    }
+   ],
+   "then": [
+    {
+     "mode": null,
+     "object": "a71d8d204f",
+     "rel": "a.validates",
+     "roles": {},
+     "subject": "16255ebe48"
+    }
+   ],
+   "type": "if"
+  }
+ ],
+ "rules": [],
+ "gaps": [
+  {
+   "entity": "a71d8d204f",
+   "role": "limit",
+   "type": "e.field"
+  },
+  {
+   "entity": "a71d8d204f",
+   "role": "unit",
+   "type": "q.rate"
+  }
+ ],
+ "warnings": [],
+ "errors": [
+  "line 10: 'm' (module) does not presuppose the role 'limit' ('has no limit'); presupposed roles: none",
+  "line 11: 'server:8993' (tcp endpoint) does not presuppose the role 'seed' ('has no seed'); presupposed roles: address, authentication",
+  "'clock': role 'unit' declared absent and filled",
+  "'floors': role 'limit' declared absent and filled"
+ ],
+ "notes": []
+}

@@ -1,0 +1,13 @@
+# A literal where the verb expects an object, and the reverse: a clear error instead of ignoring it.
+The state machine "sm" has the states "a" and "b".
+The module "m" moves "sm" from the state "a" to the state "b".
+The value "v" has the unit the unit "s".
+The value "v" has the same unit as "w".
+The value "v" has the same unit as.
+The value "v" has the unit.
+The state machine "sm" starts in "a".
+The state machine "sm" has the states the state "c".
+The module "m" is implemented in the module "n".
+The program "p" excludes the directory "tests".
+The value "v" has the unit "s".
+The value "w" has the same unit as the value "v".

@@ -1,0 +1,11 @@
+# pairs that must produce the same representation: form A ||| form B
+The module "simulator" uses the module "elevator". ||| The module "simulator" depends on the module "elevator".
+The module "config" reads the configuration "Config" from the json document "config.json". ||| The module "config" loads the configuration "Config" from the json document "config.json".
+The module "cli" uses the module "config" and the module "dispatch". ||| The module "cli" uses the module "config".\nThe module "cli" uses the module "dispatch".
+The module "simulator" never serves the record "Passenger". ||| The module "simulator" does not serve the record "Passenger".
+The module "simulator" serves the record "Passenger". ||| The module "simulator" handles the record "Passenger".
+The module "config" validates the configuration "Config". ||| The module "config" checks the configuration "Config".
+The module "simulator" changes the record "Elevator". ||| The module "simulator" mutates the record "Elevator".
+The module "output" writes the list "served passengers" to the csv file "output.csv". ||| The module "output" exports the list "served passengers" to the csv file "output.csv".
+The metric "wait p95" measures the value "wait". ||| The percentile "wait p95" measures the value "wait".
+The strategy "zone" chooses the record "Elevator" from the list "candidates". ||| The strategy "zone" selects the record "Elevator" from the list "candidates".

@@ -1,0 +1,14 @@
+If the module "a" uses the module "b" and the module "c", the module "a" does not contain the module "a".
+The module "a" has the states "x".
+The module "a" has the states "y".
+The module "a" uses the module "a".
+The module "a" validates the function "b".
+The module "dup" uses the record "dup".
+The module "k" uses the library "k".
+The percentile "lat" measures the value "v".
+The percentile "lat" uses the method "nearest".
+The priority queue "queue" is ordered by the value "t".
+The process "k" contains the module "k".
+The record "r" moves the state machine "m" from the state "p" to the state "z".
+The state machine "m" has the states "p".
+The state machine "m" has the states "q".

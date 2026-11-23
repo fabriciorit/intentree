@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="intentree helps people follow what LLM coding agents build: design intent as controlled-English sentences, checked against the code and drawn as views.">
+  <title>intentree: follow what your coding agents build</title>
+  <link rel="icon" href="data:,">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f6f2;
+      --card: #ffffff;
+      --ink: #1f2230;
+      --muted: #666a7a;
+      --line: #dedbd2;
+      --accent: #3b5bdb;
+      --accent-ink: #ffffff;
+      --accent-soft: #e6ebff;
+      --shadow: 0 1px 2px rgb(20 24 40 / 6%), 0 12px 32px rgb(20 24 40 / 8%);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #14161d;
+        --card: #1c1f29;
+        --ink: #e6e8f0;
+        --muted: #9aa0b4;
+        --line: #30354a;
+        --accent: #8ea3ff;
+        --accent-ink: #10131f;
+        --accent-soft: #252c4d;
+        --shadow: 0 1px 2px rgb(0 0 0 / 30%), 0 12px 32px rgb(0 0 0 / 35%);
+      }
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); line-height: 1.55; }
+    a { color: var(--accent); }
+    main, footer { width: min(960px, 100% - 2.5rem); margin-inline: auto; }
+
+    .hero { padding: 4.5rem 0 2.5rem; }
+    .hero__name { margin: 0; font: 700 clamp(2.6rem, 8vw, 4.2rem)/1 ui-monospace, "SF Mono", Menlo, Consolas, monospace; letter-spacing: -0.04em; }
+    .hero__name span { color: var(--accent); }
+    .hero p { margin: 1.4rem 0 0; max-width: 62ch; font-size: 1.12rem; color: var(--muted); }
+    .hero p strong { color: var(--ink); font-weight: 600; }
+
+    h2 { margin: 3rem 0 1rem; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+    .cards { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); }
+    .card { display: flex; flex-direction: column; gap: 0.5rem; padding: 1.5rem; border: 1px solid var(--line); border-radius: 16px; background: var(--card); box-shadow: var(--shadow); color: inherit; text-decoration: none; transition: transform 0.18s ease, border-color 0.18s ease; }
+    .card:hover, .card:focus-visible { transform: translateY(-3px); border-color: var(--accent); }
+    .card:focus-visible { outline: 3px solid var(--accent-soft); outline-offset: 2px; }
+    .card h3 { margin: 0; font-size: 1.35rem; letter-spacing: -0.01em; }
+    .card p { margin: 0; color: var(--muted); flex: 1; }
+    .card__go { margin-top: 0.75rem; font-weight: 600; color: var(--accent); }
+    .card__go::after { content: " \2192"; }
+
+    .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); counter-reset: step; }
+    .steps li { counter-increment: step; padding: 1.25rem 1.25rem 1.25rem 1.25rem; border-left: 3px solid var(--accent); background: var(--card); border-radius: 0 12px 12px 0; box-shadow: var(--shadow); }
+    .steps li::before { content: counter(step); display: block; margin-bottom: 0.25rem; font: 700 0.85rem ui-monospace, Menlo, Consolas, monospace; color: var(--accent); }
+    .steps strong { display: block; font-size: 1.05rem; margin-bottom: 0.2rem; }
+    .steps span { color: var(--muted); font-size: 0.95rem; }
+    .steps code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.85em; background: var(--accent-soft); padding: 0.05em 0.35em; border-radius: 4px; }
+
+    footer { margin-top: 4rem; padding: 1.5rem 0 3rem; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; color: var(--muted); font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <h1 class="hero__name">inten<span>tree</span></h1>
+      <p>Helps people follow what LLM coding agents build. Agents record a project's design intent as sentences in controlled English: strict enough for a deterministic parser, plain enough to read as notes. intentree compares the sentences with what it can find in the code and draws them as several views, so it is easier to see what was built and where it drifted from what was meant.</p>
+    </section>
+
+    <h2>Try it</h2>
+    <div class="cards">
+      <a class="card" id="card-messenger" href="examples/messenger/">
+        <h3>Messenger</h3>
+        <p>A WhatsApp-style chat simulated in the browser: two phones, a server and a push gateway.</p>
+        <span class="card__go">Open the demo</span>
+      </a>
+      <a class="card" id="card-parking" href="examples/parking/">
+        <h3>Parking garage</h3>
+        <p>Two entries, one exit, a payment kiosk and a controller that owns the count of free spaces.</p>
+        <span class="card__go">Open the demo</span>
+      </a>
+    </div>
+
+    <h2>How it works</h2>
+    <ol class="steps">
+      <li><strong>Write sentences</strong><span>The agent states the design in controlled English, one sentence per line, in a <code>.intent</code> file beside the code.</span></li>
+      <li><strong>Check against the code</strong><span>A deterministic parser reads them and compares them with the files, symbols and imports it finds. Gaps and drift are listed, not guessed.</span></li>
+      <li><strong>See the views</strong><span>The same sentences are drawn as structure, deployment, concurrency, state machines and constraints. In each demo, the real tool runs beside the simulator.</span></li>
+    </ol>
+  </main>
+
+  <footer>
+    <a href="https://github.com/fabriciorit/intentree">GitHub: fabriciorit/intentree</a>
+    <span>License: <a href="https://github.com/fabriciorit/intentree/blob/main/LICENSE">Apache-2.0</a></span>
+  </footer>
+
+  <script>
+    // Title and tagline come from each demo's demo.json; the text above is the fallback.
+    for (const id of ["messenger", "parking"]) {
+      const card = document.getElementById("card-" + id);
+      fetch(card.getAttribute("href") + "demo.json")
+        .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+        .then((demo) => {
+          if (demo.title) card.querySelector("h3").textContent = demo.title;
+          if (demo.tagline) card.querySelector("p").textContent = demo.tagline;
+        })
+        .catch(() => {});
+    }
+  </script>
+</body>
+</html>

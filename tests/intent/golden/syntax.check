@@ -1,0 +1,25 @@
+error line 2: expected a type (like module) after 'The module "a" uses the', found the name "b"
+  hint: every thing takes a type before the name: the <type> "<name>" (e.g. the module "a")
+error line 3: expected a quoted name after 'The module', found the verb 'uses'
+  hint: after the type comes the quoted name: the module "name"
+error line 4: expected the final period after 'The module "a" uses', found the type 'module'
+  hint: the sentence ends here: one clause per line; to join objects use 'and', for another verb write another sentence
+error line 5: expected the final period after 'The module "a" uses the module "b"', found a comma
+  hint: a comma alone does not make a list: the last item takes 'and' (X, Y and Z); the comma also separates condition and result after 'If'
+error line 6: expected the final period after 'The module "a" uses the module "b"', found a comma
+  hint: a comma alone does not make a list: the last item takes 'and' (X, Y and Z); the comma also separates condition and result after 'If'
+error line 7: leftover text after the period (understood so far: 'The module "a" uses the module "b".')
+  hint: one sentence per line: end with a period and start the next on a new line
+error line 8: expected the final period after 'The module "a" uses the module "b"', found the end of the line
+  hint: the final period of the sentence is missing
+error line 9: expected a comma after 'If the module "a" uses the module "b"', found the article 'the'
+  hint: the condition ends with a comma: If <clause>, <clause>.
+error line 10: expected a verb after 'If the module "a" uses the module "b", the module "c"', found a comma
+  hint: the comma separates the condition from the result; in a list of objects the last one takes 'and' (X, Y and Z)
+error line 11: expected a number after 'The module "a" is at least', found the name "x"
+  hint: a comparison takes a number (is at least 3) or another value (is at most the value "x")
+error line 12: expected an adjective after 'The module "a" is', found the final period
+  hint: after 'is' comes an adjective from the lexicon ('immutable', 'mutable', 'deterministic', 'stateful'), a number or a value: is the value "x"
+error line 13: expected the article 'the' after 'The module "a" uses the module "b" and', found the final period
+  hint: after 'and' comes another complete object: the <type> "<name>"
+12 errors, 4 entities, 3 facts, 0 invariants, 0 rules, 0 gaps, 0 warnings

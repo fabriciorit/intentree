@@ -1,0 +1,10 @@
+Every strategy in the module "simulator" returns the value "None".
+Every strategy in the registry "STRATEGIES" does not change the record "Elevator".
+Every strategy in the registry "STRATEGIES" is deterministic.
+Every strategy in the registry "STRATEGIES" receives the list "candidates".
+Every strategy in the registry "STRATEGIES" receives the value "floor".
+Every strategy in the registry "STRATEGIES" returns the record "Elevator".
+The module "dispatch" contains the registry "STRATEGIES".
+The registry "STRATEGIES" contains the strategy "nearest".
+The registry "STRATEGIES" contains the strategy "round robin".
+The registry "STRATEGIES" contains the strategy "zone".

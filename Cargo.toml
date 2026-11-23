@@ -1,0 +1,27 @@
+[package]
+name = "intentree"
+version = "0.1.0"
+edition = "2021"
+description = "Helps people follow what LLM coding agents build: design intent in controlled English, compared with the code and drawn as views."
+license = "Apache-2.0"
+repository = "https://github.com/fabriciorit/intentree"
+readme = "README.md"
+keywords = ["architecture", "documentation", "llm", "visualization", "controlled-language"]
+categories = ["command-line-utilities", "development-tools"]
+
+[lib]
+name = "intentree"
+path = "src/lib.rs"
+crate-type = ["cdylib", "rlib"]
+
+[[bin]]
+name = "intentree"
+path = "src/main.rs"
+
+[workspace]
+
+[profile.release]
+strip = true
+opt-level = "s"
+lto = true
+codegen-units = 1

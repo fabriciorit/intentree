@@ -1,0 +1,14 @@
+# Syntax errors: missing apposition, list without "and", text after the period.
+The module "a" uses the "b".
+The module uses the module "b".
+The module "a" uses module "b".
+The module "a" uses the module "b", the module "c".
+The module "a" uses the module "b", the module "c", the module "d".
+The module "a" uses the module "b". The module "c" uses the module "d".
+The module "a" uses the module "b"
+If the module "a" uses the module "b" the module "c" uses the module "d".
+If the module "a" uses the module "b", the module "c", the module "d" uses the module "e".
+The module "a" is at least "x".
+The module "a" is.
+The module "a" uses the module "b" and.
+The module "x" uses the module "y", the module "z" and the module "w".

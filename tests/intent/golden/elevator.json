@@ -1,0 +1,1430 @@
+{
+ "lexicon": "0.3",
+ "entities": [
+  {
+   "id": "05857f1c70",
+   "name": "going up",
+   "type": "p.state",
+   "attrs": {}
+  },
+  {
+   "id": "08d0b550d6",
+   "name": "arrivals",
+   "type": "m.poisson",
+   "attrs": {}
+  },
+  {
+   "id": "0940fcc64b",
+   "name": "round robin",
+   "type": "e.strategy",
+   "attrs": {}
+  },
+  {
+   "id": "0b21321a51",
+   "name": "dispatch",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "0f0b073530",
+   "name": "door open",
+   "type": "p.state",
+   "attrs": {}
+  },
+  {
+   "id": "0f4f233eb6",
+   "name": "called floor",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "113fef0288",
+   "name": "Passenger",
+   "type": "p.record",
+   "attrs": {}
+  },
+  {
+   "id": "1327d7bda7",
+   "name": "wait p95",
+   "type": "m.percentile",
+   "attrs": {}
+  },
+  {
+   "id": "1391a4dc52",
+   "name": "metrics",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "13cb2bdf3e",
+   "name": "ValueError",
+   "type": "e.error",
+   "attrs": {}
+  },
+  {
+   "id": "17948b2f36",
+   "name": "scheduling order",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "18f1016937",
+   "name": "zone",
+   "type": "e.strategy",
+   "attrs": {}
+  },
+  {
+   "id": "194ba683a0",
+   "name": "nearest rank",
+   "type": "e.method",
+   "attrs": {}
+  },
+  {
+   "id": "1956090217",
+   "name": "RuntimeError",
+   "type": "e.error",
+   "attrs": {}
+  },
+  {
+   "id": "2df3c64676",
+   "name": "stopped",
+   "type": "p.state",
+   "attrs": {}
+  },
+  {
+   "id": "2f3e814ad7",
+   "name": "per-floor rng",
+   "type": "p.random_generator",
+   "attrs": {}
+  },
+  {
+   "id": "2f94513229",
+   "name": "sum of floors of all elevators",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "32ecef7359",
+   "name": "None",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "335613ee55",
+   "name": "elevators",
+   "type": "e.field",
+   "attrs": {}
+  },
+  {
+   "id": "3711781962",
+   "name": "State",
+   "type": "p.state_machine",
+   "attrs": {}
+  },
+  {
+   "id": "3c297a9c4f",
+   "name": "mean trip",
+   "type": "e.metric",
+   "attrs": {}
+  },
+  {
+   "id": "3df3c264a6",
+   "name": "now",
+   "type": "p.clock",
+   "attrs": {}
+  },
+  {
+   "id": "3f1f378b97",
+   "name": "summary",
+   "type": "e.report",
+   "attrs": {}
+  },
+  {
+   "id": "3f4bfe674b",
+   "name": "speed",
+   "type": "e.field",
+   "attrs": {}
+  },
+  {
+   "id": "43a0d2b39c",
+   "name": "served passengers",
+   "type": "p.list",
+   "attrs": {}
+  },
+  {
+   "id": "43c5a11039",
+   "name": "timeline",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "441c559a92",
+   "name": "floor",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "4886257541",
+   "name": "seed",
+   "type": "e.field",
+   "attrs": {}
+  },
+  {
+   "id": "48d27c3d1e",
+   "name": "boarding minus arrival",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "49ba7d649e",
+   "name": "simulator",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "5271be7be0",
+   "name": "on board",
+   "type": "p.list",
+   "attrs": {}
+  },
+  {
+   "id": "52dc226df9",
+   "name": "config",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "5353e41b00",
+   "name": "elevator",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "54740ed477",
+   "name": "waiting",
+   "type": "p.list",
+   "attrs": {}
+  },
+  {
+   "id": "59b9b9cbdf",
+   "name": "elevator",
+   "type": "e.program",
+   "attrs": {}
+  },
+  {
+   "id": "6954281c48",
+   "name": "execution",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "6f2ac9cc6e",
+   "name": "floors",
+   "type": "e.field",
+   "attrs": {}
+  },
+  {
+   "id": "791cf31750",
+   "name": "door_time",
+   "type": "e.field",
+   "attrs": {}
+  },
+  {
+   "id": "7f8a635527",
+   "name": "timeline",
+   "type": "e.report",
+   "attrs": {}
+  },
+  {
+   "id": "83407aeea7",
+   "name": "stops",
+   "type": "p.set",
+   "attrs": {}
+  },
+  {
+   "id": "86a5da2f12",
+   "name": "going down",
+   "type": "p.state",
+   "attrs": {}
+  },
+  {
+   "id": "89b0c7a5cb",
+   "name": "floors traveled",
+   "type": "e.metric",
+   "attrs": {}
+  },
+  {
+   "id": "8dfdaf4eb7",
+   "name": "STRATEGIES",
+   "type": "p.registry",
+   "attrs": {}
+  },
+  {
+   "id": "90697c2139",
+   "name": "event queue",
+   "type": "p.priority_queue",
+   "attrs": {}
+  },
+  {
+   "id": "974d296cbd",
+   "name": "Elevator",
+   "type": "p.record",
+   "attrs": {}
+  },
+  {
+   "id": "980d6f8d57",
+   "name": "mean wait",
+   "type": "e.metric",
+   "attrs": {}
+  },
+  {
+   "id": "98633910ac",
+   "name": "completed",
+   "type": "p.list",
+   "attrs": {}
+  },
+  {
+   "id": "a3d50bf950",
+   "name": "cli",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "a6e17857b4",
+   "name": "origin floor",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "a71d8d204f",
+   "name": "rate",
+   "type": "e.field",
+   "attrs": {}
+  },
+  {
+   "id": "b41c868d85",
+   "name": "report",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "b42dfbb13c",
+   "name": "output.csv",
+   "type": "f.csv",
+   "attrs": {}
+  },
+  {
+   "id": "b891ebbf2e",
+   "name": "passengers",
+   "type": "p.list",
+   "attrs": {}
+  },
+  {
+   "id": "bb3820e2b1",
+   "name": "capacity",
+   "type": "e.field",
+   "attrs": {}
+  },
+  {
+   "id": "c1564004bd",
+   "name": "?",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "cbd90ab5b7",
+   "name": "2",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "cf345e962e",
+   "name": "alighting minus boarding",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "cf4d6aad0a",
+   "name": "simulated time",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "d82c2b4eaa",
+   "name": "run",
+   "type": "e.command",
+   "attrs": {}
+  },
+  {
+   "id": "db51875c2d",
+   "name": "duration",
+   "type": "e.field",
+   "attrs": {}
+  },
+  {
+   "id": "e3c7e2f6c0",
+   "name": "candidates",
+   "type": "p.list",
+   "attrs": {}
+  },
+  {
+   "id": "e9a54d13b8",
+   "name": "config.json",
+   "type": "f.json",
+   "attrs": {}
+  },
+  {
+   "id": "e9ea55ca23",
+   "name": "Config",
+   "type": "e.config",
+   "attrs": {}
+  },
+  {
+   "id": "eeff61a9f0",
+   "name": "nearest",
+   "type": "e.strategy",
+   "attrs": {}
+  },
+  {
+   "id": "efe90edae0",
+   "name": "passengers",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "f8ee8633c2",
+   "name": "compare",
+   "type": "e.command",
+   "attrs": {}
+  },
+  {
+   "id": "fef1591f45",
+   "name": "output",
+   "type": "e.module",
+   "attrs": {}
+  }
+ ],
+ "facts": [
+  {
+   "adj": "adj.deterministic",
+   "rel": "prop",
+   "subject": "49ba7d649e"
+  },
+  {
+   "adj": "adj.immutable",
+   "rel": "prop",
+   "subject": "e9ea55ca23"
+  },
+  {
+   "adj": "adj.mutable",
+   "rel": "prop",
+   "subject": "113fef0288"
+  },
+  {
+   "adj": "adj.mutable",
+   "rel": "prop",
+   "subject": "974d296cbd"
+  },
+  {
+   "adj": "adj.stateful",
+   "rel": "prop",
+   "subject": "0940fcc64b"
+  },
+  {
+   "literal": "passengers/min",
+   "mode": null,
+   "rel": "a.has_unit",
+   "roles": {},
+   "subject": "a71d8d204f"
+  },
+  {
+   "literal": "s",
+   "mode": null,
+   "rel": "a.has_unit",
+   "roles": {},
+   "subject": "3df3c264a6"
+  },
+  {
+   "literal": "s",
+   "mode": null,
+   "rel": "a.has_unit",
+   "roles": {},
+   "subject": "791cf31750"
+  },
+  {
+   "literal": "s",
+   "mode": null,
+   "rel": "a.has_unit",
+   "roles": {},
+   "subject": "db51875c2d"
+  },
+  {
+   "literal": "s/floor",
+   "mode": null,
+   "rel": "a.has_unit",
+   "roles": {},
+   "subject": "3f4bfe674b"
+  },
+  {
+   "mode": null,
+   "object": "05857f1c70",
+   "rel": "a.has_states",
+   "roles": {},
+   "subject": "3711781962"
+  },
+  {
+   "mode": null,
+   "object": "08d0b550d6",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "efe90edae0"
+  },
+  {
+   "mode": null,
+   "object": "0940fcc64b",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "8dfdaf4eb7"
+  },
+  {
+   "mode": null,
+   "object": "0b21321a51",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "59b9b9cbdf"
+  },
+  {
+   "mode": null,
+   "object": "0b21321a51",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "6954281c48"
+  },
+  {
+   "mode": null,
+   "object": "0b21321a51",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "a3d50bf950"
+  },
+  {
+   "mode": null,
+   "object": "0f0b073530",
+   "rel": "a.has_states",
+   "roles": {},
+   "subject": "3711781962"
+  },
+  {
+   "mode": null,
+   "object": "113fef0288",
+   "rel": "a.changes",
+   "roles": {},
+   "subject": "49ba7d649e"
+  },
+  {
+   "mode": null,
+   "object": "113fef0288",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "efe90edae0"
+  },
+  {
+   "mode": null,
+   "object": "1327d7bda7",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "1391a4dc52"
+  },
+  {
+   "mode": null,
+   "object": "1391a4dc52",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "59b9b9cbdf"
+  },
+  {
+   "mode": null,
+   "object": "1391a4dc52",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "d82c2b4eaa"
+  },
+  {
+   "mode": null,
+   "object": "1391a4dc52",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "f8ee8633c2"
+  },
+  {
+   "mode": null,
+   "object": "17948b2f36",
+   "rel": "a.breaks_ties_by",
+   "roles": {},
+   "subject": "90697c2139"
+  },
+  {
+   "mode": null,
+   "object": "18f1016937",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "8dfdaf4eb7"
+  },
+  {
+   "mode": null,
+   "object": "194ba683a0",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "1327d7bda7"
+  },
+  {
+   "mode": null,
+   "object": "2df3c64676",
+   "rel": "a.has_states",
+   "roles": {},
+   "subject": "3711781962"
+  },
+  {
+   "mode": null,
+   "object": "2f3e814ad7",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "efe90edae0"
+  },
+  {
+   "mode": null,
+   "object": "2f94513229",
+   "rel": "a.measures",
+   "roles": {},
+   "subject": "89b0c7a5cb"
+  },
+  {
+   "mode": null,
+   "object": "32ecef7359",
+   "rel": "a.returns",
+   "roles": {},
+   "subject": "0940fcc64b"
+  },
+  {
+   "mode": null,
+   "object": "32ecef7359",
+   "rel": "a.returns",
+   "roles": {},
+   "subject": "18f1016937"
+  },
+  {
+   "mode": null,
+   "object": "32ecef7359",
+   "rel": "a.returns",
+   "roles": {},
+   "subject": "eeff61a9f0"
+  },
+  {
+   "mode": null,
+   "object": "335613ee55",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "e9ea55ca23"
+  },
+  {
+   "mode": null,
+   "object": "3711781962",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "5353e41b00"
+  },
+  {
+   "mode": null,
+   "object": "3711781962",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "974d296cbd"
+  },
+  {
+   "mode": null,
+   "object": "3711781962",
+   "rel": "a.moves",
+   "roles": {
+    "from": "05857f1c70",
+    "to": "0f0b073530"
+   },
+   "subject": "49ba7d649e"
+  },
+  {
+   "mode": null,
+   "object": "3711781962",
+   "rel": "a.moves",
+   "roles": {
+    "from": "0f0b073530",
+    "to": "2df3c64676"
+   },
+   "subject": "49ba7d649e"
+  },
+  {
+   "mode": null,
+   "object": "3711781962",
+   "rel": "a.moves",
+   "roles": {
+    "from": "2df3c64676",
+    "to": "05857f1c70"
+   },
+   "subject": "974d296cbd"
+  },
+  {
+   "mode": null,
+   "object": "3711781962",
+   "rel": "a.moves",
+   "roles": {
+    "from": "2df3c64676",
+    "to": "0f0b073530"
+   },
+   "subject": "49ba7d649e"
+  },
+  {
+   "mode": null,
+   "object": "3711781962",
+   "rel": "a.moves",
+   "roles": {
+    "from": "2df3c64676",
+    "to": "86a5da2f12"
+   },
+   "subject": "974d296cbd"
+  },
+  {
+   "mode": null,
+   "object": "3711781962",
+   "rel": "a.moves",
+   "roles": {
+    "from": "86a5da2f12",
+    "to": "0f0b073530"
+   },
+   "subject": "49ba7d649e"
+  },
+  {
+   "mode": null,
+   "object": "3c297a9c4f",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "1391a4dc52"
+  },
+  {
+   "mode": null,
+   "object": "3df3c264a6",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "49ba7d649e"
+  },
+  {
+   "mode": null,
+   "object": "3f1f378b97",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "b41c868d85"
+  },
+  {
+   "mode": null,
+   "object": "3f4bfe674b",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "e9ea55ca23"
+  },
+  {
+   "mode": null,
+   "object": "43a0d2b39c",
+   "rel": "a.writes",
+   "roles": {
+    "to": "b42dfbb13c"
+   },
+   "subject": "fef1591f45"
+  },
+  {
+   "mode": null,
+   "object": "43c5a11039",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "59b9b9cbdf"
+  },
+  {
+   "mode": null,
+   "object": "43c5a11039",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "d82c2b4eaa"
+  },
+  {
+   "mode": null,
+   "object": "441c559a92",
+   "rel": "a.receives",
+   "roles": {},
+   "subject": "0940fcc64b"
+  },
+  {
+   "mode": null,
+   "object": "441c559a92",
+   "rel": "a.receives",
+   "roles": {},
+   "subject": "18f1016937"
+  },
+  {
+   "mode": null,
+   "object": "441c559a92",
+   "rel": "a.receives",
+   "roles": {},
+   "subject": "eeff61a9f0"
+  },
+  {
+   "mode": null,
+   "object": "4886257541",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "e9ea55ca23"
+  },
+  {
+   "mode": null,
+   "object": "4886257541",
+   "rel": "a.seeded_with",
+   "roles": {},
+   "subject": "2f3e814ad7"
+  },
+  {
+   "mode": null,
+   "object": "48d27c3d1e",
+   "rel": "a.measures",
+   "roles": {},
+   "subject": "980d6f8d57"
+  },
+  {
+   "mode": null,
+   "object": "49ba7d649e",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "59b9b9cbdf"
+  },
+  {
+   "mode": null,
+   "object": "49ba7d649e",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "6954281c48"
+  },
+  {
+   "mode": null,
+   "object": "5271be7be0",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "974d296cbd"
+  },
+  {
+   "mode": null,
+   "object": "52dc226df9",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "59b9b9cbdf"
+  },
+  {
+   "mode": null,
+   "object": "52dc226df9",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "a3d50bf950"
+  },
+  {
+   "mode": null,
+   "object": "5353e41b00",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "59b9b9cbdf"
+  },
+  {
+   "mode": null,
+   "object": "5353e41b00",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "0b21321a51"
+  },
+  {
+   "mode": null,
+   "object": "5353e41b00",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "49ba7d649e"
+  },
+  {
+   "mode": null,
+   "object": "54740ed477",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "49ba7d649e"
+  },
+  {
+   "mode": null,
+   "object": "6954281c48",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "59b9b9cbdf"
+  },
+  {
+   "mode": null,
+   "object": "6954281c48",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "d82c2b4eaa"
+  },
+  {
+   "mode": null,
+   "object": "6954281c48",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "f8ee8633c2"
+  },
+  {
+   "mode": null,
+   "object": "6f2ac9cc6e",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "e9ea55ca23"
+  },
+  {
+   "mode": null,
+   "object": "791cf31750",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "e9ea55ca23"
+  },
+  {
+   "mode": null,
+   "object": "7f8a635527",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "43c5a11039"
+  },
+  {
+   "mode": null,
+   "object": "83407aeea7",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "974d296cbd"
+  },
+  {
+   "mode": null,
+   "object": "86a5da2f12",
+   "rel": "a.has_states",
+   "roles": {},
+   "subject": "3711781962"
+  },
+  {
+   "mode": null,
+   "object": "89b0c7a5cb",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "1391a4dc52"
+  },
+  {
+   "mode": null,
+   "object": "8dfdaf4eb7",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "0b21321a51"
+  },
+  {
+   "mode": null,
+   "object": "8dfdaf4eb7",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "6954281c48"
+  },
+  {
+   "mode": null,
+   "object": "90697c2139",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "49ba7d649e"
+  },
+  {
+   "mode": null,
+   "object": "974d296cbd",
+   "rel": "a.changes",
+   "roles": {},
+   "subject": "49ba7d649e"
+  },
+  {
+   "mode": null,
+   "object": "974d296cbd",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "5353e41b00"
+  },
+  {
+   "mode": null,
+   "object": "974d296cbd",
+   "rel": "a.returns",
+   "roles": {},
+   "subject": "0940fcc64b"
+  },
+  {
+   "mode": null,
+   "object": "974d296cbd",
+   "rel": "a.returns",
+   "roles": {},
+   "subject": "18f1016937"
+  },
+  {
+   "mode": null,
+   "object": "974d296cbd",
+   "rel": "a.returns",
+   "roles": {},
+   "subject": "eeff61a9f0"
+  },
+  {
+   "mode": null,
+   "object": "980d6f8d57",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "1391a4dc52"
+  },
+  {
+   "mode": null,
+   "object": "98633910ac",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "49ba7d649e"
+  },
+  {
+   "mode": null,
+   "object": "a3d50bf950",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "59b9b9cbdf"
+  },
+  {
+   "mode": null,
+   "object": "a6e17857b4",
+   "rel": "a.seeded_with",
+   "roles": {},
+   "subject": "2f3e814ad7"
+  },
+  {
+   "mode": null,
+   "object": "a71d8d204f",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "e9ea55ca23"
+  },
+  {
+   "mode": null,
+   "object": "a71d8d204f",
+   "rel": "a.parameterized_by",
+   "roles": {},
+   "subject": "08d0b550d6"
+  },
+  {
+   "mode": null,
+   "object": "b41c868d85",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "59b9b9cbdf"
+  },
+  {
+   "mode": null,
+   "object": "b41c868d85",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "d82c2b4eaa"
+  },
+  {
+   "mode": null,
+   "object": "b41c868d85",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "f8ee8633c2"
+  },
+  {
+   "mode": null,
+   "object": "bb3820e2b1",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "e9ea55ca23"
+  },
+  {
+   "mode": null,
+   "object": "cf345e962e",
+   "rel": "a.measures",
+   "roles": {},
+   "subject": "3c297a9c4f"
+  },
+  {
+   "mode": null,
+   "object": "cf4d6aad0a",
+   "rel": "a.ordered_by",
+   "roles": {},
+   "subject": "90697c2139"
+  },
+  {
+   "mode": null,
+   "object": "d82c2b4eaa",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "a3d50bf950"
+  },
+  {
+   "mode": null,
+   "object": "db51875c2d",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "e9ea55ca23"
+  },
+  {
+   "mode": null,
+   "object": "e3c7e2f6c0",
+   "rel": "a.receives",
+   "roles": {},
+   "subject": "0940fcc64b"
+  },
+  {
+   "mode": null,
+   "object": "e3c7e2f6c0",
+   "rel": "a.receives",
+   "roles": {},
+   "subject": "18f1016937"
+  },
+  {
+   "mode": null,
+   "object": "e3c7e2f6c0",
+   "rel": "a.receives",
+   "roles": {},
+   "subject": "eeff61a9f0"
+  },
+  {
+   "mode": null,
+   "object": "e9ea55ca23",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "52dc226df9"
+  },
+  {
+   "mode": null,
+   "object": "e9ea55ca23",
+   "rel": "a.reads",
+   "roles": {
+    "from": "e9a54d13b8"
+   },
+   "subject": "52dc226df9"
+  },
+  {
+   "mode": null,
+   "object": "e9ea55ca23",
+   "rel": "a.validates",
+   "roles": {},
+   "subject": "52dc226df9"
+  },
+  {
+   "mode": null,
+   "object": "eeff61a9f0",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "8dfdaf4eb7"
+  },
+  {
+   "mode": null,
+   "object": "efe90edae0",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "59b9b9cbdf"
+  },
+  {
+   "mode": null,
+   "object": "efe90edae0",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "6954281c48"
+  },
+  {
+   "mode": null,
+   "object": "f8ee8633c2",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "a3d50bf950"
+  },
+  {
+   "mode": null,
+   "object": "fef1591f45",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "59b9b9cbdf"
+  },
+  {
+   "mode": null,
+   "object": "fef1591f45",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "d82c2b4eaa"
+  },
+  {
+   "op": ">",
+   "rel": "c.limit",
+   "subject": "3f4bfe674b",
+   "value": 0.0
+  },
+  {
+   "op": ">=",
+   "rel": "c.limit",
+   "subject": "335613ee55",
+   "value": 1.0
+  },
+  {
+   "op": ">=",
+   "rel": "c.limit",
+   "subject": "6f2ac9cc6e",
+   "value": 2.0
+  },
+  {
+   "op": ">=",
+   "rel": "c.limit",
+   "subject": "791cf31750",
+   "value": 0.0
+  },
+  {
+   "op": ">=",
+   "rel": "c.limit",
+   "subject": "a71d8d204f",
+   "value": 0.0
+  },
+  {
+   "op": ">=",
+   "rel": "c.limit",
+   "subject": "bb3820e2b1",
+   "value": 1.0
+  },
+  {
+   "op": ">=",
+   "rel": "c.limit",
+   "subject": "db51875c2d",
+   "value": 0.0
+  },
+  {
+   "rel": "absent",
+   "role": "limit",
+   "subject": "4886257541"
+  }
+ ],
+ "invariants": [
+  {
+   "if": [
+    {
+     "adj": "adj.full",
+     "rel": "prop",
+     "subject": "974d296cbd"
+    }
+   ],
+   "then": [
+    {
+     "mode": null,
+     "object": "974d296cbd",
+     "rel": "a.skips",
+     "roles": {},
+     "subject": "49ba7d649e"
+    }
+   ],
+   "type": "if"
+  },
+  {
+   "if": [
+    {
+     "mode": "not",
+     "object": "113fef0288",
+     "rel": "a.serves",
+     "roles": {},
+     "subject": "49ba7d649e"
+    }
+   ],
+   "then": [
+    {
+     "mode": null,
+     "object": "1956090217",
+     "rel": "a.raises",
+     "roles": {},
+     "subject": "49ba7d649e"
+    }
+   ],
+   "type": "if"
+  },
+  {
+   "if": [
+    {
+     "mode": null,
+     "object": "0f4f233eb6",
+     "rel": "a.contains",
+     "roles": {},
+     "subject": "83407aeea7"
+    }
+   ],
+   "then": [
+    {
+     "mode": null,
+     "object": "54740ed477",
+     "rel": "a.skips",
+     "roles": {},
+     "subject": "49ba7d649e"
+    }
+   ],
+   "type": "if"
+  },
+  {
+   "if": [
+    {
+     "mode": null,
+     "object": "13cb2bdf3e",
+     "rel": "a.raises",
+     "roles": {},
+     "subject": "52dc226df9"
+    }
+   ],
+   "then": [
+    {
+     "mode": null,
+     "object": "cbd90ab5b7",
+     "rel": "a.exits_with",
+     "roles": {},
+     "subject": "d82c2b4eaa"
+    }
+   ],
+   "type": "if"
+  },
+  {
+   "if": [
+    {
+     "mode": null,
+     "object": "32ecef7359",
+     "rel": "a.returns",
+     "roles": {},
+     "subject": "18f1016937"
+    }
+   ],
+   "then": [
+    {
+     "mode": null,
+     "object": "54740ed477",
+     "rel": "a.skips",
+     "roles": {},
+     "subject": "49ba7d649e"
+    }
+   ],
+   "type": "if"
+  },
+  {
+   "if": [
+    {
+     "mode": null,
+     "object": null,
+     "rel": "a.changes",
+     "roles": {},
+     "subject": "6f2ac9cc6e"
+    }
+   ],
+   "then": [
+    {
+     "mode": null,
+     "object": "b891ebbf2e",
+     "rel": "a.changes",
+     "roles": {},
+     "subject": "2f3e814ad7"
+    }
+   ],
+   "type": "when"
+  },
+  {
+   "if": [
+    {
+     "op": ">",
+     "rel": "c.limit",
+     "subject": "6f2ac9cc6e",
+     "value": 36.0
+    }
+   ],
+   "then": [
+    {
+     "mode": null,
+     "object": "c1564004bd",
+     "rel": "a.prints",
+     "roles": {},
+     "subject": "7f8a635527"
+    }
+   ],
+   "type": "if"
+  }
+ ],
+ "rules": [
+  {
+   "in": "8dfdaf4eb7",
+   "then": [
+    {
+     "mode": null,
+     "object": "32ecef7359",
+     "rel": "a.returns",
+     "roles": {},
+     "subject": "*"
+    }
+   ],
+   "type": "e.strategy"
+  },
+  {
+   "in": "8dfdaf4eb7",
+   "then": [
+    {
+     "mode": null,
+     "object": "441c559a92",
+     "rel": "a.receives",
+     "roles": {},
+     "subject": "*"
+    }
+   ],
+   "type": "e.strategy"
+  },
+  {
+   "in": "8dfdaf4eb7",
+   "then": [
+    {
+     "mode": null,
+     "object": "974d296cbd",
+     "rel": "a.returns",
+     "roles": {},
+     "subject": "*"
+    }
+   ],
+   "type": "e.strategy"
+  },
+  {
+   "in": "8dfdaf4eb7",
+   "then": [
+    {
+     "mode": null,
+     "object": "e3c7e2f6c0",
+     "rel": "a.receives",
+     "roles": {},
+     "subject": "*"
+    }
+   ],
+   "type": "e.strategy"
+  }
+ ],
+ "gaps": [
+  {
+   "entity": "1327d7bda7",
+   "role": "definition",
+   "type": "e.metric"
+  },
+  {
+   "entity": "3711781962",
+   "role": "initial state",
+   "type": "p.state_machine"
+  }
+ ],
+ "warnings": [
+  {
+   "entity": "3f4bfe674b",
+   "text": "the name suggests q.speed (distance/time), but the unit 's/floor' is time/distance"
+  }
+ ],
+ "errors": [],
+ "notes": []
+}

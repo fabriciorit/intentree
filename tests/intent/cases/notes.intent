@@ -1,0 +1,17 @@
+# Free notes: they stay with the sentence above, or with the file if they come before every sentence.
+Note: written by hand from the old intent.map; notes do not enter the formal IR.
+The module "executor" overwrites the json document ".minimake/cache.json".
+Note: before rebuilding a target it deletes its cache entry and rewrites it only after success.
+The module "cli" uses the module "graph" and the module "executor".
+Note: the order of the imports does not matter.
+Note: two notes in a row stay with the same sentence.
+If the value "code" is not 0, the module "commands" raises the error "MinimakeError".
+Note: a command with a nonzero code becomes a target error.
+# a comment between the sentence and the note does not detach the note
+The module "cache" writes the file ".minimake/cache.json.tmp".
+# atomic write
+Note: writes tmp and os.replace.
+# a note on a sentence with an error is dropped along with it
+The module "x" frobs the module "y".
+Note: this note disappears.
+Note:

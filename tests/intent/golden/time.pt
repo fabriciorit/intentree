@@ -1,0 +1,6 @@
+A thread “cleanup” repete a cada “1 d”.
+O temporizador “backoff” repete a cada “1 s a 60 s”.
+A thread “clock” repete a cada “1.5 h”.
+A conexão “session” expira após “30 s”.
+O temporizador “fast” repete a cada “500 ms a 2 min”.
+

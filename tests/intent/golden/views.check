@@ -1,0 +1,18 @@
+error line 18: 'shows every': 'gizmo' is not a lexicon type (use the English name, like 'thread' or 'key-value store')
+  hint: see the literals a declared view accepts in FORMAT.md
+error line 19: 'groups by': 'flies over' is not a lexicon relation (use the English form of the verb, like 'runs on' or 'contains')
+  hint: see the literals a declared view accepts in FORMAT.md
+error line 20: 'has the form': unknown form 'circle'; forms: boxes, matrix, list
+  hint: see the literals a declared view accepts in FORMAT.md
+error line 21: 'marks': unknown mark 'colors'; marks: gaps, invariants, notes, states
+  hint: see the literals a declared view accepts in FORMAT.md
+error line 22: 'shows every': a view sentence does not accept negation, 'always' or 'exceptionally'
+  hint: see the literals a declared view accepts in FORMAT.md
+error the view 'a' selects nothing (use 'shows' or 'shows every')
+error the view 'f' has more than one form: "list", "matrix"
+error the view 'g' selects nothing (use 'shows' or 'shows every')
+error the view 'b' selects nothing (use 'shows' or 'shows every')
+error the view 'c' selects nothing (use 'shows' or 'shows every')
+error the view 'e' selects nothing (use 'shows' or 'shows every')
+error the view 'd' selects nothing (use 'shows' or 'shows every')
+12 errors, 17 entities, 20 facts, 0 invariants, 0 rules, 1 gaps, 0 warnings

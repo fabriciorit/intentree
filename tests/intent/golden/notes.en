@@ -1,0 +1,13 @@
+Note: written by hand from the old intent.map; notes do not enter the formal IR.
+If the value "code" is not 0, the module "commands" raises the error "MinimakeError".
+Note: a command with a nonzero code becomes a target error.
+The module "cache" writes the file ".minimake/cache.json.tmp".
+Note: writes tmp and os.replace.
+The module "cli" uses the module "executor".
+Note: the order of the imports does not matter.
+Note: two notes in a row stay with the same sentence.
+The module "cli" uses the module "graph".
+Note: the order of the imports does not matter.
+Note: two notes in a row stay with the same sentence.
+The module "executor" overwrites the json document ".minimake/cache.json".
+Note: before rebuilding a target it deletes its cache entry and rewrites it only after success.

@@ -1,0 +1,10 @@
+# Time literals: number and unit checked; canonical range with "to".
+The connection "session" times out after "30 s".
+The timer "backoff" repeats every "1 s a 60 s".
+The timer "fast" repeats every "500 ms to 2 min".
+The thread "clock" repeats every "1.5 h".
+The thread "cleanup" repeats every "1d".
+The connection "slow" times out after "30 seconds".
+The connection "no unit" times out after "30".
+The timer "inverted" repeats every "60 s to 1 s".
+The connection "object" times out after the value "ttl".

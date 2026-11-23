@@ -1,0 +1,17 @@
+# Comparison against another value, equality, membership and a boolean condition.
+If the value "stored hash" is not the value "current hash", the module "decision" changes the record "target".
+If the value "name" is in the set "done", the module "executor" skips the record "target".
+If the value "name" is not in the set "done", the module "executor" launches the process "shell".
+The thread "executor" is bounded by the value "jobs".
+The field "floors" is at most the field "max floors".
+If the value "dry run" is true, the module "cli" prints "plan".
+If the value "dry run" is false, the module "cli" launches the process "shell".
+If the value "code" is 0, the module "commands" returns the value "success".
+If the value "code" is not 0, the module "commands" raises the error "MinimakeError".
+The value "mode" is the value "default".
+The key-value store "Store" is not keyed by the value "hour".
+The module "m" is not implemented in "legacy/**".
+# errors: comparison with itself, 'is not' without a value, membership with a literal
+The value "x" is the value "x".
+The value "x" is not bounded.
+The value "x" is in "list".

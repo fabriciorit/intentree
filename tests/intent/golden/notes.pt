@@ -1,0 +1,14 @@
+Nota: written by hand from the old intent.map; notes do not enter the formal IR.
+O módulo “cache” grava o arquivo “.minimake/cache.json.tmp”.
+Nota: writes tmp and os.replace.
+O módulo “cli” usa o módulo “executor”.
+Nota: the order of the imports does not matter.
+Nota: two notes in a row stay with the same sentence.
+O módulo “cli” usa o módulo “graph”.
+Nota: the order of the imports does not matter.
+Nota: two notes in a row stay with the same sentence.
+O módulo “executor” sobrescreve o documento JSON “.minimake/cache.json”.
+Nota: before rebuilding a target it deletes its cache entry and rewrites it only after success.
+
+Se o valor “code” não é 0, o módulo “commands” levanta o erro “MinimakeError”.
+Nota: a command with a nonzero code becomes a target error.

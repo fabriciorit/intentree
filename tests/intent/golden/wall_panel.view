@@ -1,0 +1,109 @@
+view structure · wall_panel
+marks: ● mutable state (← who changes it) · !n invariant n · ? gap: the description does not say · ∅ declared absence: none, on purpose · ⚠ warning · ⏱ timeout · ⟳ period
+
+structure (level 0 uses the ones below)
+level 0:
+deploy.sh · shell script !12
+  → runs in dev workstation; writes pages, server host, panel-server
+mosquitto · process
+  → listens on 127.0.0.1:1883; runs in server host
+level 1:
+panel-server · process !1,2,6-10,12,13
+  runs in systemd panel-server.service
+  config.json · configuration (immutable)
+  Store · key-value
+  screen cache · map ● ← changed by accept device
+  alert queue · queue
+  navigation stack · stack ● ← changed by accept device
+  SOC alert · state ● ← changed by monitor
+  accept device · thread
+  clock · thread ⟳60 s
+  control · thread
+  monitor · thread
+  mqtt · thread
+  session ping · thread ⟳5 s
+  weather · thread ⟳1800 s
+  → connects to 127.0.0.1:1883, 0.0.0.0:9222; launches curl; listens on server:8993, server:9000; reads pages; renders buffer L8 1072x1448; runs in server host; sends paneld; uses chrome-headless-shell
+level 2:
+chrome-headless-shell · process !4
+  runs in systemd, Nice 19
+  → listens on 0.0.0.0:9222; runs in server host
+curl · process
+  → reads open-meteo; runs in server host
+pages · directory
+  dark theme · page
+  home.html · page
+  launcher.html · page
+paneld · process !3,5,11
+  runs in init session
+  touch targets · list
+  connection · state ● ← changed by paneld
+  screen ownership · state ● ← changed by paneld
+  reconnect backoff · timer ⟳1 s to 60 s
+  → connects to server:8993; runs in panel device; sends panel-server
+
+externals
+0.0.0.0:9222 · devtools endpoint ?
+127.0.0.1:1883 · mqtt endpoint ?
+buffer L8 1072x1448 · device
+dev workstation · machine
+open-meteo · web service
+panel device · machine
+server host · machine
+server:8993 · tcp endpoint ∅
+server:9000 · http endpoint ?
+
+state machines
+machine SOC alert (in panel-server): states normal (initial), alert
+  normal → alert: monitor
+  alert → normal: monitor
+machine connection (in paneld): states waiting backoff, disconnected (initial), connected
+  waiting backoff → disconnected: paneld
+  disconnected → connected: paneld
+  connected → waiting backoff: paneld
+machine screen ownership (in paneld): states external app, session (initial)
+  external app → session: paneld
+  session → external app: paneld
+
+threads
+accept device: changes navigation stack, screen cache; consumes Store, alert queue
+clock ⟳60 s: fills Store
+control: fills alert queue
+monitor: consumes Store; fills alert queue; moves SOC alert
+mqtt: connects to 127.0.0.1:1883; fills Store; subscribes to home/energy/#, home/sensor/data, home/weather/#
+session ping ⟳5 s
+weather ⟳1800 s: fills Store; launches curl
+shared Store · key-value store: accept device consumes, mqtt fills, weather fills, clock fills, monitor consumes
+shared alert queue · queue: control fills, accept device consumes, monitor fills
+
+roles (what the primitives presuppose)
+config.json · configuration: source=panel-server; validation=panel-server
+0.0.0.0:9222 · devtools endpoint: address=chrome-headless-shell; authentication=?
+server:9000 · http endpoint: address=panel-server; authentication=?
+127.0.0.1:1883 · mqtt endpoint: address=mosquitto; authentication=?
+server:8993 · tcp endpoint: address=panel-server; authentication=∅
+Store · key-value store: key=data key
+screen cache · map: key=page
+alert queue · queue: capacity=bounded
+reconnect backoff · timer: period=1 s to 60 s
+
+invariants and rules
+!1 If the value "rectangle" is monochrome, the process "panel-server" uses the value "A2".
+!2 If the stack "navigation stack" changes, the process "panel-server" uses the value "GC16".
+!3 If the connection "session" closes, the process "paneld" connects to the tcp endpoint "server:8993".
+!4 When the process "chrome-headless-shell" launches, the process "chrome-headless-shell" removes the value "SingletonLock".
+!5 If the connection "session" times out, the process "paneld" launches the process "udhcpc".
+!6 If the devtools endpoint "0.0.0.0:9222" times out, the process "panel-server" falls back to the function "native render".
+!7 If the thread "mqtt" times out, the thread "monitor" publishes the alert "dead source" to the queue "alert queue".
+!8 If the value "home.soc" is less than 30, the thread "monitor" publishes the alert "low SOC" to the queue "alert queue".
+!9 If the value "home.soc" is greater than 35, the thread "monitor" removes the alert "low SOC" from the queue "alert queue".
+!10 If the counter "consecutive A2 per region" is at least 8, the process "panel-server" dispatches the event "ghosting cleanup".
+!11 The process "paneld" does not call the function "FB_WAIT_UPDATE".
+!12 The shell script "deploy.sh" does not overwrite the configuration "config.json".
+!13 The process "panel-server" does not change the value "physical screen edge".
+
+gaps (the description does not say), warnings and absences (none, on purpose)
+? devtools endpoint “0.0.0.0:9222”: missing authentication
+? http endpoint “server:9000”: missing authentication
+? mqtt endpoint “127.0.0.1:1883”: missing authentication
+∅ tcp endpoint “server:8993”: no authentication, on purpose

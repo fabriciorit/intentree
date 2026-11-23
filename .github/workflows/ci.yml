@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Rust (stable, wasm32 target)
+        run: |
+          rustup toolchain install stable --profile minimal --target wasm32-unknown-unknown
+          rustup default stable
+      - name: Build
+        run: cargo build
+      - name: Test
+        run: cargo test
+      - name: Check the project's own .intent
+        run: cargo run -- check
+      - name: Build the WebAssembly module and test it
+        run: |
+          bash scripts/build-wasm.sh
+          node web/test-wasm.mjs
+      - name: Demo unit tests
+        run: |
+          for dir in examples/*/; do
+            if ls "$dir"tests/*.test.js >/dev/null 2>&1; then
+              echo "== $dir"
+              (cd "$dir" && node --test)
+            fi
+          done

@@ -1,0 +1,24 @@
+# Layers: order by "is above" (transitive closure); a relation that goes up is an error.
+The layer "interface" is above the layer "execution".
+The layer "execution" is above the layer "domain".
+The layer "domain" is above the layer "data".
+The program "app" contains the module "cli", the module "executor", the module "rules" and the module "cache".
+The module "cli" is in the layer "interface".
+The module "executor" is in the layer "execution".
+The module "rules" is in the layer "domain".
+The module "cache" is in the layer "data".
+The module "rules" contains the function "validate".
+The module "cli" uses the module "executor" and the module "cache".
+The function "validate" reads the module "cache".
+# goes up from data to interface and from domain to execution: only the declared exception passes
+The module "cache" exceptionally calls the module "cli".
+The function "validate" uses the module "executor".
+# an exception without a violation is a warning
+The module "cli" exceptionally reads the module "rules".
+# cycle and two layers
+The layer "x" is above the layer "y".
+The layer "y" is above the layer "x".
+The module "double" is in the layer "x".
+The module "double" is in the layer "y".
+# 'exceptionally' only in a simple sentence
+If the module "cli" stops, the module "cache" exceptionally calls the module "cli".

@@ -1,0 +1,70 @@
+A função “export_pdf” tem a unidade “mm”.
+A função “export_svg” tem a unidade “mm”.
+O módulo “distortion” contém a função “compute_distortion”.
+O algoritmo “lscm” segue o método “Levy et al. 2002”.
+O módulo “distortion” contém o percentil “angular p95”.
+O módulo “loader” remove o valor “degenerate faces” da malha “mesh”.
+O programa “mesh_patterns” contém o módulo “main”.
+A janela “viewer” contém a lista “panels”.
+A função “export_pdf” lê a lista “panels”.
+A função “export_svg” lê a lista “panels”.
+O módulo “exporter” grava a lista “panels” no arquivo SVG “patterns.svg”.
+O módulo “exporter” grava a lista “panels” no arquivo PDF “patterns.pdf”.
+O programa “mesh_patterns” contém a janela “viewer”.
+O módulo “main” usa a janela “viewer”.
+O módulo “exporter” contém a função “export_pdf”.
+A máquina de estados “seam mode” tem os estados “seam with point”.
+A janela “viewer” contém o grafo “edge graph”.
+A janela “viewer” altera a pilha “seam_segments”.
+A janela “viewer” contém a pilha “seam_segments”.
+A janela “viewer” contém a máquina de estados “seam mode”.
+A janela “viewer” leva a máquina de estados “seam mode” do estado “seam with point” para o estado “navigation”.
+A janela “viewer” leva a máquina de estados “seam mode” do estado “seam with point” para o estado “seam without point”.
+A janela “viewer” leva a máquina de estados “seam mode” do estado “navigation” para o estado “seam without point”.
+A janela “viewer” leva a máquina de estados “seam mode” do estado “seam without point” para o estado “seam with point”.
+A janela “viewer” leva a máquina de estados “seam mode” do estado “seam without point” para o estado “navigation”.
+O módulo “loader” contém a malha “mesh”.
+A função “segment_by_seams” converte a malha “mesh” na lista “face groups”.
+A lista “panels” tem a mesma unidade que a malha “mesh”.
+O módulo “loader” lê a malha “mesh” do arquivo STL “model.stl”.
+O percentil “angular p95” usa o método “numpy linear interpolation”.
+A janela “viewer” altera a lista “seam_edges”.
+A janela “viewer” contém a lista “seam_edges”.
+O percentil “angular p95” mede o valor “angular distortion per face”.
+O módulo “flattener” contém a função “segment_by_seams”.
+O módulo “flattener” contém a função “flatten_patch”.
+A máquina de estados “distortion mode” tem os estados “angular”.
+A máquina de estados “distortion mode” começa no estado “angular”.
+O módulo “flattener” contém a função “cut_to_disk”.
+A função “flatten_patch” usa a função “cut_to_disk”.
+O módulo “exporter” usa a biblioteca “reportlab”.
+O módulo “flattener” contém o algoritmo “lscm”.
+A função “flatten_patch” usa o algoritmo “lscm”.
+O módulo “exporter” contém a função “export_svg”.
+O módulo “flattener” usa a biblioteca “scipy”.
+A janela “viewer” contém a máquina de estados “distortion mode”.
+A janela “viewer” leva a máquina de estados “distortion mode” do estado “angular” para o estado “area”.
+A janela “viewer” leva a máquina de estados “distortion mode” do estado “none” para o estado “angular”.
+A janela “viewer” leva a máquina de estados “distortion mode” do estado “area” para o estado “none”.
+A máquina de estados “distortion mode” tem os estados “none”.
+A janela “viewer” usa a biblioteca “pyvista”.
+A máquina de estados “seam mode” tem os estados “navigation”.
+A máquina de estados “seam mode” começa no estado “navigation”.
+O programa “mesh_patterns” contém o módulo “loader”.
+O módulo “main” usa o módulo “loader”.
+O programa “mesh_patterns” contém o módulo “distortion”.
+A janela “viewer” usa o módulo “distortion”.
+O módulo “loader” usa a biblioteca “trimesh”.
+O programa “mesh_patterns” contém o módulo “exporter”.
+A janela “viewer” usa o módulo “exporter”.
+O programa “mesh_patterns” contém o módulo “flattener”.
+A janela “viewer” usa o módulo “flattener”.
+A máquina de estados “seam mode” tem os estados “seam without point”.
+A máquina de estados “distortion mode” tem os estados “area”.
+O algoritmo “lscm” fixa o valor “two boundary vertices”.
+
+Se a malha “patch” está fechada, a função “cut_to_disk” remove o valor “last face”.
+Se a lista “panels” está vazia, a janela “viewer” não chama o módulo “exporter”.
+Se a pilha “seam_segments” está vazia, a janela “viewer” não remove a lista “seam_edges”.
+Se o algoritmo “lscm” levanta o erro “Exception”, a função “flatten_patch” remove o valor “panel”.
+Se o valor “2D area” é menor que 0, a função “flatten_patch” inverte o valor “u axis”.

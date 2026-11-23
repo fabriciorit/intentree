@@ -1,0 +1,112 @@
+A fila “alert queue” é limitada.
+A configuração “config.json” é imutável.
+O temporizador “reconnect backoff” repete a cada “1 s a 60 s”.
+A thread “weather” repete a cada “1800 s”.
+A conexão “session” expira após “30 s”.
+A thread “session ping” repete a cada “5 s”.
+A thread “clock” repete a cada “60 s”.
+O programa “wall_panel” contém o processo “curl”.
+A thread “weather” inicia o processo “curl”.
+A thread “mqtt” conecta ao endpoint MQTT “127.0.0.1:1883”.
+O processo “mosquitto” escuta no endpoint MQTT “127.0.0.1:1883”.
+A máquina de estados “screen ownership” tem os estados “external app”.
+O script de shell “deploy.sh” roda na máquina “dev workstation”.
+O processo “paneld” contém a máquina de estados “screen ownership”.
+O processo “paneld” leva a máquina de estados “screen ownership” do estado “external app” para o estado “session”.
+O processo “paneld” leva a máquina de estados “screen ownership” do estado “session” para o estado “external app”.
+O processo “panel-server” contém a thread “control”.
+O programa “wall_panel” contém o processo “chrome-headless-shell”.
+O processo “panel-server” usa o processo “chrome-headless-shell”.
+O programa “wall_panel” contém o processo “mosquitto”.
+O processo “paneld” conecta ao endpoint TCP “server:8993”.
+O processo “panel-server” escuta no endpoint TCP “server:8993”.
+A máquina de estados “SOC alert” tem os estados “normal”.
+A máquina de estados “SOC alert” começa no estado “normal”.
+O processo “panel-server” contém a thread “session ping”.
+A máquina de estados “SOC alert” tem os estados “alert”.
+A máquina de estados “connection” tem os estados “waiting backoff”.
+O processo “paneld” contém a máquina de estados “connection”.
+O processo “paneld” leva a máquina de estados “connection” do estado “waiting backoff” para o estado “disconnected”.
+O processo “paneld” leva a máquina de estados “connection” do estado “disconnected” para o estado “connected”.
+O processo “paneld” leva a máquina de estados “connection” do estado “connected” para o estado “waiting backoff”.
+O processo “chrome-headless-shell” roda no contexto de execução “systemd, Nice 19”.
+A máquina de estados “connection” tem os estados “disconnected”.
+A máquina de estados “connection” começa no estado “disconnected”.
+A pasta “pages” contém a página “dark theme”.
+O processo “panel-server” conecta ao endpoint DevTools “0.0.0.0:9222”.
+O processo “chrome-headless-shell” escuta no endpoint DevTools “0.0.0.0:9222”.
+O programa “wall_panel” contém o processo “paneld”.
+O processo “paneld” roda no contexto de execução “init session”.
+A pasta “pages” contém a página “launcher.html”.
+O processo “panel-server” contém a máquina de estados “SOC alert”.
+A thread “monitor” leva a máquina de estados “SOC alert” do estado “normal” para o estado “alert”.
+A thread “monitor” leva a máquina de estados “SOC alert” do estado “alert” para o estado “normal”.
+A thread “accept device” consome o armazenamento chave-valor “Store”.
+A thread “monitor” consome o armazenamento chave-valor “Store”.
+O processo “panel-server” contém o armazenamento chave-valor “Store”.
+A thread “mqtt” alimenta o armazenamento chave-valor “Store”.
+A thread “weather” alimenta o armazenamento chave-valor “Store”.
+A thread “clock” alimenta o armazenamento chave-valor “Store”.
+A thread “mqtt” assina o valor “home/sensor/data”.
+O processo “curl” lê o valor “forecast” do serviço web “open-meteo”.
+A máquina de estados “connection” tem os estados “connected”.
+O processo “panel-server” contém a thread “accept device”.
+O processo “panel-server” contém a configuração “config.json”.
+O processo “panel-server” lê a configuração “config.json”.
+O processo “panel-server” valida a configuração “config.json”.
+O processo “panel-server” envia a mensagem “BLIT” para o processo “paneld”.
+O processo “paneld” envia a mensagem “TOUCH” para o processo “panel-server”.
+A thread “mqtt” assina o valor “home/weather/#”.
+O processo “paneld” contém o dispositivo “digitizer”.
+O armazenamento chave-valor “Store” é indexado pelo valor “data key”.
+O processo “paneld” contém a lista “touch targets”.
+O processo “paneld” resolve a lista “touch targets”.
+O programa “wall_panel” contém a pasta “pages”.
+O script de shell “deploy.sh” grava a pasta “pages” na máquina “server host”.
+A máquina de estados “screen ownership” tem os estados “session”.
+A máquina de estados “screen ownership” começa no estado “session”.
+O processo “curl” roda na máquina “server host”.
+O processo “chrome-headless-shell” roda na máquina “server host”.
+O processo “mosquitto” roda na máquina “server host”.
+O processo “panel-server” roda na máquina “server host”.
+O processo “panel-server” contém a thread “mqtt”.
+O processo “paneld” contém o dispositivo “EPDC framebuffer”.
+O processo “panel-server” contém a thread “weather”.
+A thread “accept device” consome a fila “alert queue”.
+O processo “panel-server” contém a fila “alert queue”.
+A thread “control” alimenta a fila “alert queue”.
+A thread “monitor” alimenta a fila “alert queue”.
+O processo “panel-server” contém a thread “clock”.
+O programa “wall_panel” contém o script de shell “deploy.sh”.
+O processo “paneld” contém o temporizador “reconnect backoff”.
+A thread “accept device” altera a pilha “navigation stack”.
+O processo “panel-server” contém a pilha “navigation stack”.
+O processo “paneld” roda na máquina “panel device”.
+O mapa “screen cache” é indexado pelo valor “page”.
+O programa “wall_panel” contém o processo “panel-server”.
+O script de shell “deploy.sh” grava o processo “panel-server” na máquina “server host”.
+A pasta “pages” contém a página “home.html”.
+O processo “panel-server” lê a página “home.html” da pasta “pages”.
+O processo “panel-server” renderiza a página “home.html” no dispositivo “buffer L8 1072x1448”.
+A thread “mqtt” assina o valor “home/energy/#”.
+O processo “panel-server” roda no contexto de execução “systemd panel-server.service”.
+O processo “panel-server” contém a thread “monitor”.
+O processo “panel-server” escuta no endpoint HTTP “server:9000”.
+O processo “panel-server” envia a mensagem “CMD launch app” para o processo “paneld”.
+A thread “accept device” altera o mapa “screen cache”.
+O processo “panel-server” contém o mapa “screen cache”.
+O endpoint TCP “server:8993” não precisa de autenticação.
+
+Se o valor “rectangle” é monocromático, o processo “panel-server” usa o valor “A2”.
+Se a pilha “navigation stack” muda, o processo “panel-server” usa o valor “GC16”.
+Se a conexão “session” fecha, o processo “paneld” conecta ao endpoint TCP “server:8993”.
+Quando o processo “chrome-headless-shell” inicia, o processo “chrome-headless-shell” remove o valor “SingletonLock”.
+Se a conexão “session” expira, o processo “paneld” inicia o processo “udhcpc”.
+Se o endpoint DevTools “0.0.0.0:9222” expira, o processo “panel-server” recorre à função “native render”.
+Se a thread “mqtt” expira, a thread “monitor” publica o alerta “dead source” na fila “alert queue”.
+Se o valor “home.soc” é menor que 30, a thread “monitor” publica o alerta “low SOC” na fila “alert queue”.
+Se o valor “home.soc” é maior que 35, a thread “monitor” remove o alerta “low SOC” da fila “alert queue”.
+Se o contador “consecutive A2 per region” é no mínimo 8, o processo “panel-server” dispara o evento “ghosting cleanup”.
+O processo “paneld” não chama a função “FB_WAIT_UPDATE”.
+O script de shell “deploy.sh” não sobrescreve a configuração “config.json”.
+O processo “panel-server” não altera o valor “physical screen edge”.

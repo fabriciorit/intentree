@@ -1,0 +1,114 @@
+O módulo “simulator” é determinístico.
+A configuração “Config” é imutável.
+O registro “Passenger” é mutável.
+O registro “Elevator” é mutável.
+A estratégia “round robin” é com estado.
+O campo “rate” tem a unidade “passengers/min”.
+O relógio “now” tem a unidade “s”.
+O campo “door_time” tem a unidade “s”.
+O campo “duration” tem a unidade “s”.
+O campo “speed” tem a unidade “s/floor”.
+A máquina de estados “State” tem os estados “going up”.
+O módulo “passengers” contém o processo de Poisson “arrivals”.
+O catálogo “STRATEGIES” contém a estratégia “round robin”.
+O programa “elevator” contém o módulo “dispatch”.
+O módulo “execution” usa o módulo “dispatch”.
+O módulo “cli” usa o módulo “dispatch”.
+A máquina de estados “State” tem os estados “door open”.
+O módulo “simulator” altera o registro “Passenger”.
+O módulo “passengers” contém o registro “Passenger”.
+O módulo “metrics” contém o percentil “wait p95”.
+O programa “elevator” contém o módulo “metrics”.
+O comando “run” usa o módulo “metrics”.
+O comando “compare” usa o módulo “metrics”.
+A fila de prioridade “event queue” desempata pelo valor “scheduling order”.
+O catálogo “STRATEGIES” contém a estratégia “zone”.
+O percentil “wait p95” usa o método “nearest rank”.
+A máquina de estados “State” tem os estados “stopped”.
+O módulo “passengers” contém o gerador aleatório “per-floor rng”.
+A métrica “floors traveled” mede o valor “sum of floors of all elevators”.
+A configuração “Config” contém o campo “elevators”.
+O módulo “elevator” contém a máquina de estados “State”.
+O registro “Elevator” contém a máquina de estados “State”.
+O módulo “simulator” leva a máquina de estados “State” do estado “going up” para o estado “door open”.
+O módulo “simulator” leva a máquina de estados “State” do estado “door open” para o estado “stopped”.
+O registro “Elevator” leva a máquina de estados “State” do estado “stopped” para o estado “going up”.
+O módulo “simulator” leva a máquina de estados “State” do estado “stopped” para o estado “door open”.
+O registro “Elevator” leva a máquina de estados “State” do estado “stopped” para o estado “going down”.
+O módulo “simulator” leva a máquina de estados “State” do estado “going down” para o estado “door open”.
+O módulo “metrics” contém a métrica “mean trip”.
+O módulo “simulator” contém o relógio “now”.
+O módulo “report” contém o relatório “summary”.
+A configuração “Config” contém o campo “speed”.
+O módulo “output” grava a lista “served passengers” no arquivo CSV “output.csv”.
+O programa “elevator” contém o módulo “timeline”.
+O comando “run” usa o módulo “timeline”.
+A configuração “Config” contém o campo “seed”.
+O gerador aleatório “per-floor rng” é semeado com o campo “seed”.
+A métrica “mean wait” mede o valor “boarding minus arrival”.
+O programa “elevator” contém o módulo “simulator”.
+O módulo “execution” usa o módulo “simulator”.
+O registro “Elevator” contém a lista “on board”.
+O programa “elevator” contém o módulo “config”.
+O módulo “cli” usa o módulo “config”.
+O programa “elevator” contém o módulo “elevator”.
+O módulo “dispatch” usa o módulo “elevator”.
+O módulo “simulator” usa o módulo “elevator”.
+O módulo “simulator” contém a lista “waiting”.
+O programa “elevator” contém o módulo “execution”.
+O comando “run” usa o módulo “execution”.
+O comando “compare” usa o módulo “execution”.
+A configuração “Config” contém o campo “floors”.
+A configuração “Config” contém o campo “door_time”.
+O módulo “timeline” contém o relatório “timeline”.
+O registro “Elevator” contém o conjunto “stops”.
+A máquina de estados “State” tem os estados “going down”.
+O módulo “metrics” contém a métrica “floors traveled”.
+O módulo “dispatch” contém o catálogo “STRATEGIES”.
+O módulo “execution” usa o catálogo “STRATEGIES”.
+O módulo “simulator” contém a fila de prioridade “event queue”.
+O módulo “simulator” altera o registro “Elevator”.
+O módulo “elevator” contém o registro “Elevator”.
+O módulo “metrics” contém a métrica “mean wait”.
+O módulo “simulator” contém a lista “completed”.
+O programa “elevator” contém o módulo “cli”.
+O gerador aleatório “per-floor rng” é semeado com o valor “origin floor”.
+A configuração “Config” contém o campo “rate”.
+O processo de Poisson “arrivals” é parametrizado pelo campo “rate”.
+O programa “elevator” contém o módulo “report”.
+O comando “run” usa o módulo “report”.
+O comando “compare” usa o módulo “report”.
+A configuração “Config” contém o campo “capacity”.
+A métrica “mean trip” mede o valor “alighting minus boarding”.
+A fila de prioridade “event queue” é ordenada pelo valor “simulated time”.
+O módulo “cli” contém o comando “run”.
+A configuração “Config” contém o campo “duration”.
+O módulo “config” contém a configuração “Config”.
+O módulo “config” lê a configuração “Config” do documento JSON “config.json”.
+O módulo “config” valida a configuração “Config”.
+O catálogo “STRATEGIES” contém a estratégia “nearest”.
+O programa “elevator” contém o módulo “passengers”.
+O módulo “execution” usa o módulo “passengers”.
+O módulo “cli” contém o comando “compare”.
+O programa “elevator” contém o módulo “output”.
+O comando “run” usa o módulo “output”.
+O campo “speed” é maior que 0.
+O campo “elevators” é no mínimo 1.
+O campo “floors” é no mínimo 2.
+O campo “door_time” é no mínimo 0.
+O campo “rate” é no mínimo 0.
+O campo “capacity” é no mínimo 1.
+O campo “duration” é no mínimo 0.
+O campo “seed” não tem limite.
+
+Se o registro “Elevator” está cheio, o módulo “simulator” descarta o registro “Elevator”.
+Se o módulo “simulator” não atende o registro “Passenger”, o módulo “simulator” levanta o erro “RuntimeError”.
+Se o conjunto “stops” contém o valor “called floor”, o módulo “simulator” descarta a lista “waiting”.
+Se o módulo “config” levanta o erro “ValueError”, o comando “run” sai com o valor “2”.
+Se a estratégia “zone” devolve o valor “None”, o módulo “simulator” descarta a lista “waiting”.
+Quando o campo “floors” muda, o gerador aleatório “per-floor rng” altera a lista “passengers”.
+Se o campo “floors” é maior que 36, o relatório “timeline” imprime o valor “?”.
+Toda estratégia no catálogo “STRATEGIES” devolve o valor “None”.
+Toda estratégia no catálogo “STRATEGIES” recebe o valor “floor”.
+Toda estratégia no catálogo “STRATEGIES” devolve o registro “Elevator”.
+Toda estratégia no catálogo “STRATEGIES” recebe a lista “candidates”.

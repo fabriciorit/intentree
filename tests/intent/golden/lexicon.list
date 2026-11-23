@@ -1,0 +1,185 @@
+# types (nouns)
+alert
+command
+component
+configuration requires: source; validation
+connection
+content script
+d-bus service
+device
+directory
+environment variable
+error
+event
+field requires: limit
+file
+function
+layer
+library
+machine
+message
+method
+metric requires: definition
+module
+option requires: default
+page
+page script
+process
+program
+report
+service worker
+shell script
+strategy requires: input; output
+stream
+tab
+test suite
+text field
+unit
+value
+view
+web service
+window
+devtools endpoint requires: address; authentication
+csv file
+header
+http endpoint requires: address; authentication
+json document
+mqtt endpoint requires: address; authentication
+pdf file
+request
+route
+status code
+stl file
+svg file
+tcp endpoint requires: address; authentication
+text file
+wav buffer
+websocket endpoint requires: address; authentication
+algorithm requires: reference
+digest
+mesh requires: unit
+percentile requires: method
+poisson process requires: rate
+clock requires: unit
+counter
+event flag
+execution context
+graph
+key-value store requires: key
+list
+lock
+map requires: key
+priority queue requires: order; tie-breaker
+queue requires: capacity
+random generator requires: seed
+record
+registry requires: contents
+ring buffer requires: capacity
+set
+slot requires: synchronization
+stack
+state
+state machine requires: states; transitions; initial state
+table
+thread
+timer requires: period
+# verbs (accepted prepositions in brackets)
+is above
+adds | add [to]
+authenticates | authenticate
+blocks | block
+breaks ties by | break ties by
+calls | call [on]
+changes | change | mutates | mutate
+chooses | choose | selects | select [from]
+closes | close
+computes | compute | calculates | calculate [from]
+connects to | connect to
+consumes | consume | drains | drain
+contains | contain
+converts | convert | splits | split [into]
+creates | create | builds | build [for]
+defaults to | default to
+dispatches | dispatch | emits | emit [on]
+excludes | exclude
+exits with | exit with
+falls back to | fall back to
+fills | fill | feeds | feed
+flips | flip
+follows | follow
+forwards | forward [to]
+groups by | group by
+has the form
+has the same unit as
+has the states
+has the unit
+is implemented in
+injects | inject [into]
+invalidates | invalidate
+is in
+is keyed by
+launches | launch | starts | start
+listens on | listen on
+marks | mark
+measures | measure
+moves | move [from, to]
+is ordered by
+overwrites | overwrite
+is parameterized by
+parses | parse [from, into]
+picks | pick
+pins | pin
+pops | pop [from]
+prints | print
+is protected by
+publishes | publish [to]
+pushes | push [onto]
+raises | raise
+reads | read | loads | load [from, with]
+receives | receive
+records | record [to]
+redirects to | redirect to
+removes | remove | drops | drop [from]
+renders | render [into]
+repeats every | repeat every
+replaces | replace [with]
+resolves | resolve
+responds with | respond with
+restarts | restart
+retries up to | retry up to
+returns | return
+runs in | run in | runs on | run on
+schedules | schedule [on]
+is seeded with
+sends | send [to, through]
+serves | serve | handles | handle
+shows | show | displays | display
+shows every | show every
+skips | skip | discards | discard
+starts in | start in
+subscribes to | subscribe to
+terminates | terminate | stops | stop
+tests | test
+times out | time out
+times out after | time out after
+uses | use | depends on | depend on
+validates | validate | checks | check
+waits for | wait for
+writes | write | exports | export [to]
+# adjectives (after 'is')
+immutable | mutable | deterministic | stateful | empty | full | idempotent | bounded | unbounded | persistent | closed | busy | daemonic | monochrome | true | false
+# comparisons (followed by a number or the <type> "<name>"); equality: is, is not
+is at least | is greater than | is bounded by | is at most | is less than
+# core: mode before the verb, quantifier, copula
+does not | never | always | exceptionally | every | is | is not
+# declared absences (presupposed role left empty on purpose)
+needs no authentication (authentication)
+needs no validation (validation)
+needs no synchronization (synchronization)
+has no limit (limit)
+has no seed (seed)
+has no unit (unit)
+has no tie-breaker (tie-breaker)
+has no reference (reference)
+has no default (default)
+has no initial state (initial state)

@@ -1,0 +1,491 @@
+{
+ "lexicon": "0.3",
+ "entities": [
+  {
+   "id": "061e671db6",
+   "name": "rate",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "0fccb16ea3",
+   "name": "x",
+   "type": "e.message",
+   "attrs": {}
+  },
+  {
+   "id": "1593edc713",
+   "name": "door_time",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "16255ebe48",
+   "name": "m",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "1858ef05b3",
+   "name": "large",
+   "type": "e.field",
+   "attrs": {}
+  },
+  {
+   "id": "274311db1f",
+   "name": "tab\tname",
+   "type": "e.field",
+   "attrs": {}
+  },
+  {
+   "id": "2ba99d8200",
+   "name": "integer",
+   "type": "e.field",
+   "attrs": {}
+  },
+  {
+   "id": "2e426604eb",
+   "name": "bar\\name",
+   "type": "e.field",
+   "attrs": {}
+  },
+  {
+   "id": "39f92566e2",
+   "name": "queue",
+   "type": "p.queue",
+   "attrs": {}
+  },
+  {
+   "id": "43035c0d97",
+   "name": "y",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "481cb09144",
+   "name": "n",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "4bd2351249",
+   "name": "a",
+   "type": "p.state",
+   "attrs": {}
+  },
+  {
+   "id": "4be5992fcb",
+   "name": "c",
+   "type": "p.state",
+   "attrs": {}
+  },
+  {
+   "id": "5102fa36ba",
+   "name": "speed",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "68922b2787",
+   "name": "épsilon",
+   "type": "e.field",
+   "attrs": {}
+  },
+  {
+   "id": "6f2ac9cc6e",
+   "name": "floors",
+   "type": "e.field",
+   "attrs": {}
+  },
+  {
+   "id": "91b5a94581",
+   "name": "b",
+   "type": "p.state",
+   "attrs": {}
+  },
+  {
+   "id": "980d40c099",
+   "name": "sm",
+   "type": "p.state_machine",
+   "attrs": {}
+  },
+  {
+   "id": "aa2a8d5aed",
+   "name": "w",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "b81df7e59e",
+   "name": "duration",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "bb3820e2b1",
+   "name": "capacity",
+   "type": "e.field",
+   "attrs": {}
+  },
+  {
+   "id": "cb3830499a",
+   "name": "huge",
+   "type": "e.field",
+   "attrs": {}
+  },
+  {
+   "id": "d4ff6d849f",
+   "name": "clock",
+   "type": "p.clock",
+   "attrs": {}
+  },
+  {
+   "id": "da163a0477",
+   "name": "f",
+   "type": "e.file",
+   "attrs": {}
+  },
+  {
+   "id": "de98676168",
+   "name": "x",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "ee8edb6751",
+   "name": "z",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "efc7540ed4",
+   "name": "q2",
+   "type": "p.queue",
+   "attrs": {}
+  }
+ ],
+ "facts": [
+  {
+   "adj": "adj.bounded",
+   "rel": "prop",
+   "subject": "39f92566e2"
+  },
+  {
+   "adj": "adj.closed",
+   "rel": "prop",
+   "subject": "efc7540ed4"
+  },
+  {
+   "adj": "adj.mutable",
+   "rel": "prop",
+   "subject": "1593edc713"
+  },
+  {
+   "literal": "Hz",
+   "mode": null,
+   "rel": "a.has_unit",
+   "roles": {},
+   "subject": "061e671db6"
+  },
+  {
+   "literal": "ms",
+   "mode": null,
+   "rel": "a.has_unit",
+   "roles": {},
+   "subject": "16255ebe48"
+  },
+  {
+   "literal": "parsecs",
+   "mode": null,
+   "rel": "a.has_unit",
+   "roles": {},
+   "subject": "b81df7e59e"
+  },
+  {
+   "literal": "s",
+   "mode": null,
+   "rel": "a.has_unit",
+   "roles": {},
+   "subject": "481cb09144"
+  },
+  {
+   "literal": "s",
+   "mode": null,
+   "rel": "a.has_unit",
+   "roles": {},
+   "subject": "5102fa36ba"
+  },
+  {
+   "literal": "s",
+   "mode": null,
+   "rel": "a.has_unit",
+   "roles": {},
+   "subject": "d4ff6d849f"
+  },
+  {
+   "literal": "s",
+   "mode": null,
+   "rel": "a.has_unit",
+   "roles": {},
+   "subject": "ee8edb6751"
+  },
+  {
+   "mode": null,
+   "object": "061e671db6",
+   "rel": "a.has_same_unit_as",
+   "roles": {},
+   "subject": "aa2a8d5aed"
+  },
+  {
+   "mode": null,
+   "object": "061e671db6",
+   "rel": "a.reads",
+   "roles": {},
+   "subject": "16255ebe48"
+  },
+  {
+   "mode": null,
+   "object": "43035c0d97",
+   "rel": "a.has_same_unit_as",
+   "roles": {},
+   "subject": "de98676168"
+  },
+  {
+   "mode": null,
+   "object": "4bd2351249",
+   "rel": "a.has_states",
+   "roles": {},
+   "subject": "980d40c099"
+  },
+  {
+   "mode": null,
+   "object": "4bd2351249",
+   "rel": "a.starts_in",
+   "roles": {},
+   "subject": "980d40c099"
+  },
+  {
+   "mode": null,
+   "object": "4be5992fcb",
+   "rel": "a.has_states",
+   "roles": {},
+   "subject": "980d40c099"
+  },
+  {
+   "mode": null,
+   "object": "91b5a94581",
+   "rel": "a.has_states",
+   "roles": {},
+   "subject": "980d40c099"
+  },
+  {
+   "mode": null,
+   "object": "980d40c099",
+   "rel": "a.moves",
+   "roles": {
+    "from": "4bd2351249",
+    "to": "91b5a94581"
+   },
+   "subject": "16255ebe48"
+  },
+  {
+   "mode": null,
+   "object": "aa2a8d5aed",
+   "rel": "a.consumes",
+   "roles": {},
+   "subject": "481cb09144"
+  },
+  {
+   "mode": null,
+   "object": "de98676168",
+   "rel": "a.has_same_unit_as",
+   "roles": {},
+   "subject": "43035c0d97"
+  },
+  {
+   "mode": null,
+   "object": "de98676168",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "481cb09144"
+  },
+  {
+   "op": "<",
+   "rel": "c.limit",
+   "subject": "68922b2787",
+   "value": 1e-05
+  },
+  {
+   "op": "<=",
+   "rel": "c.limit",
+   "subject": "1858ef05b3",
+   "value": 1234567.0
+  },
+  {
+   "op": "<=",
+   "rel": "c.limit",
+   "subject": "6f2ac9cc6e",
+   "value": 30.0
+  },
+  {
+   "op": "<=",
+   "rel": "c.limit",
+   "subject": "cb3830499a",
+   "value": 1e+16
+  },
+  {
+   "op": ">",
+   "rel": "c.limit",
+   "subject": "bb3820e2b1",
+   "value": 0.5
+  },
+  {
+   "op": ">=",
+   "rel": "c.limit",
+   "subject": "274311db1f",
+   "value": 1.25
+  },
+  {
+   "op": ">=",
+   "rel": "c.limit",
+   "subject": "2ba99d8200",
+   "value": 7.0
+  },
+  {
+   "op": ">=",
+   "rel": "c.limit",
+   "subject": "2e426604eb",
+   "value": 100000.0
+  },
+  {
+   "op": ">=",
+   "rel": "c.limit",
+   "subject": "6f2ac9cc6e",
+   "value": 2.0
+  }
+ ],
+ "invariants": [
+  {
+   "if": [
+    {
+     "adj": "adj.full",
+     "rel": "prop",
+     "subject": "efc7540ed4"
+    }
+   ],
+   "then": [
+    {
+     "mode": "always",
+     "object": "0fccb16ea3",
+     "rel": "a.removes",
+     "roles": {
+      "from": "efc7540ed4"
+     },
+     "subject": "16255ebe48"
+    }
+   ],
+   "type": "if"
+  },
+  {
+   "if": [
+    {
+     "mode": null,
+     "object": "061e671db6",
+     "rel": "a.reads",
+     "roles": {},
+     "subject": "16255ebe48"
+    },
+    {
+     "mode": null,
+     "object": "ee8edb6751",
+     "rel": "a.reads",
+     "roles": {},
+     "subject": "16255ebe48"
+    }
+   ],
+   "then": [
+    {
+     "mode": "not",
+     "object": "ee8edb6751",
+     "rel": "a.changes",
+     "roles": {},
+     "subject": "16255ebe48"
+    }
+   ],
+   "type": "when"
+  },
+  {
+   "then": [
+    {
+     "literal": "x",
+     "mode": "not",
+     "rel": "a.writes",
+     "roles": {
+      "to": "da163a0477"
+     },
+     "subject": "16255ebe48"
+    }
+   ],
+   "type": "not"
+  },
+  {
+   "then": [
+    {
+     "mode": "not",
+     "object": null,
+     "rel": "a.changes",
+     "roles": {},
+     "subject": "16255ebe48"
+    }
+   ],
+   "type": "not"
+  }
+ ],
+ "rules": [],
+ "gaps": [
+  {
+   "entity": "1593edc713",
+   "role": "unit",
+   "type": "q.duration"
+  },
+  {
+   "entity": "4be5992fcb",
+   "role": "outgoing transition",
+   "type": "p.state"
+  },
+  {
+   "entity": "91b5a94581",
+   "role": "outgoing transition",
+   "type": "p.state"
+  },
+  {
+   "entity": "efc7540ed4",
+   "role": "capacity",
+   "type": "p.queue"
+  }
+ ],
+ "warnings": [
+  {
+   "entity": "16255ebe48",
+   "text": "assumes 'ms', but 'rate' is in 'Hz'"
+  },
+  {
+   "entity": "481cb09144",
+   "text": "assumes 's', but 'w' is in 'Hz'"
+  },
+  {
+   "entity": "481cb09144",
+   "text": "assumes 's', but 'x' inherits the unit of 'x', which has no declared unit"
+  },
+  {
+   "entity": "5102fa36ba",
+   "text": "the name suggests q.speed (distance/time), but the unit 's' is time"
+  },
+  {
+   "entity": "b81df7e59e",
+   "text": "the name suggests q.duration (time), but the unit 'parsecs' is unknown"
+  }
+ ],
+ "errors": [],
+ "notes": []
+}

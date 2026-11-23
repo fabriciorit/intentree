@@ -1,0 +1,7 @@
+error line 16: expected the article 'the' or a number after 'The value "x" is not', found the adjective 'bounded'
+  hint: after this word comes a complete object: the <type> "<name>"
+error line 15: comparison of 'x' with itself
+  hint: compare with another value or with a number
+error line 17: 'is in' expects an object (the <type> "<name>") after the verb, found a quoted literal
+  hint: form: The <type> "<name>" is in the <type> "<name>"
+3 errors, 24 entities, 3 facts, 9 invariants, 0 rules, 2 gaps, 0 warnings

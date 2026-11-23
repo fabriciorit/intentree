@@ -1,0 +1,19 @@
+error line 3: 'moves' expects an object (the <type> "<name>") after the verb, found a quoted literal
+  hint: form: The <type> "<name>" moves the <type> "<name>"
+error line 4: 'has the unit' expects a quoted literal after the verb, found an object (the <type> "<name>")
+  hint: form: The <type> "<name>" has the unit "<literal>"
+error line 5: 'has the same unit as' expects an object (the <type> "<name>") after the verb, found a quoted literal
+  hint: form: The <type> "<name>" has the same unit as the <type> "<name>"
+error line 6: 'has the same unit as' requires an object (the <type> "<name>") after the verb
+  hint: form: The <type> "<name>" has the same unit as the <type> "<name>"
+error line 7: 'has the unit' requires a quoted literal after the verb
+  hint: form: The <type> "<name>" has the unit "<literal>"
+error line 8: 'starts in' expects an object (the <type> "<name>") after the verb, found a quoted literal
+  hint: form: The <type> "<name>" starts in the <type> "<name>"
+error line 9: 'has the states' expects a quoted literal after the verb, found an object (the <type> "<name>")
+  hint: form: The <type> "<name>" has the states "<literal>"
+error line 10: 'is implemented in' expects a quoted literal after the verb, found an object (the <type> "<name>")
+  hint: form: The <type> "<name>" is implemented in "<literal>"
+error line 11: 'excludes' expects a quoted literal after the verb, found an object (the <type> "<name>")
+  hint: form: The <type> "<name>" excludes "<literal>"
+9 errors, 11 entities, 4 facts, 0 invariants, 0 rules, 4 gaps, 0 warnings

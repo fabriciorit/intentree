@@ -1,0 +1,313 @@
+{
+ "lexicon": "0.3",
+ "entities": [
+  {
+   "id": "0940fcc64b",
+   "name": "round robin",
+   "type": "e.strategy",
+   "attrs": {}
+  },
+  {
+   "id": "0b21321a51",
+   "name": "dispatch",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "18f1016937",
+   "name": "zone",
+   "type": "e.strategy",
+   "attrs": {}
+  },
+  {
+   "id": "32ecef7359",
+   "name": "None",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "441c559a92",
+   "name": "floor",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "49ba7d649e",
+   "name": "simulator",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "4e4597d96b",
+   "name": "x",
+   "type": "p.state",
+   "attrs": {}
+  },
+  {
+   "id": "8dfdaf4eb7",
+   "name": "STRATEGIES",
+   "type": "p.registry",
+   "attrs": {}
+  },
+  {
+   "id": "974d296cbd",
+   "name": "Elevator",
+   "type": "p.record",
+   "attrs": {}
+  },
+  {
+   "id": "e3101f3f38",
+   "name": "p",
+   "type": "e.program",
+   "attrs": {}
+  },
+  {
+   "id": "e3c7e2f6c0",
+   "name": "candidates",
+   "type": "p.list",
+   "attrs": {}
+  },
+  {
+   "id": "eeff61a9f0",
+   "name": "nearest",
+   "type": "e.strategy",
+   "attrs": {}
+  }
+ ],
+ "facts": [
+  {
+   "adj": "adj.deterministic",
+   "rel": "prop",
+   "subject": "0940fcc64b"
+  },
+  {
+   "adj": "adj.deterministic",
+   "rel": "prop",
+   "subject": "18f1016937"
+  },
+  {
+   "adj": "adj.deterministic",
+   "rel": "prop",
+   "subject": "eeff61a9f0"
+  },
+  {
+   "mode": null,
+   "object": "0940fcc64b",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "8dfdaf4eb7"
+  },
+  {
+   "mode": null,
+   "object": "18f1016937",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "8dfdaf4eb7"
+  },
+  {
+   "mode": null,
+   "object": "441c559a92",
+   "rel": "a.receives",
+   "roles": {},
+   "subject": "0940fcc64b"
+  },
+  {
+   "mode": null,
+   "object": "441c559a92",
+   "rel": "a.receives",
+   "roles": {},
+   "subject": "18f1016937"
+  },
+  {
+   "mode": null,
+   "object": "441c559a92",
+   "rel": "a.receives",
+   "roles": {},
+   "subject": "eeff61a9f0"
+  },
+  {
+   "mode": null,
+   "object": "8dfdaf4eb7",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "0b21321a51"
+  },
+  {
+   "mode": null,
+   "object": "974d296cbd",
+   "rel": "a.returns",
+   "roles": {},
+   "subject": "0940fcc64b"
+  },
+  {
+   "mode": null,
+   "object": "974d296cbd",
+   "rel": "a.returns",
+   "roles": {},
+   "subject": "18f1016937"
+  },
+  {
+   "mode": null,
+   "object": "974d296cbd",
+   "rel": "a.returns",
+   "roles": {},
+   "subject": "eeff61a9f0"
+  },
+  {
+   "mode": null,
+   "object": "e3c7e2f6c0",
+   "rel": "a.receives",
+   "roles": {},
+   "subject": "0940fcc64b"
+  },
+  {
+   "mode": null,
+   "object": "e3c7e2f6c0",
+   "rel": "a.receives",
+   "roles": {},
+   "subject": "18f1016937"
+  },
+  {
+   "mode": null,
+   "object": "e3c7e2f6c0",
+   "rel": "a.receives",
+   "roles": {},
+   "subject": "eeff61a9f0"
+  },
+  {
+   "mode": null,
+   "object": "eeff61a9f0",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "8dfdaf4eb7"
+  }
+ ],
+ "invariants": [
+  {
+   "then": [
+    {
+     "mode": "not",
+     "object": "974d296cbd",
+     "rel": "a.changes",
+     "roles": {},
+     "subject": "0940fcc64b"
+    }
+   ],
+   "type": "not"
+  },
+  {
+   "then": [
+    {
+     "mode": "not",
+     "object": "974d296cbd",
+     "rel": "a.changes",
+     "roles": {},
+     "subject": "18f1016937"
+    }
+   ],
+   "type": "not"
+  },
+  {
+   "then": [
+    {
+     "mode": "not",
+     "object": "974d296cbd",
+     "rel": "a.changes",
+     "roles": {},
+     "subject": "eeff61a9f0"
+    }
+   ],
+   "type": "not"
+  }
+ ],
+ "rules": [
+  {
+   "in": "49ba7d649e",
+   "then": [
+    {
+     "mode": null,
+     "object": "32ecef7359",
+     "rel": "a.returns",
+     "roles": {},
+     "subject": "*"
+    }
+   ],
+   "type": "e.strategy"
+  },
+  {
+   "in": "8dfdaf4eb7",
+   "then": [
+    {
+     "adj": "adj.deterministic",
+     "rel": "prop",
+     "subject": "*"
+    }
+   ],
+   "type": "e.strategy"
+  },
+  {
+   "in": "8dfdaf4eb7",
+   "then": [
+    {
+     "mode": "not",
+     "object": "974d296cbd",
+     "rel": "a.changes",
+     "roles": {},
+     "subject": "*"
+    }
+   ],
+   "type": "e.strategy"
+  },
+  {
+   "in": "8dfdaf4eb7",
+   "then": [
+    {
+     "mode": null,
+     "object": "441c559a92",
+     "rel": "a.receives",
+     "roles": {},
+     "subject": "*"
+    }
+   ],
+   "type": "e.strategy"
+  },
+  {
+   "in": "8dfdaf4eb7",
+   "then": [
+    {
+     "mode": null,
+     "object": "974d296cbd",
+     "rel": "a.returns",
+     "roles": {},
+     "subject": "*"
+    }
+   ],
+   "type": "e.strategy"
+  },
+  {
+   "in": "8dfdaf4eb7",
+   "then": [
+    {
+     "mode": null,
+     "object": "e3c7e2f6c0",
+     "rel": "a.receives",
+     "roles": {},
+     "subject": "*"
+    }
+   ],
+   "type": "e.strategy"
+  }
+ ],
+ "gaps": [],
+ "warnings": [
+  {
+   "entity": "49ba7d649e",
+   "text": "quantified rule without members: no strategy in \"simulator\""
+  }
+ ],
+ "errors": [
+  "line 14: the quantifier 'every' only applies in a simple sentence, without a condition (understood so far: 'If')",
+  "line 13: 'starts in' does not accept a subject of type 'module' (the rule's 'every module'); accepts subject: state machine"
+ ],
+ "notes": []
+}

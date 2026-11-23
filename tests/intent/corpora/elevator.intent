@@ -1,0 +1,84 @@
+# Elevator described in controlled English. One predication per line.
+# Every mention carries a type and a name (apposition required): the <type> "<name>".
+
+# --- structure
+The program "elevator" contains the module "cli", the module "execution", the module "simulator", the module "elevator", the module "dispatch", the module "passengers", the module "metrics", the module "config", the module "report", the module "timeline" and the module "output".
+The module "cli" contains the command "run" and the command "compare".
+The module "simulator" contains the priority queue "event queue", the clock "now", the list "waiting" and the list "completed".
+The module "elevator" contains the record "Elevator" and the state machine "State".
+The record "Elevator" contains the state machine "State", the set "stops" and the list "on board".
+The module "dispatch" contains the registry "STRATEGIES".
+The registry "STRATEGIES" contains the strategy "nearest", the strategy "round robin" and the strategy "zone".
+The module "passengers" contains the poisson process "arrivals", the random generator "per-floor rng" and the record "Passenger".
+The module "config" contains the configuration "Config".
+The configuration "Config" contains the field "floors", the field "elevators", the field "capacity", the field "speed", the field "door_time", the field "seed", the field "rate" and the field "duration".
+The module "metrics" contains the metric "mean wait", the metric "wait p95", the metric "mean trip" and the metric "floors traveled".
+The module "timeline" contains the report "timeline".
+The module "report" contains the report "summary".
+
+# --- relations
+The command "run" uses the module "execution", the module "metrics", the module "report", the module "timeline" and the module "output".
+The command "compare" uses the module "execution", the module "metrics" and the module "report".
+The module "cli" uses the module "config" and the module "dispatch".
+The module "execution" uses the module "simulator", the module "dispatch" and the module "passengers".
+The module "simulator" uses the module "elevator".
+The module "dispatch" uses the module "elevator".
+The module "config" reads the configuration "Config" from the json document "config.json".
+The module "output" writes the list "served passengers" to the csv file "output.csv".
+The module "execution" uses the registry "STRATEGIES".
+
+# --- state
+The record "Elevator" is mutable.
+The record "Passenger" is mutable.
+The configuration "Config" is immutable.
+The strategy "round robin" is stateful.
+The module "simulator" changes the record "Elevator".
+The module "simulator" changes the record "Passenger".
+
+# --- elevator state machine
+The state machine "State" has the states "stopped", "going up", "going down" and "door open".
+The record "Elevator" moves the state machine "State" from the state "stopped" to the state "going up".
+The record "Elevator" moves the state machine "State" from the state "stopped" to the state "going down".
+The module "simulator" moves the state machine "State" from the state "going up" to the state "door open".
+The module "simulator" moves the state machine "State" from the state "going down" to the state "door open".
+The module "simulator" moves the state machine "State" from the state "door open" to the state "stopped".
+The module "simulator" moves the state machine "State" from the state "stopped" to the state "door open".
+
+# --- primitives and their roles
+The priority queue "event queue" is ordered by the value "simulated time".
+The priority queue "event queue" breaks ties by the value "scheduling order".
+The clock "now" has the unit "s".
+The random generator "per-floor rng" is seeded with the field "seed" and the value "origin floor".
+The field "seed" has no limit.
+The poisson process "arrivals" is parameterized by the field "rate".
+The metric "mean wait" measures the value "boarding minus arrival".
+The metric "mean trip" measures the value "alighting minus boarding".
+The metric "floors traveled" measures the value "sum of floors of all elevators".
+The percentile "wait p95" uses the method "nearest rank".
+Every strategy in the registry "STRATEGIES" receives the value "floor" and the list "candidates".
+Every strategy in the registry "STRATEGIES" returns the record "Elevator".
+The module "config" validates the configuration "Config".
+
+# --- fields
+The field "floors" is at least 2.
+The field "elevators" is at least 1.
+The field "capacity" is at least 1.
+The field "speed" is greater than 0.
+The field "speed" has the unit "s/floor".
+The field "door_time" is at least 0.
+The field "door_time" has the unit "s".
+The field "rate" is at least 0.
+The field "rate" has the unit "passengers/min".
+The field "duration" is at least 0.
+The field "duration" has the unit "s".
+
+# --- invariants
+The module "simulator" is deterministic.
+Every strategy in the registry "STRATEGIES" returns the value "None".
+If the strategy "zone" returns the value "None", the module "simulator" skips the list "waiting".
+If the module "simulator" does not serve the record "Passenger", the module "simulator" raises the error "RuntimeError".
+If the module "config" raises the error "ValueError", the command "run" exits with the value "2".
+If the field "floors" is greater than 36, the report "timeline" prints the value "?".
+When the field "floors" changes, the random generator "per-floor rng" changes the list "passengers".
+If the record "Elevator" is full, the module "simulator" skips the record "Elevator".
+If the set "stops" contains the value "called floor", the module "simulator" skips the list "waiting".

@@ -1,0 +1,13 @@
+error line 2: word outside the lexicon: 'frobnicates' (after 'The module "a"'; expected a verb)
+  hint: no similar approved form; if none fits, propose one: intentree lexicon propose verb "frobnicates" --meaning "<what it means>"
+error line 3: word outside the lexicon: 'gizmo' (after 'The module "a" uses the'; expected a type (like module))
+  hint: no similar approved form; if none fits, propose one: intentree lexicon propose type "gizmo" --meaning "<what it means>"
+error line 4: unexpected character: ';'
+  hint: outside quotes only lexicon words, numbers, commas and periods are allowed; names go in quotes
+error line 5: unexpected character: 'é'
+  hint: outside quotes only lexicon words, numbers, commas and periods are allowed; names go in quotes
+error line 6: unexpected character: "'"
+  hint: outside quotes only lexicon words, numbers, commas and periods are allowed; names go in quotes
+error line 7: unexpected character: '"'
+  hint: outside quotes only lexicon words, numbers, commas and periods are allowed; names go in quotes
+6 errors, 2 entities, 1 facts, 0 invariants, 0 rules, 0 gaps, 0 warnings

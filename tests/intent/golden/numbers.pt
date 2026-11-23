@@ -1,0 +1,35 @@
+A fila “queue” é limitada.
+A fila “q2” está fechada.
+O valor “door_time” é mutável.
+O valor “rate” tem a unidade “Hz”.
+O módulo “m” tem a unidade “ms”.
+O valor “duration” tem a unidade “parsecs”.
+O módulo “n” tem a unidade “s”.
+O valor “speed” tem a unidade “s”.
+O relógio “clock” tem a unidade “s”.
+O valor “z” tem a unidade “s”.
+O valor “w” tem a mesma unidade que o valor “rate”.
+O módulo “m” lê o valor “rate”.
+O valor “x” tem a mesma unidade que o valor “y”.
+A máquina de estados “sm” tem os estados “a”.
+A máquina de estados “sm” começa no estado “a”.
+A máquina de estados “sm” tem os estados “c”.
+A máquina de estados “sm” tem os estados “b”.
+O módulo “m” leva a máquina de estados “sm” do estado “a” para o estado “b”.
+O módulo “n” consome o valor “w”.
+O valor “y” tem a mesma unidade que o valor “x”.
+O módulo “n” usa o valor “x”.
+O campo “épsilon” é menor que 0.00001.
+O campo “large” é no máximo 1234567.
+O campo “floors” é no máximo 30.
+O campo “huge” é no máximo 10000000000000000.
+O campo “capacity” é maior que 0.5.
+O campo “tab	name” é no mínimo 1.25.
+O campo “integer” é no mínimo 7.
+O campo “bar\name” é no mínimo 100000.
+O campo “floors” é no mínimo 2.
+
+Se a fila “q2” está cheia, o módulo “m” sempre remove a mensagem “x” da fila “q2”.
+Quando o módulo “m” lê o valor “rate” e o valor “z”, o módulo “m” não altera o valor “z”.
+O módulo “m” não grava “x” no arquivo “f”.
+O módulo “m” não muda.

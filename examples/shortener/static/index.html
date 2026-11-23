@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>shortener</title>
+</head>
+<body>
+  <h1>shortener</h1>
+  <form id="form">
+    <input id="url" type="url" required placeholder="https://example.com/page">
+    <button type="submit">Shorten</button>
+  </form>
+  <p id="error" role="alert"></p>
+  <section id="result" hidden>
+    <p>Link: <a id="link" href="#"></a></p>
+    <button id="refresh" type="button">Refresh stats</button>
+    <p>Total clicks: <strong id="total">0</strong></p>
+    <table>
+      <thead><tr><th>Day</th><th>Clicks</th></tr></thead>
+      <tbody id="days"></tbody>
+    </table>
+  </section>
+  <script src="static/app.js"></script>
+</body>
+</html>

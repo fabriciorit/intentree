@@ -1,0 +1,39 @@
+{
+ "lexicon": "0.3",
+ "entities": [
+  {
+   "id": "54dd6bf7c4",
+   "name": "a",
+   "type": "e.module",
+   "attrs": {}
+  },
+  {
+   "id": "ebe65d0071",
+   "name": "b",
+   "type": "e.module",
+   "attrs": {}
+  }
+ ],
+ "facts": [
+  {
+   "mode": null,
+   "object": "ebe65d0071",
+   "rel": "a.uses",
+   "roles": {},
+   "subject": "54dd6bf7c4"
+  }
+ ],
+ "invariants": [],
+ "rules": [],
+ "gaps": [],
+ "warnings": [],
+ "errors": [
+  "line 2: word outside the lexicon: 'frobnicates' (after 'The module \"a\"'; expected a verb)",
+  "line 3: word outside the lexicon: 'gizmo' (after 'The module \"a\" uses the'; expected a type (like module))",
+  "line 4: unexpected character: ';'",
+  "line 5: unexpected character: 'é'",
+  "line 6: unexpected character: \"'\"",
+  "line 7: unexpected character: '\"'"
+ ],
+ "notes": []
+}

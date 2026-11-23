@@ -1,0 +1,221 @@
+# The intentree crate: the tool that reads this format, described in the format itself.
+# Written from the code (src/**) and verified by `intentree check`.
+
+The layer "interface" is above the layer "operation".
+The layer "operation" is above the layer "domain".
+The layer "domain" is above the layer "core".
+The layer "core" is above the layer "external".
+
+The program "intentree" contains the module "cli", the module "intent", the module "facts", the module "measure", the module "glob", the module "symbol", the module "files", the module "stale", the module "lib", the module "vfs", the module "ctx", the module "bridge", the module "wasm", the test suite "tests", the test suite "wasm test", the file "manifest", the file "documentation", the file "web wrapper", the file "demo shell", the file "landing page" and the file "build script".
+The program "intentree" excludes "examples/**" and ".gitignore".
+The program "intentree" never uses the library "external crate". ^Cargo.toml
+Note: zero dependencies: the [dependencies] table of Cargo.toml stays empty; SHA-1, JSON, glob and the format reader are written by hand.
+
+The file "manifest" is implemented in "{Cargo.toml,Cargo.lock}".
+The file "documentation" is implemented in "{README.md,FORMAT.md,CONTRIBUTING.md,AGENTS.md,LICENSE,NOTICE,.github/**,docs/**}".
+Note: writing guide for the format, contribution notes, license, GitHub templates and instructions for agents.
+
+The module "cli" is implemented in "src/{cli,main}.rs".
+Note: reads -C, runs the command on that directory and prints its output; the binary is only this.
+The module "cli" is in the layer "interface".
+The module "lib" is implemented in "src/lib.rs".
+Note: the library entry: run_command(fs, args) dispatches one command against any Fs and returns the exit code with what it printed; an unknown command exits with 2 and prints the usage.
+The module "lib" is in the layer "interface".
+The module "vfs" is implemented in "src/vfs.rs".
+Note: the Fs trait the commands read the project through, with DiskFs (the directory, git included) and MemFs (a sorted map of path to text, read-only, no git).
+The module "vfs" is in the layer "core".
+The module "ctx" is implemented in "src/ctx.rs".
+Note: what a command runs against: the Fs and the text it prints; nothing writes to the process's stdout or stderr, the caller gets an Output.
+The module "ctx" is in the layer "core".
+The module "bridge" is implemented in "src/bridge.rs".
+Note: JSON in, JSON out for hosts that only pass text: files as an object of path to text, arguments as an array, the answer as code, stdout and stderr.
+The module "bridge" is in the layer "interface".
+The module "wasm" is implemented in "src/wasm.rs".
+Note: C ABI exports for WebAssembly (alloc, dealloc, set_files, run, last_panic); compiled only for wasm32, no imports and no wasm-bindgen.
+The module "wasm" is in the layer "interface".
+
+The module "intent" is implemented in "src/intent/mod.rs".
+Note: gathers the project's .intent files (root and intent/) and the lexicon into a Source.
+The module "intent" is in the layer "core".
+The module "intent" contains the module "commands", the module "code", the module "locate", the module "syntax", the module "lexicon", the module "analysis", the module "layers", the module "canon", the module "hints", the module "propose", the module "project", the module "json", the module "time", the module "sha1", the module "views" and the test suite "intent tests".
+
+The module "commands" is implemented in "src/intent/commands.rs".
+Note: check --verbose lists the invariants and rules read, with the originating sentence; the check hint repeats --file in the lexicon propose command.
+Note: dispatches check, show, where, view, views, facts, coverage, stale, ir, canon and lexicon; without *.intent files in the project it says so.
+The module "commands" is in the layer "interface".
+The module "code" is implemented in "src/intent/code.rs".
+Note: the part of check, show, stale, facts and coverage that looks at the project's files.
+The module "code" is in the layer "operation".
+The module "locate" is implemented in "src/intent/locate.rs".
+Note: quick orientation on where to change: matches the words of the change (or a file) against names, sentences, notes, paths and anchor symbols; returns a few ranked components and, under "rules nearby", the invariants, notes and absences of the one-hop neighbors, within 2.5 KB.
+The module "locate" is in the layer "operation".
+The module "propose" is implemented in "src/intent/propose.rs".
+Note: lexicon propose and lexicon pending: write lexicon proposals as comments; with --file, the pending file lives in the directory of --file.
+The module "propose" is in the layer "operation".
+The module "syntax" is implemented in "src/intent/syntax.rs".
+Note: longest-match tokens and the regular grammar of sentences.
+The module "lexicon" is implemented in "src/intent/lexicon.rs".
+Note: line-based lexicon, with the embedded seed and the project's extensions.
+The module "analysis" is implemented in "src/intent/analysis.rs".
+Note: entities, frames, normal form, constraints, gaps and warnings; produces the IR.
+The module "layers" is implemented in "src/intent/layers.rs".
+Note: layer order and the rule that a relation never goes upward.
+The module "canon" is implemented in "src/intent/canon.rs".
+Note: canonical sentences in English (reparsable) and in Portuguese (for reading).
+The module "hints" is implemented in "src/intent/hints.rs".
+Note: what was understood, what was missing and the hint for each check error; it does not decide what the language accepts.
+The module "project" is implemented in "src/intent/project.rs".
+Note: links the .intent to the files: owner of each file, coverage, anchors and show.
+The module "project" is in the layer "domain".
+The module "json" is implemented in "src/intent/json.rs".
+Note: hand-written JSON writer, with Python's repr for text and numbers.
+The module "time" is implemented in "src/intent/time.rs".
+Note: time literals with checked number and unit.
+The module "sha1" is implemented in "src/intent/sha1.rs".
+Note: hand-written SHA-1 (FIPS 180-4), only for entity ids.
+The test suite "intent tests" is implemented in "src/intent/tests.rs".
+Note: goldens, shuffle properties and lexicon checks.
+
+The module "views" is implemented in "src/intent/views/mod.rs".
+Note: views of the format in the three outputs (text for an LLM, SVG, JSON); picks the view by name.
+The module "views" is in the layer "operation".
+The module "views" contains the module "model", the module "text", the module "svg", the module "panels", the module "builtin", the module "deployment", the module "constraints", the module "freeform", the module "declared", the module "data" and the test suite "view tests".
+The module "model" is implemented in "src/intent/views/model.rs".
+Note: queries over the analysis that every view uses.
+The module "text" is implemented in "src/intent/views/text.rs".
+Note: compact text output, one line per thing.
+The module "svg" is implemented in "src/intent/views/svg.rs".
+Note: SVG primitives: text, box, arrow and document.
+The module "panels" is implemented in "src/intent/views/panels.rs".
+Note: SVG panels: layers, state machines, threads, invariants, gaps and notes.
+The module "builtin" is implemented in "src/intent/views/builtin.rs".
+Note: built-in views as lists of panels over the same queries.
+The module "deployment" is implemented in "src/intent/views/deployment.rs".
+Note: machines, processes, endpoints and labeled links.
+The module "constraints" is implemented in "src/intent/views/constraints.rs".
+Note: bipartite graph of invariants and the entities they touch.
+The module "freeform" is implemented in "src/intent/views/freeform.rs".
+Note: views declared in the language: selection, grouping, shape and marks.
+The module "declared" is implemented in "src/intent/views/declared.rs".
+Note: checks the parameters of the The view "..." ... sentences.
+The module "data" is implemented in "src/intent/views/data.rs".
+Note: JSON output of the views, with fixed keys.
+The test suite "view tests" is implemented in "src/intent/views/tests.rs".
+Note: determinism of the outputs, text goldens and declared views.
+
+The module "facts" is implemented in "src/facts.rs".
+Note: text scan of the code: dependencies, HTTP, programs, writes, routes and environment.
+The module "facts" is in the layer "domain".
+The module "measure" is implemented in "src/measure.rs".
+Note: how much of what the code reveals the .intent says.
+The module "measure" is in the layer "domain".
+The module "glob" is implemented in "src/glob.rs".
+Note: patterns with *, **, ? and braces over slash-separated paths.
+The module "glob" is in the layer "domain".
+The module "symbol" is implemented in "src/symbol.rs".
+Note: anchors with #symbol: finds the definition per language.
+The module "symbol" is in the layer "domain".
+The module "files" is implemented in "src/files.rs".
+Note: lists the project's files (git ls-files, or a directory scan).
+The module "files" is in the layer "domain".
+The module "stale" is implemented in "src/stale.rs".
+Note: git, date of the last .intent change and formatting of the stale output.
+The module "stale" is in the layer "domain".
+The file "web wrapper" is implemented in "web/{intentree.js,README.md,.gitignore}".
+Note: hand-written ES module that loads intentree.wasm and exposes setFiles and run; it also restarts the instance after a trap.
+The file "demo shell" is implemented in "web/shell.{js,css}".
+Note: one script line turns a demo page into the showcase: it loads intentree.wasm beside the simulator (views, editable intent, where, tour) and pulses the drawing from the demo's events; the event contract is in web/README.md.
+The file "demo shell" uses the file "web wrapper".
+The file "landing page" is implemented in "index.html".
+Note: the site's front page: what intentree is and one card per demo, with titles read from each demo.json.
+The file "build script" is implemented in "scripts/**".
+Note: scripts/build-wasm.sh builds the wasm file and copies it to a directory (used by CI).
+The test suite "wasm test" is implemented in "web/test-wasm.mjs".
+Note: loads examples/elevator into the wasm module and compares check, view, where, facts, coverage, canon and ir with the native binary byte for byte.
+The test suite "tests" is implemented in "tests/**".
+Note: runs the binary on temporary projects; tests/intent holds cases, corpora and goldens.
+The test suite "tests" is in the layer "interface".
+
+The file "lexicon.txt" is implemented in "src/intent/lexicon.txt".
+Note: the seed lexicon, embedded in the binary.
+
+# ---------------------------------------------------------------- relations
+# Dependencies between modules (checked by `intentree facts` against the `use` statements in the code).
+The module "hints" uses the module "lexicon" and the module "syntax".
+The module "analysis" uses the module "hints", the module "layers", the module "canon", the module "json", the module "lexicon", the module "sha1", the module "syntax" and the module "time".
+The module "layers" uses the module "analysis".
+The module "canon" uses the module "analysis" and the module "json".
+The module "cli" uses the module "intent", the module "lib", the module "ctx" and the module "vfs".
+The module "code" uses the module "analysis", the module "files", the module "facts", the module "measure", the module "project", the module "stale", the module "ctx" and the module "vfs".
+The module "commands" uses the module "ctx", the module "analysis", the module "canon", the module "code", the module "locate", the module "propose", the module "syntax" and the module "views".
+The module "data" uses the module "json", the module "model", the module "panels" and the module "text".
+The module "declared" uses the module "analysis" and the module "lexicon".
+The module "builtin" uses the module "data", the module "deployment", the module "json", the module "model", the module "panels", the module "constraints", the module "svg" and the module "text".
+The module "facts" uses the module "glob", the module "json", the module "project" and the module "vfs".
+The module "deployment" uses the module "analysis", the module "json", the module "model", the module "panels", the module "svg" and the module "text".
+The module "lexicon" uses the module "json" and the file "lexicon.txt".
+The module "freeform" uses the module "analysis", the module "declared", the module "json", the module "model", the module "panels", the module "constraints", the module "svg" and the module "text".
+The module "measure" uses the module "facts", the module "json" and the module "project".
+The module "model" uses the module "analysis", the module "canon", the module "json" and the module "svg".
+The module "locate" uses the module "ctx", the module "analysis", the module "canon", the module "code", the module "declared", the module "glob", the module "json", the module "project" and the module "symbol".
+The module "panels" uses the module "model" and the module "svg".
+The module "project" uses the module "analysis", the module "canon", the module "glob", the module "symbol" and the module "vfs".
+The module "propose" uses the module "lexicon" and the module "vfs".
+The module "constraints" uses the module "json", the module "model", the module "panels", the module "svg" and the module "text".
+The module "symbol" uses the module "facts", the module "glob" and the module "vfs".
+The module "syntax" uses the module "json" and the module "lexicon".
+The module "time" uses the module "json".
+The test suite "view tests" uses the module "analysis", the module "lexicon" and the test suite "intent tests".
+The test suite "intent tests" uses the module "analysis", the module "canon", the module "lexicon" and the module "syntax".
+The module "text" uses the module "model" and the module "panels".
+The module "views" uses the module "analysis" and the module "json".
+
+The module "bridge" uses the module "json".
+The module "ctx" uses the module "vfs".
+The module "intent" uses the module "vfs".
+The module "vfs" exceptionally uses the module "files".
+Note: DiskFs hands the directory listing to the files module (git ls-files, or a scan); everything else in vfs is self-contained.
+The module "wasm" uses the module "bridge".
+The test suite "wasm test" uses the file "web wrapper".
+The test suite "wasm test" reads the environment variable "INTENTREE_BIN" and the environment variable "INTENTREE_WASM".
+The file "build script" launches the program "cargo".
+The program "cargo" is in the layer "external".
+Note: cargo builds the wasm32 target; git (files, stale) lists the project's files and tells what changed.
+
+The module "files" launches the program "git".
+The module "stale" launches the program "git".
+The test suite "tests" launches the program "git" and the program "intentree".
+The program "git" is in the layer "external".
+Note: git ls-files lists the project's files; git log and git status give what changed since the last reviewed .intent.
+
+# ---------------------------------------------------------------- what the code writes and reads
+The module "propose" writes the file "intent/lexicon-pending.intent".
+The module "vfs" writes the file "intent/lexicon-pending.intent".
+Note: only DiskFs writes, and only on behalf of lexicon propose; MemFs refuses.
+The test suite "tests" writes the directory "temporary projects".
+The test suite "intent tests" writes the directory "goldens".
+The test suite "intent tests" reads the environment variable "UPDATE_GOLDEN".
+Note: with UPDATE_GOLDEN=1 the test rewrites the goldens with the binary's output.
+
+# ---------------------------------------------------------------- invariants
+The module "lexicon" always reads the file "lexicon.txt". ^src/intent/lexicon.rs#EMBEDDED
+Note: the seed lexicon is compiled into the binary (include_str!); the = lines of the project's .intent files only extend it.
+
+The module "analysis" is deterministic. ^src/intent/analysis.rs ^src/intent/tests.rs#order_50_shuffles_give_the_same_ir
+Note: the order of the sentences does not change the IR (50 shuffles per corpus in the test).
+The module "views" is deterministic. ^src/intent/views/model.rs ^src/intent/views/tests.rs#all_views_come_out_equal_in_two_generations
+The module "views" never uses the value "HashMap". ^src/intent/views/model.rs
+Note: every output comes from a BTreeMap, a BTreeSet or a sorted list: none depends on the iteration order of a hash table.
+The module "canon" never uses the value "HashMap". ^src/intent/canon.rs
+The module "propose" never writes the file "lexicon.txt". ^src/intent/propose.rs#propose
+Note: no command approves a lexicon proposal: the proposal stays in comments of intent/lexicon-pending.intent until a human removes the "# " from the = line.
+The module "commands" never writes the file "lexicon.txt". ^src/intent/commands.rs
+If the value ".intent files" is empty, the module "commands" raises the error "no .intent file". ^src/intent/commands.rs#load_with
+If the value "git" is false, the module "code" raises the error "stale requires git". ^src/intent/code.rs#stale
+If the value "disk" is false, the module "code" raises the error "stale is not available". ^src/intent/code.rs#stale
+Note: stale reads git history and file dates, so on a project held in memory it says it is not available instead of guessing.
+The module "bridge" never uses the value "stdout". ^src/bridge.rs#every_command_prints_into_the_output
+Note: commands print through the context (Ctx), never to the process; the test runs every command on a project in memory and checks the output comes back as a value, which is what the wasm build relies on.
+The module "vfs" never launches the program "git". ^src/vfs.rs#MemFs
+If the value "anchor symbol" is false, the module "symbol" raises the error "symbol does not exist". ^src/symbol.rs#check_anchor
+Note: an anchor to a file or symbol that does not exist is a check error.

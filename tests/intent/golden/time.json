@@ -1,0 +1,136 @@
+{
+ "lexicon": "0.3",
+ "entities": [
+  {
+   "id": "05c75cbbdd",
+   "name": "ttl",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "1e3834be5c",
+   "name": "slow",
+   "type": "e.connection",
+   "attrs": {}
+  },
+  {
+   "id": "24b6525ef1",
+   "name": "no unit",
+   "type": "e.connection",
+   "attrs": {}
+  },
+  {
+   "id": "4979ac44b9",
+   "name": "session",
+   "type": "e.connection",
+   "attrs": {}
+  },
+  {
+   "id": "5c5597a875",
+   "name": "backoff",
+   "type": "p.timer",
+   "attrs": {}
+  },
+  {
+   "id": "744cafd877",
+   "name": "inverted",
+   "type": "p.timer",
+   "attrs": {}
+  },
+  {
+   "id": "904509222c",
+   "name": "fast",
+   "type": "p.timer",
+   "attrs": {}
+  },
+  {
+   "id": "916f3d9d82",
+   "name": "cleanup",
+   "type": "p.thread",
+   "attrs": {}
+  },
+  {
+   "id": "b9ef05c2e9",
+   "name": "clock",
+   "type": "p.thread",
+   "attrs": {}
+  },
+  {
+   "id": "f01ee4e42a",
+   "name": "object",
+   "type": "e.connection",
+   "attrs": {}
+  }
+ ],
+ "facts": [
+  {
+   "literal": "1 d",
+   "mode": null,
+   "rel": "a.repeats_every",
+   "roles": {},
+   "seconds": [
+    86400.0
+   ],
+   "subject": "916f3d9d82"
+  },
+  {
+   "literal": "1 s to 60 s",
+   "mode": null,
+   "rel": "a.repeats_every",
+   "roles": {},
+   "seconds": [
+    1.0,
+    60.0
+   ],
+   "subject": "5c5597a875"
+  },
+  {
+   "literal": "1.5 h",
+   "mode": null,
+   "rel": "a.repeats_every",
+   "roles": {},
+   "seconds": [
+    5400.0
+   ],
+   "subject": "b9ef05c2e9"
+  },
+  {
+   "literal": "30 s",
+   "mode": null,
+   "rel": "a.times_out_after",
+   "roles": {},
+   "seconds": [
+    30.0
+   ],
+   "subject": "4979ac44b9"
+  },
+  {
+   "literal": "500 ms to 2 min",
+   "mode": null,
+   "rel": "a.repeats_every",
+   "roles": {},
+   "seconds": [
+    0.5,
+    120.0
+   ],
+   "subject": "904509222c"
+  }
+ ],
+ "invariants": [],
+ "rules": [],
+ "gaps": [
+  {
+   "entity": "744cafd877",
+   "role": "period",
+   "type": "p.timer"
+  }
+ ],
+ "warnings": [],
+ "errors": [
+  "line 7: 'times out after': invalid time literal \"30 seconds\": invalid time unit 'seconds' (use ms, s, min, h or d)",
+  "line 8: 'times out after': invalid time literal \"30\": missing unit in '30' (use ms, s, min, h or d)",
+  "line 9: 'repeats every': invalid time literal \"60 s to 1 s\": reversed time range: '60 s to 1 s' (the start is after the end)",
+  "line 10: 'times out after' expects a quoted literal after the verb, found an object (the <type> \"<name>\")"
+ ],
+ "notes": []
+}

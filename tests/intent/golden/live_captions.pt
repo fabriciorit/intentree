@@ -1,0 +1,87 @@
+A thread “inference” é daemon.
+A thread “capture” é daemon.
+A fila “finals” é ilimitada.
+O processo “whisper-server” expira após “120 s”.
+O módulo “app” roda no serviço D-Bus “single instance”.
+O programa “live_captions” contém a janela “history”.
+O módulo “app” mostra a janela “history”.
+O módulo “config” lê o valor “preferences” do arquivo de texto “config.json”.
+O módulo “config” grava o valor “preferences” no arquivo de texto “config.json”.
+O módulo “pipeline” contém a máquina de estados “segment”.
+A thread “capture” leva a máquina de estados “segment” do estado “speech” para o estado “silence”.
+A thread “capture” leva a máquina de estados “segment” do estado “silence” para o estado “speech”.
+O módulo “audio” contém a thread “sink-watch”.
+O módulo “pipeline” contém a trava “partial_lock”.
+O slot “partial” é protegido pela trava “partial_lock”.
+O módulo “engine” contém o valor “loaded_key”.
+O programa “live_captions” contém o módulo “app”.
+A thread “inference” consome o slot “partial”.
+O módulo “pipeline” contém o slot “partial”.
+A thread “capture” sobrescreve o slot “partial”.
+O módulo “engine” contém a trava “engine lock”.
+O programa “live_captions” contém o módulo “config”.
+O módulo “app” usa o módulo “config”.
+O módulo “audio” inicia o processo “parec”.
+A máquina de estados “segment” tem os estados “speech”.
+A máquina de estados “app state” tem os estados “speech”.
+O programa “live_captions” contém o módulo “audio”.
+O módulo “pipeline” usa o módulo “audio”.
+O programa “live_captions” contém a janela “overlay”.
+O módulo “app” mostra a janela “overlay”.
+O módulo “pipeline” contém o buffer circular “vad window”.
+O módulo “pipeline” contém o buffer circular “preroll”.
+O módulo “pipeline” contém a thread “inference”.
+O módulo “engine” envia o buffer WAV “speech chunk” para o endpoint HTTP “127.0.0.1 free port”.
+A máquina de estados “segment” tem os estados “silence”.
+A máquina de estados “segment” começa no estado “silence”.
+O módulo “audio” contém a thread “capture”.
+O módulo “app” contém a máquina de estados “app state”.
+O módulo “app” leva a máquina de estados “app state” do estado “speech” para o estado “off”.
+O módulo “pipeline” leva a máquina de estados “app state” do estado “speech” para o estado “on”.
+O módulo “app” leva a máquina de estados “app state” do estado “off” para o estado “loading”.
+O módulo “app” leva a máquina de estados “app state” do estado “loading” para o estado “error”.
+O módulo “app” leva a máquina de estados “app state” do estado “loading” para o estado “on”.
+O módulo “app” leva a máquina de estados “app state” do estado “error” para o estado “loading”.
+O módulo “pipeline” leva a máquina de estados “app state” do estado “on” para o estado “speech”.
+O módulo “app” leva a máquina de estados “app state” do estado “on” para o estado “off”.
+O módulo “app” leva a máquina de estados “app state” do estado “on” para o estado “loading”.
+O processo “whisper-server” escuta no endpoint HTTP “127.0.0.1 free port”.
+O processo “whisper-server” usa a biblioteca “whisper.cpp Vulkan”.
+A thread “inference” agenda a função “on_final” na a thread “gtk”.
+O módulo “audio” inicia o processo “pactl subscribe”.
+O programa “live_captions” contém o módulo “pipeline”.
+O módulo “app” usa o módulo “pipeline”.
+O processo “parec” lê o valor “30 ms frames” do dispositivo “PipeWire monitor”.
+O programa “live_captions” contém a janela “prefs”.
+O módulo “app” mostra a janela “prefs”.
+O programa “live_captions” contém o módulo “logwriter”.
+O módulo “app” usa o módulo “logwriter”.
+O módulo “pipeline” contém o sinal “wake”.
+A máquina de estados “app state” tem os estados “off”.
+A máquina de estados “app state” começa no estado “off”.
+A thread “inference” agenda a função “on_partial” na a thread “gtk”.
+O módulo “logwriter” grava o valor “final phrases” no arquivo de texto “transcript .txt .srt”.
+O programa “live_captions” contém o módulo “hotkeys”.
+O módulo “app” usa o módulo “hotkeys”.
+A máquina de estados “app state” tem os estados “loading”.
+A máquina de estados “app state” tem os estados “error”.
+O programa “live_captions” contém o módulo “engine”.
+O módulo “app” usa o módulo “engine”.
+O módulo “pipeline” usa o módulo “engine”.
+O módulo “app” contém a thread “gtk”.
+O módulo “engine” inicia o processo “whisper-server”.
+A máquina de estados “app state” tem os estados “on”.
+A thread “inference” consome a fila “finals”.
+O módulo “pipeline” contém a fila “finals”.
+A thread “capture” alimenta a fila “finals”.
+O buffer circular “vad window” é no máximo 8.
+O buffer circular “preroll” é no máximo 10.
+
+Quando o módulo “audio” altera o dispositivo “PipeWire monitor”, a thread “sink-watch” reinicia o processo “parec”.
+Quando o módulo “app” altera o valor “config engine”, o módulo “app” reinicia o processo “whisper-server”.
+Se a thread “inference” consome o slot “partial”, o módulo “engine” não usa o valor “context prompt”.
+Quando o módulo “app” altera o valor “config audio”, o módulo “app” reinicia o módulo “pipeline”.
+Se o processo “whisper-server” expira, o módulo “app” leva a máquina de estados “app state” do estado “loading” para o estado “error”.
+A thread “capture” não chama a janela “overlay”.
+A thread “inference” não remove a fila “finals”.
+A thread “capture” não bloqueia.

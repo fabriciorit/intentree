@@ -1,0 +1,18 @@
+# Declared absence: the presupposed role is deliberately empty and leaves the gaps.
+The process "srv" listens on the tcp endpoint "server:8993".
+The tcp endpoint "server:8993" needs no authentication.
+The field "seed" has no limit.
+The random generator "rng" has no seed.
+The value "duration" has no unit.
+The priority queue "queue" is ordered by the value "t".
+The priority queue "queue" has no tie-breaker.
+# error: the type does not presuppose the role
+The module "m" has no limit.
+The tcp endpoint "server:8993" has no seed.
+# error: declared absent and also filled
+The field "floors" has no limit.
+The field "floors" is at least 2.
+The clock "clock" has no unit.
+The clock "clock" has the unit "s".
+# inside a condition it counts as a clause, but does not fill the role
+If the field "rate" has no limit, the module "m" validates the field "rate".

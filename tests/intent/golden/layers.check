@@ -1,0 +1,6 @@
+error line 24: 'exceptionally' only applies in a simple sentence (the relation that goes up a layer)
+  hint: write the sentence with 'exceptionally' and no condition: The module "x" exceptionally uses the module "y".
+error cycle in the layer order: 'x', 'y'
+error 'double' is in more than one layer: x, y
+error line 15: relation goes up a layer: 'validate' (layer 'domain') a.uses 'executor' (layer 'execution'); if it is on purpose, write 'exceptionally' before the verb
+4 errors, 13 entities, 22 facts, 0 invariants, 0 rules, 0 gaps, 1 warnings

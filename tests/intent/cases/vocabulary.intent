@@ -1,0 +1,8 @@
+# Lexicon errors: word outside the lexicon and unexpected character.
+The module "a" frobnicates the module "b".
+The module "a" uses the gizmo "b".
+The module "a" uses the module "b"; the module "c".
+The modulé "a" uses the module "b".
+The module "a" uses the module 'b'.
+The module "a uses the module "b".
+The module "a" uses the module "b".

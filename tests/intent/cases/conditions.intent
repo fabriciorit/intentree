@@ -1,0 +1,8 @@
+# Coordinated conditions: literals, states and objects
+# with a preposition inside the condition. The canonical English form must reparse into the same IR.
+While the module "m" prints "a" and "b", the module "m" uses the module "n".
+If the state machine "sm" has the states "x" and "y", the module "m" starts the process "p".
+The state machine "sm" starts in the state "x".
+If the module "m" writes the record "r" and the record "s" to the file "f", the module "n" reads the file "f".
+If the module "m" sends the message "a", the message "b" and the message "c" to the process "p" through the connection "k", the process "p" closes the connection "k".
+When the module "m" reads the value "rate" and the value "z", the module "m" never changes the value "z".

@@ -1,0 +1,12 @@
+If the value "code" is 0, the module "commands" returns the value "success".
+If the value "code" is not 0, the module "commands" raises the error "MinimakeError".
+If the value "dry run" is false, the module "cli" launches the process "shell".
+If the value "dry run" is true, the module "cli" prints "plan".
+If the value "name" is in the set "done", the module "executor" skips the record "target".
+If the value "name" is not in the set "done", the module "executor" launches the process "shell".
+If the value "stored hash" is not the value "current hash", the module "decision" changes the record "target".
+The field "floors" is bounded by the field "max floors".
+The key-value store "Store" is not keyed by the value "hour".
+The module "m" is not implemented in "legacy/**".
+The thread "executor" is bounded by the value "jobs".
+The value "mode" is the value "default".

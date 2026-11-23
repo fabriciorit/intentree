@@ -1,0 +1,892 @@
+{
+ "lexicon": "0.3",
+ "entities": [
+  {
+   "id": "0b11d03069",
+   "name": "selection mode",
+   "type": "p.state_machine",
+   "attrs": {}
+  },
+  {
+   "id": "0bedada991",
+   "name": "field_bridge",
+   "type": "e.program",
+   "attrs": {}
+  },
+  {
+   "id": "0e8dac11a7",
+   "name": "extension not connected",
+   "type": "e.message",
+   "attrs": {}
+  },
+  {
+   "id": "0fccac5ead",
+   "name": "first tab with authorized field",
+   "type": "e.tab",
+   "attrs": {}
+  },
+  {
+   "id": "111e0f41e5",
+   "name": "request id",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "12ef876aa5",
+   "name": "service worker",
+   "type": "p.execution_context",
+   "attrs": {}
+  },
+  {
+   "id": "21a91937ad",
+   "name": "getDiagnostics",
+   "type": "e.function",
+   "attrs": {}
+  },
+  {
+   "id": "25aa8bedcc",
+   "name": "watching",
+   "type": "p.set",
+   "attrs": {}
+  },
+  {
+   "id": "451284737a",
+   "name": "bridge",
+   "type": "e.process",
+   "attrs": {}
+  },
+  {
+   "id": "4f13156057",
+   "name": "watchers",
+   "type": "p.set",
+   "attrs": {}
+  },
+  {
+   "id": "5145e17089",
+   "name": "cmd",
+   "type": "e.process",
+   "attrs": {}
+  },
+  {
+   "id": "54da9ae3f6",
+   "name": "first message",
+   "type": "e.message",
+   "attrs": {}
+  },
+  {
+   "id": "56ba3be43c",
+   "name": "active tab",
+   "type": "e.tab",
+   "attrs": {}
+  },
+  {
+   "id": "5cadaecbfa",
+   "name": "ws://127.0.0.1:8797",
+   "type": "f.websocket",
+   "attrs": {}
+  },
+  {
+   "id": "5dc844126d",
+   "name": "content",
+   "type": "e.content_script",
+   "attrs": {}
+  },
+  {
+   "id": "5f71c6768e",
+   "name": "change",
+   "type": "e.event",
+   "attrs": {}
+  },
+  {
+   "id": "6089266548",
+   "name": "extension popup",
+   "type": "p.execution_context",
+   "attrs": {}
+  },
+  {
+   "id": "687dfd2505",
+   "name": "chrome.storage.local",
+   "type": "p.key_value_store",
+   "attrs": {}
+  },
+  {
+   "id": "6f0da5bcc0",
+   "name": "previous extension",
+   "type": "e.connection",
+   "attrs": {}
+  },
+  {
+   "id": "73ffc8be14",
+   "name": "MAIN world",
+   "type": "p.execution_context",
+   "attrs": {}
+  },
+  {
+   "id": "77749f9667",
+   "name": "python asyncio",
+   "type": "p.execution_context",
+   "attrs": {}
+  },
+  {
+   "id": "78abb8e021",
+   "name": "field-bridge-change",
+   "type": "e.event",
+   "attrs": {}
+  },
+  {
+   "id": "805eb6e38c",
+   "name": "pending main-world",
+   "type": "p.map",
+   "attrs": {}
+  },
+  {
+   "id": "80abd66274",
+   "name": "pending",
+   "type": "p.map",
+   "attrs": {}
+  },
+  {
+   "id": "848226354e",
+   "name": "field-bridge-response",
+   "type": "e.event",
+   "attrs": {}
+  },
+  {
+   "id": "8483cdc087",
+   "name": "field-bridge-reconnect",
+   "type": "p.timer",
+   "attrs": {}
+  },
+  {
+   "id": "88f97e6a76",
+   "name": "selecting",
+   "type": "p.state",
+   "attrs": {}
+  },
+  {
+   "id": "93fadb935d",
+   "name": "popup",
+   "type": "e.window",
+   "attrs": {}
+  },
+  {
+   "id": "953ea2d6af",
+   "name": "DOM window",
+   "type": "p.execution_context",
+   "attrs": {}
+  },
+  {
+   "id": "9939d20624",
+   "name": "change event",
+   "type": "e.message",
+   "attrs": {}
+  },
+  {
+   "id": "9b46c568dd",
+   "name": "window.ace",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "a6432d3acb",
+   "name": "isolated world",
+   "type": "p.execution_context",
+   "attrs": {}
+  },
+  {
+   "id": "b388ea1f34",
+   "name": "each tab",
+   "type": "e.tab",
+   "attrs": {}
+  },
+  {
+   "id": "b78fe00e25",
+   "name": "input",
+   "type": "e.event",
+   "attrs": {}
+  },
+  {
+   "id": "c1af74e0f2",
+   "name": "main-world",
+   "type": "e.page_script",
+   "attrs": {}
+  },
+  {
+   "id": "d0e747f912",
+   "name": "origin plus path",
+   "type": "e.value",
+   "attrs": {}
+  },
+  {
+   "id": "da95500a63",
+   "name": "authorized field",
+   "type": "e.text_field",
+   "attrs": {}
+  },
+  {
+   "id": "dfd34cc358",
+   "name": "field-bridge-request",
+   "type": "e.event",
+   "attrs": {}
+  },
+  {
+   "id": "e112da3b8a",
+   "name": "id_counter",
+   "type": "p.counter",
+   "attrs": {}
+  },
+  {
+   "id": "e5ee59d388",
+   "name": "idle",
+   "type": "p.state",
+   "attrs": {}
+  },
+  {
+   "id": "f1536d642f",
+   "name": "start-select",
+   "type": "e.message",
+   "attrs": {}
+  },
+  {
+   "id": "f7c0e2d305",
+   "name": "background",
+   "type": "e.service_worker",
+   "attrs": {}
+  },
+  {
+   "id": "f8c8e5badf",
+   "name": "client",
+   "type": "e.connection",
+   "attrs": {}
+  },
+  {
+   "id": "fc9a929d6e",
+   "name": "command",
+   "type": "e.message",
+   "attrs": {}
+  }
+ ],
+ "facts": [
+  {
+   "adj": "adj.idempotent",
+   "rel": "prop",
+   "subject": "5dc844126d"
+  },
+  {
+   "adj": "adj.idempotent",
+   "rel": "prop",
+   "subject": "c1af74e0f2"
+  },
+  {
+   "adj": "adj.persistent",
+   "rel": "prop",
+   "subject": "687dfd2505"
+  },
+  {
+   "literal": "10 s",
+   "mode": null,
+   "rel": "a.times_out_after",
+   "roles": {},
+   "seconds": [
+    10.0
+   ],
+   "subject": "80abd66274"
+  },
+  {
+   "literal": "5 s",
+   "mode": null,
+   "rel": "a.repeats_every",
+   "roles": {},
+   "seconds": [
+    5.0
+   ],
+   "subject": "8483cdc087"
+  },
+  {
+   "literal": "5 s",
+   "mode": null,
+   "rel": "a.times_out_after",
+   "roles": {},
+   "seconds": [
+    5.0
+   ],
+   "subject": "54da9ae3f6"
+  },
+  {
+   "literal": "8 s",
+   "mode": null,
+   "rel": "a.times_out_after",
+   "roles": {},
+   "seconds": [
+    8.0
+   ],
+   "subject": "805eb6e38c"
+  },
+  {
+   "mode": null,
+   "object": "0b11d03069",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "5dc844126d"
+  },
+  {
+   "mode": null,
+   "object": "0b11d03069",
+   "rel": "a.moves",
+   "roles": {
+    "from": "88f97e6a76",
+    "to": "e5ee59d388"
+   },
+   "subject": "5dc844126d"
+  },
+  {
+   "mode": null,
+   "object": "0b11d03069",
+   "rel": "a.moves",
+   "roles": {
+    "from": "e5ee59d388",
+    "to": "88f97e6a76"
+   },
+   "subject": "93fadb935d"
+  },
+  {
+   "mode": null,
+   "object": "0fccac5ead",
+   "rel": "a.picks",
+   "roles": {},
+   "subject": "f7c0e2d305"
+  },
+  {
+   "mode": null,
+   "object": "111e0f41e5",
+   "rel": "a.keyed_by",
+   "roles": {},
+   "subject": "805eb6e38c"
+  },
+  {
+   "mode": null,
+   "object": "111e0f41e5",
+   "rel": "a.keyed_by",
+   "roles": {},
+   "subject": "80abd66274"
+  },
+  {
+   "mode": null,
+   "object": "12ef876aa5",
+   "rel": "a.runs_in",
+   "roles": {},
+   "subject": "f7c0e2d305"
+  },
+  {
+   "mode": null,
+   "object": "21a91937ad",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "c1af74e0f2"
+  },
+  {
+   "mode": null,
+   "object": "25aa8bedcc",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "c1af74e0f2"
+  },
+  {
+   "mode": null,
+   "object": "451284737a",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "0bedada991"
+  },
+  {
+   "mode": null,
+   "object": "4f13156057",
+   "rel": "a.changes",
+   "roles": {},
+   "subject": "451284737a"
+  },
+  {
+   "mode": null,
+   "object": "4f13156057",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "451284737a"
+  },
+  {
+   "mode": null,
+   "object": "5145e17089",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "0bedada991"
+  },
+  {
+   "mode": null,
+   "object": "5cadaecbfa",
+   "rel": "a.connects_to",
+   "roles": {},
+   "subject": "5145e17089"
+  },
+  {
+   "mode": null,
+   "object": "5cadaecbfa",
+   "rel": "a.connects_to",
+   "roles": {},
+   "subject": "f7c0e2d305"
+  },
+  {
+   "mode": null,
+   "object": "5cadaecbfa",
+   "rel": "a.listens_on",
+   "roles": {},
+   "subject": "451284737a"
+  },
+  {
+   "mode": null,
+   "object": "5dc844126d",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "0bedada991"
+  },
+  {
+   "mode": null,
+   "object": "5dc844126d",
+   "rel": "a.injects",
+   "roles": {
+    "into": "56ba3be43c"
+   },
+   "subject": "93fadb935d"
+  },
+  {
+   "mode": null,
+   "object": "5dc844126d",
+   "rel": "a.injects",
+   "roles": {
+    "into": "b388ea1f34"
+   },
+   "subject": "f7c0e2d305"
+  },
+  {
+   "mode": null,
+   "object": "6089266548",
+   "rel": "a.runs_in",
+   "roles": {},
+   "subject": "93fadb935d"
+  },
+  {
+   "mode": null,
+   "object": "687dfd2505",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "5dc844126d"
+  },
+  {
+   "mode": null,
+   "object": "73ffc8be14",
+   "rel": "a.runs_in",
+   "roles": {},
+   "subject": "c1af74e0f2"
+  },
+  {
+   "mode": null,
+   "object": "77749f9667",
+   "rel": "a.runs_in",
+   "roles": {},
+   "subject": "451284737a"
+  },
+  {
+   "mode": null,
+   "object": "77749f9667",
+   "rel": "a.runs_in",
+   "roles": {},
+   "subject": "5145e17089"
+  },
+  {
+   "mode": null,
+   "object": "78abb8e021",
+   "rel": "a.sends",
+   "roles": {
+    "through": "953ea2d6af",
+    "to": "5dc844126d"
+   },
+   "subject": "c1af74e0f2"
+  },
+  {
+   "mode": null,
+   "object": "805eb6e38c",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "5dc844126d"
+  },
+  {
+   "mode": null,
+   "object": "80abd66274",
+   "rel": "a.changes",
+   "roles": {},
+   "subject": "451284737a"
+  },
+  {
+   "mode": null,
+   "object": "80abd66274",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "451284737a"
+  },
+  {
+   "mode": null,
+   "object": "848226354e",
+   "rel": "a.sends",
+   "roles": {
+    "through": "953ea2d6af",
+    "to": "5dc844126d"
+   },
+   "subject": "c1af74e0f2"
+  },
+  {
+   "mode": null,
+   "object": "8483cdc087",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "f7c0e2d305"
+  },
+  {
+   "mode": null,
+   "object": "88f97e6a76",
+   "rel": "a.has_states",
+   "roles": {},
+   "subject": "0b11d03069"
+  },
+  {
+   "mode": null,
+   "object": "93fadb935d",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "0bedada991"
+  },
+  {
+   "mode": null,
+   "object": "9939d20624",
+   "rel": "a.forwards",
+   "roles": {
+    "to": "4f13156057"
+   },
+   "subject": "451284737a"
+  },
+  {
+   "mode": null,
+   "object": "9939d20624",
+   "rel": "a.sends",
+   "roles": {
+    "to": "451284737a"
+   },
+   "subject": "f7c0e2d305"
+  },
+  {
+   "mode": null,
+   "object": "9939d20624",
+   "rel": "a.sends",
+   "roles": {
+    "to": "f7c0e2d305"
+   },
+   "subject": "5dc844126d"
+  },
+  {
+   "mode": null,
+   "object": "9b46c568dd",
+   "rel": "a.reads",
+   "roles": {},
+   "subject": "c1af74e0f2"
+  },
+  {
+   "mode": null,
+   "object": "a6432d3acb",
+   "rel": "a.runs_in",
+   "roles": {},
+   "subject": "5dc844126d"
+  },
+  {
+   "mode": null,
+   "object": "c1af74e0f2",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "0bedada991"
+  },
+  {
+   "mode": null,
+   "object": "c1af74e0f2",
+   "rel": "a.injects",
+   "roles": {
+    "into": "56ba3be43c"
+   },
+   "subject": "93fadb935d"
+  },
+  {
+   "mode": null,
+   "object": "c1af74e0f2",
+   "rel": "a.injects",
+   "roles": {
+    "into": "b388ea1f34"
+   },
+   "subject": "f7c0e2d305"
+  },
+  {
+   "mode": null,
+   "object": "d0e747f912",
+   "rel": "a.keyed_by",
+   "roles": {},
+   "subject": "687dfd2505"
+  },
+  {
+   "mode": null,
+   "object": "da95500a63",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "5dc844126d"
+  },
+  {
+   "mode": null,
+   "object": "dfd34cc358",
+   "rel": "a.sends",
+   "roles": {
+    "through": "953ea2d6af",
+    "to": "c1af74e0f2"
+   },
+   "subject": "5dc844126d"
+  },
+  {
+   "mode": null,
+   "object": "e112da3b8a",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "451284737a"
+  },
+  {
+   "mode": null,
+   "object": "e5ee59d388",
+   "rel": "a.has_states",
+   "roles": {},
+   "subject": "0b11d03069"
+  },
+  {
+   "mode": null,
+   "object": "e5ee59d388",
+   "rel": "a.starts_in",
+   "roles": {},
+   "subject": "0b11d03069"
+  },
+  {
+   "mode": null,
+   "object": "f1536d642f",
+   "rel": "a.sends",
+   "roles": {
+    "to": "5dc844126d"
+   },
+   "subject": "93fadb935d"
+  },
+  {
+   "mode": null,
+   "object": "f7c0e2d305",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "0bedada991"
+  },
+  {
+   "mode": null,
+   "object": "fc9a929d6e",
+   "rel": "a.contains",
+   "roles": {},
+   "subject": "5145e17089"
+  },
+  {
+   "mode": null,
+   "object": "fc9a929d6e",
+   "rel": "a.forwards",
+   "roles": {
+    "to": "f7c0e2d305"
+   },
+   "subject": "451284737a"
+  },
+  {
+   "mode": null,
+   "object": "fc9a929d6e",
+   "rel": "a.sends",
+   "roles": {
+    "to": "451284737a"
+   },
+   "subject": "5145e17089"
+  },
+  {
+   "mode": null,
+   "object": "fc9a929d6e",
+   "rel": "a.sends",
+   "roles": {
+    "to": "5dc844126d"
+   },
+   "subject": "f7c0e2d305"
+  }
+ ],
+ "invariants": [
+  {
+   "if": [
+    {
+     "mode": "not",
+     "object": "451284737a",
+     "rel": "a.connects_to",
+     "roles": {},
+     "subject": "f7c0e2d305"
+    }
+   ],
+   "then": [
+    {
+     "mode": null,
+     "object": "0e8dac11a7",
+     "rel": "a.sends",
+     "roles": {
+      "to": "5145e17089"
+     },
+     "subject": "451284737a"
+    }
+   ],
+   "type": "if"
+  },
+  {
+   "if": [
+    {
+     "mode": null,
+     "object": "451284737a",
+     "rel": "a.connects_to",
+     "roles": {},
+     "subject": "f7c0e2d305"
+    }
+   ],
+   "then": [
+    {
+     "mode": null,
+     "object": "6f0da5bcc0",
+     "rel": "a.replaces",
+     "roles": {},
+     "subject": "451284737a"
+    }
+   ],
+   "type": "when"
+  },
+  {
+   "if": [
+    {
+     "mode": null,
+     "object": "da95500a63",
+     "rel": "a.changes",
+     "roles": {},
+     "subject": "c1af74e0f2"
+    }
+   ],
+   "then": [
+    {
+     "mode": null,
+     "object": "5f71c6768e",
+     "rel": "a.dispatches",
+     "roles": {},
+     "subject": "c1af74e0f2"
+    }
+   ],
+   "type": "if"
+  },
+  {
+   "if": [
+    {
+     "mode": null,
+     "object": "da95500a63",
+     "rel": "a.changes",
+     "roles": {},
+     "subject": "c1af74e0f2"
+    }
+   ],
+   "then": [
+    {
+     "mode": null,
+     "object": "b78fe00e25",
+     "rel": "a.dispatches",
+     "roles": {},
+     "subject": "c1af74e0f2"
+    }
+   ],
+   "type": "if"
+  },
+  {
+   "if": [
+    {
+     "mode": null,
+     "object": null,
+     "rel": "a.times_out",
+     "roles": {},
+     "subject": "54da9ae3f6"
+    }
+   ],
+   "then": [
+    {
+     "mode": null,
+     "object": "f8c8e5badf",
+     "rel": "a.closes",
+     "roles": {},
+     "subject": "451284737a"
+    }
+   ],
+   "type": "if"
+  },
+  {
+   "if": [
+    {
+     "mode": null,
+     "object": null,
+     "rel": "a.times_out",
+     "roles": {},
+     "subject": "8483cdc087"
+    }
+   ],
+   "then": [
+    {
+     "mode": null,
+     "object": "451284737a",
+     "rel": "a.connects_to",
+     "roles": {},
+     "subject": "f7c0e2d305"
+    }
+   ],
+   "type": "if"
+  },
+  {
+   "then": [
+    {
+     "mode": "not",
+     "object": "56ba3be43c",
+     "rel": "a.picks",
+     "roles": {},
+     "subject": "f7c0e2d305"
+    }
+   ],
+   "type": "not"
+  },
+  {
+   "then": [
+    {
+     "mode": "not",
+     "object": "9b46c568dd",
+     "rel": "a.reads",
+     "roles": {},
+     "subject": "5dc844126d"
+    }
+   ],
+   "type": "not"
+  }
+ ],
+ "rules": [],
+ "gaps": [
+  {
+   "entity": "5cadaecbfa",
+   "role": "authentication",
+   "type": "f.websocket"
+  }
+ ],
+ "warnings": [],
+ "errors": [],
+ "notes": []
+}

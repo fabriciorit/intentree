@@ -1,0 +1,68 @@
+# live_captions: live captions of the system audio with whisper.cpp on the GPU.
+
+# --- structure
+The program "live_captions" contains the module "app", the module "pipeline", the module "audio", the module "engine", the module "logwriter", the module "hotkeys", the module "config", the window "overlay", the window "history" and the window "prefs".
+The module "app" contains the state machine "app state" and the thread "gtk".
+The module "pipeline" contains the state machine "segment", the thread "inference", the queue "finals", the slot "partial", the lock "partial_lock", the event flag "wake", the ring buffer "preroll" and the ring buffer "vad window".
+The module "audio" contains the thread "capture" and the thread "sink-watch".
+The module "engine" contains the lock "engine lock" and the value "loaded_key".
+
+# --- relations
+The module "app" uses the module "pipeline", the module "engine", the module "logwriter", the module "hotkeys" and the module "config".
+The module "app" shows the window "overlay", the window "history" and the window "prefs".
+The module "pipeline" uses the module "audio" and the module "engine".
+The module "app" runs in the d-bus service "single instance".
+The module "audio" launches the process "parec".
+The module "audio" launches the process "pactl subscribe".
+The process "parec" reads the value "30 ms frames" from the device "PipeWire monitor".
+The module "engine" launches the process "whisper-server".
+The process "whisper-server" listens on the http endpoint "127.0.0.1 free port".
+The module "engine" sends the wav buffer "speech chunk" to the http endpoint "127.0.0.1 free port".
+The process "whisper-server" uses the library "whisper.cpp Vulkan".
+The module "logwriter" writes the value "final phrases" to the text file "transcript .txt .srt".
+The module "config" reads the value "preferences" from the text file "config.json".
+The module "config" writes the value "preferences" to the text file "config.json".
+
+# --- threads and queues
+The thread "capture" fills the queue "finals".
+The thread "capture" overwrites the slot "partial".
+The thread "inference" consumes the queue "finals".
+The thread "inference" consumes the slot "partial".
+The slot "partial" is protected by the lock "partial_lock".
+The queue "finals" is unbounded.
+The ring buffer "preroll" is at most 10.
+The ring buffer "vad window" is at most 8.
+The thread "inference" schedules the function "on_final" on the thread "gtk".
+The thread "inference" schedules the function "on_partial" on the thread "gtk".
+The thread "capture" never blocks.
+The thread "inference" never drops the queue "finals".
+The thread "capture" is daemonic.
+The thread "inference" is daemonic.
+
+# --- app state machine
+The state machine "app state" has the states "off", "loading", "on", "speech" and "error".
+The state machine "app state" starts in the state "off".
+The module "app" moves the state machine "app state" from the state "off" to the state "loading".
+The module "app" moves the state machine "app state" from the state "loading" to the state "on".
+The module "app" moves the state machine "app state" from the state "loading" to the state "error".
+The module "pipeline" moves the state machine "app state" from the state "on" to the state "speech".
+The module "pipeline" moves the state machine "app state" from the state "speech" to the state "on".
+The module "app" moves the state machine "app state" from the state "on" to the state "off".
+The module "app" moves the state machine "app state" from the state "speech" to the state "off".
+The module "app" moves the state machine "app state" from the state "error" to the state "loading".
+The module "app" moves the state machine "app state" from the state "on" to the state "loading".
+
+# --- segmentation state machine
+The state machine "segment" has the states "silence" and "speech".
+The state machine "segment" starts in the state "silence".
+The thread "capture" moves the state machine "segment" from the state "silence" to the state "speech".
+The thread "capture" moves the state machine "segment" from the state "speech" to the state "silence".
+
+# --- invariants
+When the module "app" changes the value "config engine", the module "app" restarts the process "whisper-server".
+When the module "app" changes the value "config audio", the module "app" restarts the module "pipeline".
+When the module "audio" changes the device "PipeWire monitor", the thread "sink-watch" restarts the process "parec".
+If the thread "inference" consumes the slot "partial", the module "engine" does not use the value "context prompt".
+If the process "whisper-server" times out, the module "app" moves the state machine "app state" from the state "loading" to the state "error".
+The process "whisper-server" times out after "120 s".
+The thread "capture" never calls the window "overlay".
